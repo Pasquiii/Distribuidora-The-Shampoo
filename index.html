@@ -30,7 +30,11 @@
                 </div>
             </div>
 
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-2 md:space-x-3">
+                <button onclick="toggleCartModal()" class="relative bg-gray-800 text-white hover:bg-black p-2.5 rounded-full transition text-sm flex items-center justify-center w-10 h-10 shadow-sm mr-1 cursor-pointer">
+                    <i class="fas fa-shopping-cart text-base"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-[#D21427] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+                </button>
                 <a id="btn-insta-head" href="#" target="_blank" class="bg-[#6BA4D9] text-white hover:bg-opacity-90 p-2.5 rounded-full transition text-sm flex items-center justify-center w-10 h-10 shadow-sm">
                     <i class="fab fa-instagram text-lg"></i>
                 </a>
@@ -66,7 +70,7 @@
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6">
         <div class="flex items-center justify-between mb-6">
             <h2 id="section-title" class="text-xl md:text-2xl font-bold text-gray-800 border-l-4 border-[#6BA4D9] pl-3">Todos los Productos</h2>
-            <span id="product-count" class="text-xs md:text-sm bg-gray-200 text-gray-700 px-3 py-1 rounded-full font-medium">0 Products</span>
+            <span id="product-count" class="text-xs md:text-sm bg-gray-200 text-gray-700 px-3 py-1 rounded-full font-medium">0 Productos</span>
         </div>
 
         <div id="grid-productos" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6"></div>
@@ -82,15 +86,38 @@
         <p class="mt-1 text-[#6BA4D9] font-medium">Calidad y Belleza Profesional</p>
     </footer>
 
-    <button onclick="toggleAdminPanel()" class="fixed bottom-4 left-4 bg-gray-800 text-white w-10 h-10 rounded-full shadow-lg hover:bg-black transition flex items-center justify-center z-50 opacity-60 hover:opacity-100">
+    <button onclick="toggleAdminPanel()" class="fixed bottom-4 left-4 bg-gray-800 text-white w-10 h-10 rounded-full shadow-lg hover:bg-black transition flex items-center justify-center z-50 opacity-60 hover:opacity-100 cursor-pointer">
         <i class="fas fa-cog text-base"></i>
     </button>
+
+    <div id="cart-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden backdrop-blur-xs">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            <div class="bg-gray-900 text-white p-4 flex justify-between items-center">
+                <h3 class="font-bold text-base flex items-center"><i class="fas fa-shopping-cart mr-2 text-[#6BA4D9]"></i> Mi Carrito de Compras</h3>
+                <button onclick="toggleCartModal()" class="text-gray-400 hover:text-white text-lg cursor-pointer"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div id="cart-items" class="p-4 flex-grow overflow-y-auto space-y-3">
+                </div>
+
+            <div class="p-4 bg-gray-50 border-t border-gray-200 space-y-3">
+                <div class="flex justify-between items-center font-bold text-base md:text-lg text-gray-800">
+                    <span>Total Estimado:</span>
+                    <span id="cart-total" class="text-[#D21427]">$0.00</span>
+                </div>
+                <button onclick="sendCartToWhatsApp()" class="w-full bg-[#25D366] hover:bg-opacity-95 text-white font-bold py-2.5 rounded-lg text-sm transition flex items-center justify-center space-x-2 shadow-md cursor-pointer">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    <span>Confirmar Pedido por WhatsApp</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <div id="admin-panel" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden backdrop-blur-xs">
         <div class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden">
             <div class="bg-gray-900 text-white p-4 flex justify-between items-center">
                 <h3 class="font-bold text-base flex items-center"><i class="fas fa-sliders-h mr-2 text-[#6BA4D9]"></i> Panel de Control</h3>
-                <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-white text-lg"><i class="fas fa-times"></i></button>
+                <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-white text-lg cursor-pointer"><i class="fas fa-times"></i></button>
             </div>
             
             <div class="p-4 flex-grow overflow-y-auto space-y-5">
@@ -137,21 +164,24 @@
                             <label class="block text-xs font-medium text-gray-700 mb-1">URL de Imagen (Opcional)</label>
                             <input type="text" id="prod-img" placeholder="https://enlace.com/imagen.jpg" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#6BA4D9]">
                         </div>
-                        <button onclick="addProduct()" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-2 rounded text-sm transition shadow-sm mt-1">
+                        <button onclick="addProduct()" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-2 rounded text-sm transition shadow-sm mt-1 cursor-pointer">
                             <i class="fas fa-plus mr-1"></i> Registrar Producto
                         </button>
                     </div>
                 </div>
 
-                <div class="pt-2">
-                    <button onclick="resetData()" class="w-full bg-red-100 text-red-700 hover:bg-red-200 text-xs font-medium py-1.5 rounded border border-red-200 transition">
+                <div class="pt-2 space-y-2">
+                    <button onclick="downloadHTML()" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2 rounded border border-blue-700 transition flex items-center justify-center space-x-1 cursor-pointer shadow-xs">
+                        <i class="fas fa-download mr-1"></i> <span class="font-bold">Descargar HTML Actualizado (para GitHub)</span>
+                    </button>
+                    <button onclick="resetData()" class="w-full bg-red-100 text-red-700 hover:bg-red-200 text-xs font-medium py-1.5 rounded border border-red-200 transition cursor-pointer">
                         <i class="fas fa-undo mr-1"></i> Reestablecer Datos de Fábrica
                     </button>
                 </div>
             </div>
 
             <div class="bg-gray-100 p-3 border-t border-gray-200 flex justify-end">
-                <button onclick="saveConfig()" class="bg-[#D21427] hover:bg-opacity-90 text-white font-semibold px-5 py-2 rounded text-sm transition shadow-md">
+                <button onclick="saveConfig()" class="bg-[#D21427] hover:bg-opacity-90 text-white font-semibold px-5 py-2 rounded text-sm transition shadow-md cursor-pointer">
                     Guardar Cambios
                 </button>
             </div>
@@ -159,13 +189,16 @@
     </div>
 
     <script>
-        // Configuración y Base de Datos por Defecto (Simulada)
+        // CONFIGURACIÓN Y BASE DE DATOS DE FÁBRICA REEMPLAZABLE DINÁMICAMENTE
+        /*START_SETTINGS*/
         const defaultSettings = {
             whatsapp: "584241234567",
             instagram: "the_shampoo_distribuidora",
-            password: "admin" // Contraseña por defecto añadida aquí
+            password: "admin"
         };
+        /*END_SETTINGS*/
 
+        /*START_PRODUCTS*/
         const defaultProducts = [
             { id: 1, name: "Igora Royal 60ml", price: 4.50, category: "Tintes Profesionales", img: "imagenes/igorarojo.png" },
             { id: 2, name: "Agua Oxigenada 20 Vol 1L", price: 3.00, category: "Agua Oxigenada", img: "" },
@@ -174,8 +207,10 @@
             { id: 5, name: "Shampoo Antirresiduos 1L", price: 8.00, category: "Shampoo", img: "" },
             { id: 6, name: "Maquillaje Base Matte Alta Cobertura", price: 6.50, category: "Maquillaje", img: "" }
         ];
+        /*END_PRODUCTS*/
 
         let currentCategory = "Todos";
+        let cart = []; // Estado en tiempo real del carrito de compras
 
         // Inicializadores de LocalStorage
         if (!localStorage.getItem("ts_settings")) {
@@ -206,7 +241,7 @@
             // Rellenar Campos del Formulario del Panel con los valores guardados
             document.getElementById("cfg-whatsapp").value = settings.whatsapp;
             document.getElementById("cfg-instagram").value = settings.instagram;
-            document.getElementById("cfg-password").value = settings.password || "admin"; // Carga la contraseña
+            document.getElementById("cfg-password").value = settings.password || "admin";
 
             // Filtrar y Mostrar Productos
             const grid = document.getElementById("grid-productos");
@@ -225,8 +260,7 @@
                 
                 filtered.forEach(p => {
                     const finalImg = p.img || `https://placehold.co/300x300/f3f4f6/a3a3a3?text=${encodeURIComponent(p.name)}`;
-                    const waLink = `https://wa.me/${settings.whatsapp}?text=Hola!%20Me%20interesa%20el%20producto:%20${encodeURIComponent(p.name)}%20(Cat:%20${encodeURIComponent(p.category)})%20con%20precio%20de%20$${p.price}`;
-
+                    
                     grid.innerHTML += `
                         <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
                             <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
@@ -234,7 +268,7 @@
                                 <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
                                     ${p.category}
                                 </span>
-                                <button onclick="deleteProduct(${p.id})" class="absolute top-2 right-2 bg-red-600 text-white w-6 h-6 rounded-full opacity-0 group-hover:opacity-100 transition shadow-md text-xs flex items-center justify-center hover:bg-red-700" title="Eliminar Producto">
+                                <button onclick="deleteProduct(${p.id})" class="absolute top-2 right-2 bg-red-600 text-white w-6 h-6 rounded-full opacity-0 group-hover:opacity-100 transition shadow-md text-xs flex items-center justify-center hover:bg-red-700 cursor-pointer" title="Eliminar Producto">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </div>
@@ -242,18 +276,20 @@
                                 <div>
                                     <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 h-8 md:h-10 mb-1">${p.name}</h3>
                                 </div>
-                                <div class="mt-2">
-                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-2">$${p.price.toFixed(2)}</div>
-                                    <a href="${waLink}" target="_blank" class="w-full bg-[#25D366] text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 hover:bg-opacity-90">
-                                        <i class="fab fa-whatsapp text-sm"></i>
-                                        <span>Consultar</span>
-                                    </a>
+                                <div class="mt-2 space-y-1.5">
+                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$${p.price.toFixed(2)}</div>
+                                    
+                                    <button onclick="addToCart(${p.id})" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
+                                        <i class="fas fa-cart-plus"></i>
+                                        <span>Añadir al Carrito</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     `;
                 });
             }
+            updateCartUI();
         }
 
         // Acciones de Categorías
@@ -277,18 +313,129 @@
             refreshUI();
         }
 
+        // LÓGICA DEL CARRITO DE COMPRAS
+        function toggleCartModal() {
+            document.getElementById("cart-modal").classList.toggle("hidden");
+        }
+
+        function addToCart(id) {
+            const products = JSON.parse(localStorage.getItem("ts_products"));
+            const itemMatch = products.find(p => p.id === id);
+            if (!itemMatch) return;
+
+            const existingCartItem = cart.find(item => item.id === id);
+            if (existingCartItem) {
+                existingCartItem.quantity++;
+            } else {
+                cart.push({ ...itemMatch, quantity: 1 });
+            }
+            updateCartUI();
+        }
+
+        function updateCartQuantity(id, amount) {
+            const item = cart.find(p => p.id === id);
+            if (!item) return;
+
+            item.quantity += amount;
+            if (item.quantity <= 0) {
+                cart = cart.filter(p => p.id !== id);
+            }
+            updateCartUI();
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(p => p.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById("cart-badge");
+            const itemsContainer = document.getElementById("cart-items");
+            const totalContainer = document.getElementById("cart-total");
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            // Actualizar insignia/badge numérico de arriba
+            if (totalItems > 0) {
+                badge.innerText = totalItems;
+                badge.classList.remove("hidden");
+            } else {
+                badge.classList.add("hidden");
+            }
+
+            totalContainer.innerText = `$${totalPrice.toFixed(2)}`;
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = `
+                    <div class="text-center py-8 text-gray-400">
+                        <i class="fas fa-shopping-basket text-4xl mb-2"></i>
+                        <p class="text-xs font-medium">Tu carrito está vacío.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            itemsContainer.innerHTML = "";
+            cart.forEach(item => {
+                const img = item.img || `https://placehold.co/50x50/f3f4f6/a3a3a3?text=${encodeURIComponent(item.name)}`;
+                itemsContainer.innerHTML += `
+                    <div class="flex items-center justify-between p-2.5 border border-gray-100 rounded-lg bg-gray-50 gap-2">
+                        <img src="${img}" class="w-10 h-10 object-cover rounded bg-white border flex-shrink-0">
+                        <div class="flex-grow min-w-0">
+                            <h4 class="text-xs font-semibold text-gray-800 truncate">${item.name}</h4>
+                            <p class="text-xs text-[#D21427] font-bold mt-0.5">$${item.price.toFixed(2)}</p>
+                        </div>
+                        <div class="flex items-center space-x-1 flex-shrink-0">
+                            <button onclick="updateCartQuantity(${item.id}, -1)" class="w-5 h-5 rounded bg-gray-200 hover:bg-gray-300 text-xs font-bold flex items-center justify-center text-gray-700 cursor-pointer">-</button>
+                            <span class="text-xs font-bold w-5 text-center">${item.quantity}</span>
+                            <button onclick="updateCartQuantity(${item.id}, 1)" class="w-5 h-5 rounded bg-gray-200 hover:bg-gray-300 text-xs font-bold flex items-center justify-center text-gray-700 cursor-pointer">+</button>
+                            <button onclick="removeFromCart(${item.id})" class="text-gray-400 hover:text-red-600 pl-1 text-xs cursor-pointer" title="Remover producto">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function sendCartToWhatsApp() {
+            if (cart.length === 0) {
+                alert("Por favor añade artículos a tu carrito primero.");
+                return;
+            }
+            const settings = JSON.parse(localStorage.getItem("ts_settings"));
+            
+            let message = `🛒 *NUEVO PEDIDO - THE SHAMPOO*\n`;
+            message += `====================================\n\n`;
+            
+            let total = 0;
+            cart.forEach((item, index) => {
+                const sub = item.price * item.quantity;
+                total += sub;
+                message += `*${index + 1}. ${item.name}*\n`;
+                message += `   Cant: ${item.quantity}  x  $${item.price.toFixed(2)}\n`;
+                message += `   Subtotal: *$${sub.toFixed(2)}*\n\n`;
+            });
+
+            message += `====================================\n`;
+            message += `💰 *TOTAL A PAGAR: $${total.toFixed(2)}*\n\n`;
+            message += `Quedo a la espera de sus datos para concretar el pago y la entrega.`;
+
+            const waUrl = `https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, '_blank');
+        }
+
         // Toggle Modal Panel Administrativo con bloqueo de contraseña
         function toggleAdminPanel() {
             const panel = document.getElementById("admin-panel");
             
-            // Si el panel está cerrado y se intenta abrir, pedimos contraseña
             if (panel.classList.contains("hidden")) {
                 const settings = JSON.parse(localStorage.getItem("ts_settings")) || defaultSettings;
                 const savedPassword = settings.password || "admin";
                 
                 const inputPass = prompt("Introduce la contraseña para ingresar al Panel de Control:");
-                
-                if (inputPass === null) return; // Si el usuario cancela el cuadro de diálogo
+                if (inputPass === null) return;
                 
                 if (inputPass === savedPassword) {
                     panel.classList.remove("hidden");
@@ -296,16 +443,15 @@
                     alert("Contraseña incorrecta. Acceso denegado.");
                 }
             } else {
-                // Si ya está abierto, simplemente lo cerramos
                 panel.classList.add("hidden");
             }
         }
 
-        // Guardar Ajustes Generales (WhatsApp / Instagram / Contraseña)
+        // Guardar Ajustes Generales
         function saveConfig() {
-            const nw = document.getElementById("cfg-whatsapp").value.replace(/\D/g,''); // Solo numérico
+            const nw = document.getElementById("cfg-whatsapp").value.replace(/\D/g,''); 
             const ni = document.getElementById("cfg-instagram").value.trim();
-            const np = document.getElementById("cfg-password").value.trim(); // Lee la nueva contraseña
+            const np = document.getElementById("cfg-password").value.trim();
 
             if(!nw) { alert("Por favor ingresa un número de WhatsApp válido."); return; }
             if(!ni) { alert("Por favor ingresa una cuenta de Instagram."); return; }
@@ -314,7 +460,35 @@
             localStorage.setItem("ts_settings", JSON.stringify({ whatsapp: nw, instagram: ni, password: np }));
             refreshUI();
             toggleAdminPanel();
-            alert("¡Configuración y contraseña guardadas exitosamente!");
+            alert("¡Configuración guardada exitosamente!");
+        }
+
+        // FUNCIÓN CLAVE: EXPORTACIÓN Y COMPILACIÓN DE CÓDIGO FUENTE COMPATIBLE CON GITHUB
+        function downloadHTML() {
+            const currentSettings = localStorage.getItem("ts_settings") || JSON.stringify(defaultSettings);
+            const currentProducts = localStorage.getItem("ts_products") || JSON.stringify(defaultProducts);
+
+            let rawHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+
+            // Limpieza preventiva de clases de visibilidad para evitar congelar modales abiertos al arrancar en producción
+            rawHtml = rawHtml.replace('id="admin-panel" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-xs"', 'id="admin-panel" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden backdrop-blur-xs"');
+            rawHtml = rawHtml.replace('id="cart-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-xs"', 'id="cart-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden backdrop-blur-xs"');
+
+            // Inyección de arreglos persistentes usando expresiones regulares sobre los delimitadores
+            const settingsRegex = /\/\*START_SETTINGS\*\/[\s\S]*?\/\*END_SETTINGS\*\//;
+            const productsRegex = /\/\*START_PRODUCTS\*\/[\s\S]*?\/\*END_PRODUCTS\*\//;
+
+            rawHtml = rawHtml.replace(settingsRegex, `/*START_SETTINGS*/\n        const defaultSettings = ${currentSettings};\n        /*END_SETTINGS*/`);
+            rawHtml = rawHtml.replace(productsRegex, `/*START_PRODUCTS*/\n        const defaultProducts = ${currentProducts};\n        /*END_PRODUCTS*/`);
+
+            // Lanzamiento de descarga directa del documento plano compilado
+            const blob = new Blob([rawHtml], { type: "text/html" });
+            const downloaderElement = document.createElement("a");
+            downloaderElement.href = URL.createObjectURL(blob);
+            downloaderElement.download = "index.html";
+            document.body.appendChild(downloaderElement);
+            downloaderElement.click();
+            document.body.removeChild(downloaderElement);
         }
 
         // Agregar Producto Personalizado
@@ -335,7 +509,6 @@
             products.push({ id: newId, name, price, category, img });
             localStorage.setItem("ts_products", JSON.stringify(products));
 
-            // Limpiar inputs
             document.getElementById("prod-name").value = "";
             document.getElementById("prod-price").value = "";
             document.getElementById("prod-img").value = "";
@@ -361,6 +534,7 @@
                 localStorage.setItem("ts_settings", JSON.stringify(defaultSettings));
                 localStorage.setItem("ts_products", JSON.stringify(defaultProducts));
                 currentCategory = "Todos";
+                cart = [];
                 filterCategory("Todos");
                 toggleAdminPanel();
             }
