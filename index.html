@@ -5,176 +5,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Distribuidora The Shampoo</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */
-        @layer properties;
-        @layer theme, base, components, utilities;
-        @layer theme {
-          :root, :host {
-            --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-            --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-            --color-red-100: oklch(93.6% 0.032 17.717);
-            --color-red-200: oklch(88.5% 0.062 18.334);
-            --color-red-600: oklch(57.7% 0.245 27.325);
-            --color-red-700: oklch(50.5% 0.213 27.518);
-            --color-amber-500: oklch(76.9% 0.188 70.08);
-            --color-emerald-500: oklch(69.6% 0.196 141.58);
-            --color-emerald-600: oklch(62.7% 0.194 149.21);
-            --color-emerald-700: oklch(51.8% 0.191 150.46);
-          }
-        }
         body { font-family: 'Poppins', sans-serif; }
+        /* Ocultar barra de scroll en categorías manteniendo funcionalidad */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
     <header class="bg-white shadow-md sticky top-0 z-40">
-        <div class="bg-[#D21427] h-2 w-full animate-pulse"></div>
-        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="text-center sm:text-left">
-                <h1 class="text-2xl font-bold text-gray-900 tracking-tight flex items-center justify-center sm:justify-start gap-2">
-                    <i class="fas fa-fire text-[#D21427]"></i> Distribuidora <span class="text-[#D21427]">The Shampoo</span>
-                </h1>
-                <p class="text-xs text-gray-500 font-medium mt-0.5">Tu aliado profesional en estilismo y belleza</p>
-            </div>
+        <div class="bg-[#D21427] h-2 w-full"></div> 
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             
-            <div class="w-full sm:w-72 relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
-                    <i class="fas fa-search"></i>
-                </span>
-                <input type="text" id="search-bar" oninput="searchProducts()" placeholder="Buscar producto..." class="w-full pl-9 pr-4 py-2 bg-gray-100 border-none rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#D21427] transition-all">
+            <div class="flex items-center space-x-3">
+                <img src="logo.png" alt="Logo" onerror="this.src='https://placehold.co/50x50/D21427/ffffff?text=TS'" class="h-12 w-auto object-contain rounded">
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-gray-900 tracking-tight leading-none">The Shampoo</h1>
+                    <span class="text-xs text-gray-500 font-medium tracking-wide block mt-1">Distribuidora de Artículos de Peluquería</span>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <a id="btn-insta-head" href="#" target="_blank" class="bg-[#6BA4D9] text-white hover:bg-opacity-90 p-2.5 rounded-full transition text-sm flex items-center justify-center w-10 h-10 shadow-sm">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
+                <a id="btn-wats-head" href="#" target="_blank" class="bg-[#25D366] text-white hover:bg-opacity-90 p-2.5 rounded-full transition text-sm flex items-center justify-center w-10 h-10 shadow-sm">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 border-t border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-2 md:px-4 py-2.5 overflow-x-auto no-scrollbar flex space-x-2 md:flex-wrap md:gap-2 md:space-x-0">
+                <button onclick="filterCategory('Todos')" id="cat-Todos" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition whitespace-nowrap bg-[#D21427] text-white shadow-sm">
+                    Todos
+                </button>
+                <script>
+                    const categories = [
+                        "Tintes Profesionales", "Agua Oxigenada", "Keratina", "Decolorantes", 
+                        "Ceras", "Shampoo", "Acondicionador", "Ampollas", "SobrePeines", 
+                        "Maquinas", "Planchas", "Secadores", "Cepillos", "Peines", "Maquillaje"
+                    ];
+                    categories.forEach(cat => {
+                        document.write(`
+                            <button onclick="filterCategory('${cat}')" id="cat-${cat.replace(/\s+/g, '')}" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
+                                ${cat}
+                            </button>
+                        `);
+                    });
+                </script>
             </div>
         </div>
     </header>
 
-    <div class="bg-gradient-to-r from-gray-900 via-stone-800 to-gray-900 text-white py-12 px-4 relative overflow-hidden shadow-inner">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D21427_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <span class="bg-[#D21427] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Catálogo Mayorista</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 tracking-tight">Potencia tu Salón con los Mejores Productos</h2>
-            <p class="mt-2 text-gray-300 text-sm sm:text-base max-w-xl mx-auto font-light">Explora nuestra selección exclusiva importada directamente para estilistas exigentes. Envíos a todo el país.</p>
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6">
+        <div class="flex items-center justify-between mb-6">
+            <h2 id="section-title" class="text-xl md:text-2xl font-bold text-gray-800 border-l-4 border-[#6BA4D9] pl-3">Todos los Productos</h2>
+            <span id="product-count" class="text-xs md:text-sm bg-gray-200 text-gray-700 px-3 py-1 rounded-full font-medium">0 Products</span>
         </div>
-    </div>
 
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8">
-        <div class="flex items-center gap-2 overflow-x-auto pb-4 no-scrollbar mb-8" id="category-list"></div>
-        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"></div>
+        <div id="grid-productos" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6"></div>
+
+        <div id="no-products-msg" class="hidden text-center py-12">
+            <i class="fas fa-box-open text-gray-300 text-5xl mb-3"></i>
+            <p class="text-gray-500 font-medium">No hay productos registrados en esta categoría aún.</p>
+        </div>
     </main>
 
-    <div id="admin-panel" class="fixed inset-y-0 right-0 w-full sm:w-96 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col border-l border-gray-100">
-        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50">
-            <div>
-                <h3 class="font-bold text-lg text-gray-900">Panel de Control</h3>
-                <p class="text-xs text-gray-500">Añade o gestiona tus productos</p>
-            </div>
-            <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-gray-600 p-2 rounded-lg hover:bg-gray-200 transition-all">
-                <i class="fas fa-times text-lg"></i>
-            </button>
-        </div>
+    <footer class="bg-white border-t border-gray-200 py-6 mt-12 text-center text-xs text-gray-500">
+        <p>&copy; 2026 Distribuidora The Shampoo. Todos los derechos reservados.</p>
+        <p class="mt-1 text-[#6BA4D9] font-medium">Calidad y Belleza Profesional</p>
+    </footer>
 
-        <div class="p-6 flex-grow overflow-y-auto space-y-6">
-            <div class="space-y-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
-                <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center gap-2">
-                    <i class="fas fa-cog"></i> Configuración General
-                </h4>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-600 mb-1">WhatsApp (Con código de país)</label>
-                    <input type="text" id="set-phone" class="w-full text-sm border border-gray-200 rounded-lg p-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#D21427]">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-600 mb-1">Contraseña de Acceso</label>
-                    <input type="password" id="set-pass" class="w-full text-sm border border-gray-200 rounded-lg p-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#D21427]">
-                </div>
-                <button onclick="saveSettings()" class="w-full bg-gray-900 text-white text-sm font-semibold py-2.5 rounded-lg hover:bg-gray-800 transition-all">
-                    Guardar Ajustes
-                </button>
-            </div>
+    <button onclick="toggleAdminPanel()" class="fixed bottom-4 left-4 bg-gray-800 text-white w-10 h-10 rounded-full shadow-lg hover:bg-black transition flex items-center justify-center z-50 opacity-60 hover:opacity-100">
+        <i class="fas fa-cog text-base"></i>
+    </button>
 
-            <div class="space-y-4">
-                <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center gap-2">
-                    <i class="fas fa-plus-circle"></i> Añadir Nuevo Producto
-                </h4>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-600 mb-1">Nombre del Producto</label>
-                    <input type="text" id="prod-name" class="w-full text-sm border border-gray-200 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-[#D21427]">
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 mb-1">Precio ($)</label>
-                        <input type="number" step="0.01" id="prod-price" class="w-full text-sm border border-gray-200 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-[#D21427]">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-600 mb-1">Categoría</label>
-                        <select id="prod-category" class="w-full text-sm border border-gray-200 rounded-lg p-2.5 bg-white focus:outline-none focus:ring-2 focus:ring-[#D21427]"></select>
+    <div id="admin-panel" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden backdrop-blur-xs">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden">
+            <div class="bg-gray-900 text-white p-4 flex justify-between items-center">
+                <h3 class="font-bold text-base flex items-center"><i class="fas fa-sliders-h mr-2 text-[#6BA4D9]"></i> Panel de Control</h3>
+                <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-white text-lg"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="p-4 flex-grow overflow-y-auto space-y-5">
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                    <h4 class="font-semibold text-xs uppercase tracking-wider text-gray-500 mb-2">Enlaces de Contacto</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-medium text-gray-700 mb-1">WhatsApp (Solo números con código de país, ej: 584241234567)</label>
+                            <input type="text" id="cfg-whatsapp" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#D21427]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-gray-700 mb-1">Usuario de Instagram (ej: tu_tienda)</label>
+                            <input type="text" id="cfg-instagram" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#D21427]">
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-600 mb-1">URL de Imagen</label>
-                    <input type="text" id="prod-img" placeholder="ej: imagenes/producto.png" class="w-full text-sm border border-gray-200 rounded-lg p-2.5 focus:outline-none focus:ring-2 focus:ring-[#D21427]">
+
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                    <h4 class="font-semibold text-xs uppercase tracking-wider text-gray-500 mb-2"><i class="fas fa-lock mr-1 text-amber-500"></i> Seguridad</h4>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-700 mb-1">Contraseña del Panel de Control</label>
+                        <input type="password" id="cfg-password" placeholder="Cambiar contraseña" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#D21427]">
+                    </div>
                 </div>
-                <button onclick="addProduct()" class="w-full bg-[#D21427] text-white text-sm font-semibold py-2.5 rounded-lg hover:bg-red-700 transition-all shadow-md shadow-red-100">
-                    Registrar Producto
+
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                    <h4 class="font-semibold text-xs uppercase tracking-wider text-gray-500 mb-2">Añadir Nuevo Producto</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-medium text-gray-700 mb-1">Nombre del Producto</label>
+                            <input type="text" id="prod-name" placeholder="Ej. Tinte Igora 6-0" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#6BA4D9]">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block text-xs font-medium text-gray-700 mb-1">Precio ($)</label>
+                                <input type="number" step="0.01" id="prod-price" placeholder="0.00" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#6BA4D9]">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-gray-700 mb-1">Categoría</label>
+                                <select id="prod-category" class="w-full text-sm border border-gray-300 p-2 rounded bg-white focus:outline-none focus:border-[#6BA4D9]"></select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-gray-700 mb-1">URL de Imagen (Opcional)</label>
+                            <input type="text" id="prod-img" placeholder="https://enlace.com/imagen.jpg" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#6BA4D9]">
+                        </div>
+                        <button onclick="addProduct()" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-2 rounded text-sm transition shadow-sm mt-1">
+                            <i class="fas fa-plus mr-1"></i> Registrar Producto
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button onclick="resetData()" class="w-full bg-red-100 text-red-700 hover:bg-red-200 text-xs font-medium py-1.5 rounded border border-red-200 transition">
+                        <i class="fas fa-undo mr-1"></i> Reestablecer Datos de Fábrica
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-gray-100 p-3 border-t border-gray-200 flex justify-end">
+                <button onclick="saveConfig()" class="bg-[#D21427] hover:bg-opacity-90 text-white font-semibold px-5 py-2 rounded text-sm transition shadow-md">
+                    Guardar Cambios
                 </button>
             </div>
-        </div>
-
-        <div class="p-4 border-t border-gray-100 bg-gray-50 flex gap-2">
-            <button onclick="downloadUpdatedHTML()" class="flex-grow bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-500/10">
-                <i class="fas fa-download"></i> Descargar HTML Actualizado
-            </button>
-            <button onclick="resetData()" title="Restablecer Catálogo" class="bg-gray-200 hover:bg-gray-300 text-gray-600 p-2.5 rounded-lg transition-all">
-                <i class="fas fa-undo"></i>
-            </button>
         </div>
     </div>
 
-    <footer class="bg-white border-t border-gray-100 py-6 mt-12">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            <p>© 2026 Distribuidora The Shampoo. Todos los derechos reservados.</p>
-            <div class="flex items-center gap-4">
-                <a href="https://instagram.com/distribuidoratheshampoo" target="_blank" class="hover:text-[#D21427] text-lg transition-colors"><i class="fab fa-instagram"></i></a>
-                <button onclick="checkAdminAccess()" class="font-medium hover:text-gray-800 transition-colors flex items-center gap-1.5 bg-gray-100 px-3 py-1.5 rounded-xl text-xs"><i class="fas fa-lock"></i> Panel</button>
-            </div>
-        </div>
-    </footer>
-
     <script>
-        // CONFIGURACIONES PREDETERMINADAS
+        // Configuración y Base de Datos por Defecto (Simulada)
         const defaultSettings = {
-            phone: "584124630390",
-            pass: "admin"
+            whatsapp: "584241234567",
+            instagram: "
+distribuidoratheshampooca
+",
+            password: "admin" // Contraseña por defecto añadida aquí
         };
 
-        const categories = ["Todos", "Tintes", "Shampoo", "Tratamientos", "Herramientas", "Maquillaje", "Otros"];
-
         const defaultProducts = [
-            { id: 1, name: "Igora Royal Tinte 60ml + Agua Oxigenada (Tono Rubio, Rojizo, Negro, Castaño)", price: 16.00, category: "Tintes", img: "imagenes/temporal.png" },
-            { id: 2, name: "Igora Royal Highlifts Tinte 60ml + Agua Oxigenada (Tono Rubio, Aclarante)", price: 16.00, category: "Tintes", img: "imagenes/temporal.png" },
-            { id: 3, name: "Igora Royal Silver Whites Tinte 60ml + Agua Oxigenada (Tono Gris Oscuro, Plata)", price: 16.00, category: "Tintes", img: "imagenes/temporal.png" },
-            { id: 4, name: "Igora Royal Fashion Lights Tinte 60ml + Agua Oxigenada (Tono Rojizo)", price: 16.00, category: "Tintes", img: "imagenes/temporal.png" },
-            { id: 5, name: "Igora Royal Absolutes Tinte 60ml + Agua Oxigenada (Tono Rubio, Castaño)", price: 16.00, category: "Tintes", img: "imagenes/temporal.png" },
-            { id: 6, name: "Tinte Nouvelle Tinte 100ml + Agua Oxigenada", price: 16.00, category: "Tintes", img: "imagenes/temporal.png" },
-            { id: 7, name: "Nouvelle Tono Sobre Tono Touch (libre de amoniaco) Tinte 60ml + Agua Oxigenada", price: 16.40, category: "Tintes", img: "imagenes/temporal.png" },
-            { id: 8, name: "Nook The Virgin Color Tinte 100ml + Agua Oxigenada (Tono Negro, Rubio, Castaño)", price: 1.00, category: "Tintes", img: "imagenes/temporal.png" },
-            { id: 9, name: "Glamour Professional For Your Hair Tinte 120ml + Agua Oxigenada", price: 1.00, category: "Tintes", img: "imagenes/temporal.png" },
-            { id: 10, name: "Carbon Combs peine", price: 16.00, category: "Herramientas", img: "imagenes/temporal.png" },
-            { id: 11, name: "Carbon Combs Peine", price: 16.00, category: "Herramientas", img: "imagenes/temporal.png" },
-            { id: 12, name: "Rucha Cepillo Para Cuero Cabelludo Gris Morado Naranja", price: 16.00, category: "Herramientas", img: "imagenes/temporal.png" },
-            { id: 13, name: "Cepillo Cero Nudos Rucha", price: 1.00, category: "Herramientas", img: "imagenes/temporal.png" },
-            { id: 14, name: "Peine Evok", price: 1.00, category: "Herramientas", img: "imagenes/temporal.png" },
-            { id: 15, name: "Polvo Karité Acido Hialuronico", price: 1.00, category: "Maquillaje", img: "imagenes/temporal.png" },
-            { id: 16, name: "Polvo Karité Colágeno", price: 1.00, category: "Maquillaje", img: "imagenes/temporal.png" }
-        ];
+            { id: 1, name: "Igora Royal 60ml + agua oxigenada", price: 4.50, category: "Tintes Profesionales", img: "imagenes/igorarojo.png" },
+            { id: 2, name: "Igora Royal Highlifts 60ml + agua oxigenada", price: 3.00, category: "Tintes Profesionales", img: "igoraazul.png" },
+            { id: 3, name: "Igora Royal Silver Whites 60ml + agua oxigenada", price: 12.50, category: "Tintes Profesionales", img: "igoracrema.png" },
+            { id: 4, name: "Igora Royal Fashion Lights 60ml + agua oxigenada", price: 15.00, category: "Tintes Profesionales", img: "igoramorado.png" },
+            { id: 5, name: "Igora Royal Absolutes 60ml + agua oxigenada", price: 8.00, category: "Tintes Profesionales", img: "igoramarron.png" },
+            { id: 6, name: "Tinte Nouvelle 100ml + agua oxigenada", price: 6.50, category: "Tintes Profesionales", img: "nouvelle.png" },{ id: 7, name: "Nouvelle Tono Sobre Tono Touch
+60ml + agua oxigenada", price: 6.50, category: "Tintes Profesionales", img: "nouvelletouch.png" },
+
+ 
 
         let currentCategory = "Todos";
-        let isAdminLoggedIn = false; // Nueva bandera de seguridad
 
+        // Inicializadores de LocalStorage
         if (!localStorage.getItem("ts_settings")) {
             localStorage.setItem("ts_settings", JSON.stringify(defaultSettings));
         }
@@ -182,147 +189,149 @@
             localStorage.setItem("ts_products", JSON.stringify(defaultProducts));
         }
 
+        // Renderizado del Select de Categorías en el Formulario Administrativo
+        const selectCat = document.getElementById('prod-category');
+        categories.forEach(c => {
+            let opt = document.createElement('option');
+            opt.value = c;
+            opt.innerText = c;
+            selectCat.appendChild(opt);
+        });
+
+        // Cargar Datos y Refrescar Interfaz
         function refreshUI() {
             const settings = JSON.parse(localStorage.getItem("ts_settings"));
-            document.getElementById("set-phone").value = settings.phone;
-            document.getElementById("set-pass").value = settings.pass;
+            const products = JSON.parse(localStorage.getItem("ts_products"));
 
-            // CORRECCIÓN: Limpiar el select antes de renderizar para que no se dupliquen las categorías
-            const selectCat = document.getElementById('prod-category');
-            selectCat.innerHTML = "";
-            categories.forEach(c => {
-                if(c !== "Todos") {
-                    let opt = document.createElement('option');
-                    opt.value = c;
-                    opt.innerText = c;
-                    selectCat.appendChild(opt);
-                }
-            });
+            // Actualizar Enlaces de Redes Sociales
+            document.getElementById("btn-insta-head").href = `https://instagram.com/${settings.instagram}`;
+            document.getElementById("btn-wats-head").href = `https://wa.me/${settings.whatsapp}?text=Hola!%20Me%20interesan%20algunos%20productos%20de%20la%20distribuidora.`;
 
-            renderCategories();
-            renderProducts();
-        }
+            // Rellenar Campos del Formulario del Panel con los valores guardados
+            document.getElementById("cfg-whatsapp").value = settings.whatsapp;
+            document.getElementById("cfg-instagram").value = settings.instagram;
+            document.getElementById("cfg-password").value = settings.password || "admin"; // Carga la contraseña
 
-        function renderCategories() {
-            const catList = document.getElementById("category-list");
-            catList.innerHTML = "";
-            categories.forEach(c => {
-                const btn = document.createElement("button");
-                btn.innerText = c;
-                btn.onclick = () => filterCategory(c);
-                if (c === currentCategory) {
-                    btn.className = "bg-[#D21427] text-white text-xs font-semibold px-4 py-2 rounded-xl shadow-md shadow-red-100 whitespace-nowrap transition-all";
-                } else {
-                    btn.className = "bg-white text-gray-600 hover:bg-gray-100 text-xs font-medium px-4 py-2 rounded-xl border border-gray-100 whitespace-nowrap transition-all";
-                }
-                catList.appendChild(btn);
-            });
-        }
-
-        function renderProducts() {
-            const grid = document.getElementById("product-grid");
+            // Filtrar y Mostrar Productos
+            const grid = document.getElementById("grid-productos");
             grid.innerHTML = "";
-            let products = JSON.parse(localStorage.getItem("ts_products"));
 
-            if (currentCategory !== "Todos") {
-                products = products.filter(p => p.category === currentCategory);
-            }
+            const filtered = currentCategory === "Todos" 
+                ? products 
+                : products.filter(p => p.category === currentCategory);
 
-            const searchVal = document.getElementById("search-bar").value.toLowerCase();
-            if (searchVal) {
-                products = products.filter(p => p.name.toLowerCase().includes(searchVal));
-            }
+            document.getElementById("product-count").innerText = `${filtered.length} Producto${filtered.length !== 1 ? 's' : ''}`;
 
-            const settings = JSON.parse(localStorage.getItem("ts_settings"));
-
-            if(products.length === 0) {
-                grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-400 text-sm font-medium"><i class="fas fa-box-open text-2xl mb-2 block"></i> No se encontraron productos</div>`;
-                return;
-            }
-
-            products.forEach(p => {
-                const card = document.createElement("div");
-                card.className = "bg-white rounded-2xl border border-gray-100 p-3 sm:p-4 shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative group";
+            if(filtered.length === 0) {
+                document.getElementById("no-products-msg").classList.remove("hidden");
+            } else {
+                document.getElementById("no-products-msg").classList.add("hidden");
                 
-                // CORRECCIÓN: El botón de eliminar SOLO se renderiza si la bandera isAdminLoggedIn es verdadera
-                let adminBtn = "";
-                if(isAdminLoggedIn) {
-                    adminBtn = `<button onclick="deleteProduct(${p.id})" class="absolute top-2 right-2 bg-red-50 text-red-600 h-7 w-7 rounded-full flex items-center justify-center hover:bg-red-100 transition-all z-10"><i class="fas fa-trash-alt text-xs"></i></button>`;
-                }
+                filtered.forEach(p => {
+                    const finalImg = p.img || `https://placehold.co/300x300/f3f4f6/a3a3a3?text=${encodeURIComponent(p.name)}`;
+                    const waLink = `https://wa.me/${settings.whatsapp}?text=Hola!%20Me%20interesa%20el%20producto:%20${encodeURIComponent(p.name)}%20(Cat:%20${encodeURIComponent(p.category)})%20con%20precio%20de%20$${p.price}`;
 
-                const message = encodeURIComponent(`Hola, me interesa el producto: ${p.name} (Precio: $${p.price.toFixed(2)})`);
-                const wsUrl = `https://wa.me/${settings.phone}?text=${message}`;
+                    grid.innerHTML += `
+                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
+                            <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
+                                <img src="${finalImg}" alt="${p.name}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
+                                    ${p.category}
+                                </span>
+                                <button onclick="deleteProduct(${p.id})" class="absolute top-2 right-2 bg-red-600 text-white w-6 h-6 rounded-full opacity-0 group-hover:opacity-100 transition shadow-md text-xs flex items-center justify-center hover:bg-red-700" title="Eliminar Producto">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                            <div class="p-3 flex-grow flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 h-8 md:h-10 mb-1">${p.name}</h3>
+                                </div>
+                                <div class="mt-2">
+                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-2">$${p.price.toFixed(2)}</div>
+                                    <a href="${waLink}" target="_blank" class="w-full bg-[#25D366] text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 hover:bg-opacity-90">
+                                        <i class="fab fa-whatsapp text-sm"></i>
+                                        <span>Consultar</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+        }
 
-                card.innerHTML = `
-                    ${adminBtn}
-                    <div class="aspect-square bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center mb-3 p-2">
-                        <img src="${p.img}" alt="${p.name}" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div>
-                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">${p.category}</span>
-                        <h4 class="font-semibold text-xs sm:text-sm text-gray-900 line-clamp-2 mt-0.5 min-h-[32px]">${p.name}</h4>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-gray-50 flex items-center justify-between gap-2">
-                        <span class="text-sm sm:text-base font-bold text-gray-900">$${p.price.toFixed(2)}</span>
-                        <a href="${wsUrl}" target="_blank" class="bg-gray-900 hover:bg-[#D21427] text-white text-[11px] sm:text-xs font-semibold px-2.5 py-1.5 rounded-lg flex items-center gap-1 transition-all">
-                            <i class="fab fa-whatsapp"></i> <span class="hidden sm:inline">Pedir</span>
-                        </a>
-                    </div>
-                `;
-                grid.appendChild(card);
+        // Acciones de Categorías
+        function filterCategory(catName) {
+            currentCategory = catName;
+            
+            // Actualizar Estilos de Botones
+            document.querySelectorAll(".cat-btn").forEach(btn => {
+                btn.classList.remove("bg-[#D21427]", "text-white", "shadow-sm");
+                btn.classList.add("bg-white", "text-gray-700", "border-gray-300");
             });
-        }
 
-        function filterCategory(cat) {
-            currentCategory = cat;
-            renderCategories();
-            renderProducts();
-        }
-
-        function searchProducts() {
-            renderProducts();
-        }
-
-        function checkAdminAccess() {
-            const pass = prompt("Introduce la contraseña de administrador:");
-            const settings = JSON.parse(localStorage.getItem("ts_settings"));
-            if (pass === settings.pass) {
-                isAdminLoggedIn = true; // Activar el modo administrador verificado
-                toggleAdminPanel();
-            } else if (pass !== null) {
-                alert("Contraseña incorrecta");
+            const activeId = `cat-${catName.replace(/\s+/g, '')}`;
+            const activeBtn = document.getElementById(activeId);
+            if(activeBtn) {
+                activeBtn.classList.remove("bg-white", "text-gray-700", "border-gray-300");
+                activeBtn.classList.add("bg-[#D21427]", "text-white", "shadow-sm");
             }
-        }
 
-        function toggleAdminPanel() {
-            const panel = document.getElementById("admin-panel");
-            panel.classList.toggle("translate-x-full");
-            
-            // Si cerramos el panel manualmente, quitamos el estado logueado por seguridad
-            if(panel.classList.contains("translate-x-full")) {
-                isAdminLoggedIn = false;
-            }
-            renderProducts(); 
-        }
-
-        function saveSettings() {
-            const phone = document.getElementById("set-phone").value.trim();
-            const pass = document.getElementById("set-pass").value.trim();
-            if(!phone || !pass) return alert("Rellena todos los campos");
-            
-            localStorage.setItem("ts_settings", JSON.stringify({ phone, pass }));
-            alert("Ajustes guardados correctamente");
+            document.getElementById("section-title").innerText = catName === "Todos" ? "Todos los Productos" : catName;
             refreshUI();
         }
 
+        // Toggle Modal Panel Administrativo con bloqueo de contraseña
+        function toggleAdminPanel() {
+            const panel = document.getElementById("admin-panel");
+            
+            // Si el panel está cerrado y se intenta abrir, pedimos contraseña
+            if (panel.classList.contains("hidden")) {
+                const settings = JSON.parse(localStorage.getItem("ts_settings")) || defaultSettings;
+                const savedPassword = settings.password || "admin";
+                
+                const inputPass = prompt("Introduce la contraseña para ingresar al Panel de Control:");
+                
+                if (inputPass === null) return; // Si el usuario cancela el cuadro de diálogo
+                
+                if (inputPass === savedPassword) {
+                    panel.classList.remove("hidden");
+                } else {
+                    alert("Contraseña incorrecta. Acceso denegado.");
+                }
+            } else {
+                // Si ya está abierto, simplemente lo cerramos
+                panel.classList.add("hidden");
+            }
+        }
+
+        // Guardar Ajustes Generales (WhatsApp / Instagram / Contraseña)
+        function saveConfig() {
+            const nw = document.getElementById("cfg-whatsapp").value.replace(/\D/g,''); // Solo numérico
+            const ni = document.getElementById("cfg-instagram").value.trim();
+            const np = document.getElementById("cfg-password").value.trim(); // Lee la nueva contraseña
+
+            if(!nw) { alert("Por favor ingresa un número de WhatsApp válido."); return; }
+            if(!ni) { alert("Por favor ingresa una cuenta de Instagram."); return; }
+            if(!np) { alert("Por favor ingresa una contraseña válida."); return; }
+
+            localStorage.setItem("ts_settings", JSON.stringify({ whatsapp: nw, instagram: ni, password: np }));
+            refreshUI();
+            toggleAdminPanel();
+            alert("¡Configuración y contraseña guardadas exitosamente!");
+        }
+
+        // Agregar Producto Personalizado
         function addProduct() {
             const name = document.getElementById("prod-name").value.trim();
             const price = parseFloat(document.getElementById("prod-price").value);
             const category = document.getElementById("prod-category").value;
-            let img = document.getElementById("prod-img").value.trim();
+            const img = document.getElementById("prod-img").value.trim();
 
-            if (!name || isNaN(price)) return alert("Por favor ingresa nombre y precio válidos");
-            if (!img) img = "imagenes/temporal.png";
+            if(!name || isNaN(price) || price <= 0) {
+                alert("Por favor completa el nombre y un precio válido mayor a 0.");
+                return;
+            }
 
             let products = JSON.parse(localStorage.getItem("ts_products"));
             const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
@@ -330,6 +339,7 @@
             products.push({ id: newId, name, price, category, img });
             localStorage.setItem("ts_products", JSON.stringify(products));
 
+            // Limpiar inputs
             document.getElementById("prod-name").value = "";
             document.getElementById("prod-price").value = "";
             document.getElementById("prod-img").value = "";
@@ -338,6 +348,7 @@
             alert("¡Producto añadido exitosamente!");
         }
 
+        // Eliminar Producto
         function deleteProduct(id) {
             if(confirm("¿Estás seguro de que deseas eliminar este producto?")) {
                 let products = JSON.parse(localStorage.getItem("ts_products"));
@@ -347,51 +358,19 @@
             }
         }
 
-        function downloadUpdatedHTML() {
-            const panel = document.getElementById("admin-panel");
-            const wasOpen = !panel.classList.contains("translate-x-full");
-            
-            if(wasOpen) panel.classList.add("translate-x-full");
-            
-            // Forzar el apagado de la sesión de administración en el archivo descargado
-            const initialAdminState = isAdminLoggedIn;
-            isAdminLoggedIn = false;
-
-            const currentProducts = localStorage.getItem("ts_products");
-            const currentSettings = localStorage.getItem("ts_settings");
-
-            let htmlContent = document.documentElement.outerHTML;
-
-            htmlContent = htmlContent.replace(/const defaultProducts = \[[\s\S]*?\];/, `const defaultProducts = ${currentProducts};`);
-            htmlContent = htmlContent.replace(/const defaultSettings = \{[\s\S]*?\};/, `const defaultSettings = ${currentSettings};`);
-
-            const blob = new Blob(["<!DOCTYPE html>\n" + htmlContent], { type: "text/html" });
-            const a = document.createElement("a");
-            a.href = URL.createObjectURL(blob);
-            a.download = "index.html";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-
-            // Restaurar los estados para el usuario en la sesión en vivo actual
-            isAdminLoggedIn = initialAdminState;
-            if(wasOpen) panel.classList.remove("translate-x-full");
-            refreshUI();
-        }
-
+        // Reestablecer Base de Datos
         function resetData() {
-            if(confirm("Se restablecerán los productos muestra y la contraseña de fábrica ('admin'). ¿Proceder?")) {
+            if(confirm("Se borrarán tus modificaciones, se restablecerá la contraseña de fábrica ('admin') y volverán los productos muestra. ¿Proceder?")) {
                 localStorage.clear();
                 localStorage.setItem("ts_settings", JSON.stringify(defaultSettings));
                 localStorage.setItem("ts_products", JSON.stringify(defaultProducts));
                 currentCategory = "Todos";
-                isAdminLoggedIn = false;
-                refreshUI();
-                const panel = document.getElementById("admin-panel");
-                if(!panel.classList.contains("translate-x-full")) panel.classList.add("translate-x-full");
+                filterCategory("Todos");
+                toggleAdminPanel();
             }
         }
 
+        // Carga Inicial
         window.onload = function() {
             refreshUI();
         };
