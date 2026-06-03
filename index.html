@@ -55,94 +55,76 @@
             <span id="product-count" class="text-xs md:text-sm bg-gray-200 text-gray-700 px-3 py-1 rounded-full font-medium">0 Productos</span>
         </div>
 
-        <div id="grid-productos" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
-            </div>
+        <div id="grid-productos" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6"></div>
 
         <div id="no-products-msg" class="hidden text-center py-12">
             <i class="fas fa-box-open text-gray-300 text-5xl mb-3"></i>
-            <p class="text-gray-500 font-medium">No hay productos registrados aún.</p>
+            <p class="text-gray-500 font-medium">No hay productos aquí.</p>
         </div>
     </main>
 
     <footer class="bg-white border-t border-gray-200 py-6 mt-12 text-center text-xs text-gray-500">
         <p>© 2026 Distribuidora The Shampoo. Todos los derechos reservados.</p>
-        <p class="mt-1 text-[#6BA4D9] font-medium">Calidad y Belleza Profesional</p>
     </footer>
 
     <button onclick="toggleAdminPanel()" class="fixed bottom-4 left-4 bg-gray-800 text-white w-10 h-10 rounded-full shadow-lg hover:bg-black transition flex items-center justify-center z-50 opacity-60 hover:opacity-100 cursor-pointer">
-        <i class="fas fa-cog text-base"></i>
+        <i class="fas fa-cog"></i>
     </button>
+
+    <div id="admin-panel" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden backdrop-blur-xs">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto p-5">
+            <div class="flex justify-between items-center mb-4 border-b pb-2">
+                <h3 class="font-bold text-lg">Panel de Control</h3>
+                <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-red-600"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-gray-50 p-3 rounded-lg border">
+                    <h4 class="font-bold text-xs uppercase mb-2">Configuración</h4>
+                    <input type="text" id="cfg-whatsapp" placeholder="WhatsApp (Ej: 58412...)" class="w-full text-sm border p-2 rounded mb-2">
+                    <input type="text" id="cfg-instagram" placeholder="Instagram (sin @)" class="w-full text-sm border p-2 rounded">
+                </div>
+
+                <div class="bg-gray-50 p-3 rounded-lg border">
+                    <h4 class="font-bold text-xs uppercase mb-2">Nuevo Producto</h4>
+                    <input type="text" id="prod-name" placeholder="Nombre" class="w-full text-sm border p-2 rounded mb-2">
+                    <textarea id="prod-desc" placeholder="Descripción del producto..." class="w-full text-sm border p-2 rounded mb-2 h-20"></textarea>
+                    <div class="grid grid-cols-2 gap-2 mb-2">
+                        <input type="number" step="0.01" id="prod-price" placeholder="Precio $" class="w-full text-sm border p-2 rounded">
+                        <select id="prod-category" class="w-full text-sm border p-2 rounded"></select>
+                    </div>
+                    <input type="text" id="prod-img" placeholder="URL de la imagen" class="w-full text-sm border p-2 rounded mb-3">
+                    <button onclick="addProduct()" class="w-full bg-[#6BA4D9] text-white py-2 rounded font-bold hover:bg-blue-600">Registrar Producto</button>
+                </div>
+
+                <div class="flex gap-2">
+                    <button onclick="saveConfig()" class="flex-grow bg-gray-800 text-white py-2 rounded text-sm font-bold">Guardar Cambios</button>
+                    <button onclick="resetData()" class="bg-red-100 text-red-600 px-3 py-2 rounded" title="Reiniciar"><i class="fas fa-undo"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="cart-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden backdrop-blur-xs">
         <div class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden">
             <div class="bg-gray-900 text-white p-4 flex justify-between items-center">
-                <h3 class="font-bold text-base flex items-center"><i class="fas fa-shopping-cart mr-2 text-[#6BA4D9]"></i> Mi Carrito</h3>
-                <button onclick="toggleCartModal()" class="text-gray-400 hover:text-white text-lg cursor-pointer"><i class="fas fa-times"></i></button>
+                <h3 class="font-bold"><i class="fas fa-shopping-cart mr-2"></i> Mi Carrito</h3>
+                <button onclick="toggleCartModal()" class="text-gray-400 hover:text-white"><i class="fas fa-times"></i></button>
             </div>
-            <div id="cart-items" class="p-4 flex-grow overflow-y-auto space-y-3">
-                </div>
-            <div class="p-4 border-t border-gray-100 bg-gray-50">
+            <div id="cart-items" class="p-4 flex-grow overflow-y-auto space-y-3"></div>
+            <div class="p-4 border-t bg-gray-50">
                 <div class="flex justify-between items-center mb-4">
-                    <span class="text-gray-500 font-medium">Total Estimado:</span>
-                    <span id="cart-total" class="text-xl font-bold text-gray-900">$0.00</span>
+                    <span class="font-medium">Total:</span>
+                    <span id="cart-total" class="text-xl font-bold">$0.00</span>
                 </div>
-                <button onclick="sendOrder()" class="w-full bg-[#25D366] hover:bg-opacity-90 text-white font-bold py-3 rounded-lg shadow-md transition flex items-center justify-center cursor-pointer">
-                    <i class="fab fa-whatsapp mr-2 text-xl"></i> Enviar Pedido por WhatsApp
+                <button onclick="sendOrder()" class="w-full bg-[#25D366] text-white font-bold py-3 rounded-lg flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-2 text-xl"></i> Pedir por WhatsApp
                 </button>
             </div>
         </div>
     </div>
 
-    <div id="admin-panel" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden backdrop-blur-xs">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto p-5">
-            <div class="flex justify-between items-center mb-4 border-b pb-2">
-                <h3 class="font-bold text-lg text-gray-800">Panel de Control</h3>
-                <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-red-600 cursor-pointer"><i class="fas fa-times"></i></button>
-            </div>
-            
-            <div class="space-y-4">
-                <div class="bg-blue-50 p-3 rounded-lg border border-blue-100">
-                    <h4 class="font-semibold text-xs uppercase tracking-wider text-blue-700 mb-2">Configuración de Contacto</h4>
-                    <div class="space-y-2">
-                        <div>
-                            <label class="block text-xs font-medium text-gray-700 mb-1">WhatsApp (Ej: 58412...)</label>
-                            <input type="text" id="cfg-whatsapp" class="w-full text-sm border border-gray-300 p-2 rounded focus:border-[#6BA4D9]">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-medium text-gray-700 mb-1">Instagram (Usuario sin @)</label>
-                            <input type="text" id="cfg-instagram" class="w-full text-sm border border-gray-300 p-2 rounded focus:border-[#6BA4D9]">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                    <h4 class="font-semibold text-xs uppercase tracking-wider text-gray-500 mb-2">Nuevo Producto</h4>
-                    <div class="space-y-3">
-                        <input type="text" id="prod-name" placeholder="Nombre del producto" class="w-full text-sm border border-gray-300 p-2 rounded">
-                        <textarea id="prod-desc" placeholder="Descripción del producto" class="w-full text-sm border border-gray-300 p-2 rounded h-20"></textarea>
-                        <div class="grid grid-cols-2 gap-2">
-                            <input type="number" step="0.01" id="prod-price" placeholder="Precio $" class="w-full text-sm border border-gray-300 p-2 rounded">
-                            <select id="prod-category" class="w-full text-sm border border-gray-300 p-2 rounded bg-white"></select>
-                        </div>
-                        <input type="text" id="prod-img" placeholder="URL de la imagen (Opcional)" class="w-full text-sm border border-gray-300 p-2 rounded">
-                        <button onclick="addProduct()" class="w-full bg-[#6BA4D9] text-white font-bold py-2 rounded text-sm hover:bg-blue-600 transition cursor-pointer">
-                            <i class="fas fa-plus mr-1"></i> Registrar Producto
-                        </button>
-                    </div>
-                </div>
-
-                <div class="flex gap-2">
-                    <button onclick="saveConfig()" class="flex-grow bg-gray-800 text-white py-2 rounded text-sm font-semibold hover:bg-black transition cursor-pointer">Guardar Cambios</button>
-                    <button onclick="resetData()" class="bg-red-100 text-red-600 px-3 py-2 rounded text-sm hover:bg-red-200 transition cursor-pointer" title="Reiniciar base de datos">
-                        <i class="fas fa-undo"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // --- CONFIGURACIÓN INICIAL ---
         const categories = ["Todos", "Tintes", "Shampoo", "Tratamientos", "Cuidado", "Accesorios"];
         const defaultSettings = {
             whatsapp: "584124630390",
@@ -150,72 +132,55 @@
             password: "admin"
         };
         const defaultProducts = [
-            { id: 1, name: "Tinte Igora Royal 6-0", price: 8.50, category: "Tintes", img: "", description: "Coloración permanente de alta calidad para resultados profesionales." },
-            { id: 2, name: "Shampoo Post-Color 1L", price: 15.00, category: "Shampoo", img: "", description: "Limpia suavemente mientras protege el color por más tiempo." }
+            { id: 1, name: "Tinte Igora Royal 6-0", price: 8.50, category: "Tintes", img: "", description: "Coloración permanente profesional." }
         ];
 
         let cart = [];
         let currentCategory = "Todos";
         let isAdminLoggedIn = false;
 
-        // Inicializar LocalStorage
         if (!localStorage.getItem("ts_settings")) localStorage.setItem("ts_settings", JSON.stringify(defaultSettings));
         if (!localStorage.getItem("ts_products")) localStorage.setItem("ts_products", JSON.stringify(defaultProducts));
-
-        // Cargar Categorías en Select
-        const selectCat = document.getElementById('prod-category');
-        categories.forEach(c => {
-            if(c !== "Todos") {
-                let opt = document.createElement('option');
-                opt.value = c; opt.innerText = c;
-                selectCat.appendChild(opt);
-            }
-        });
 
         function refreshUI() {
             const settings = JSON.parse(localStorage.getItem("ts_settings"));
             const products = JSON.parse(localStorage.getItem("ts_products"));
 
-            // Actualizar Enlaces
             document.getElementById("btn-insta-head").href = `https://instagram.com/${settings.instagram}`;
             document.getElementById("btn-wats-head").href = `https://wa.me/${settings.whatsapp}`;
             document.getElementById("cfg-whatsapp").value = settings.whatsapp;
             document.getElementById("cfg-instagram").value = settings.instagram;
 
-            // Renderizar Categorías
             const catList = document.getElementById("category-list");
             catList.innerHTML = "";
             categories.forEach(cat => {
-                const activeClass = currentCategory === cat ? "bg-[#6BA4D9] text-white border-[#6BA4D9]" : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100";
-                catList.innerHTML += `<button onclick="filterCategory('${cat}')" class="px-4 py-1.5 rounded-full text-xs font-medium transition border whitespace-nowrap shadow-sm cursor-pointer ${activeClass}">${cat}</button>`;
+                const active = currentCategory === cat ? "bg-[#6BA4D9] text-white" : "bg-white text-gray-700 border-gray-300";
+                catList.innerHTML += `<button onclick="filterCategory('${cat}')" class="px-4 py-1.5 rounded-full text-xs font-medium border shadow-sm cursor-pointer ${active}">${cat}</button>`;
             });
 
-            // Filtrar y Mostrar Productos
             const grid = document.getElementById("grid-productos");
             grid.innerHTML = "";
             const filtered = currentCategory === "Todos" ? products : products.filter(p => p.category === currentCategory);
             
-            document.getElementById("product-count").innerText = `${filtered.length} Producto${filtered.length !== 1 ? 's' : ''}`;
+            document.getElementById("product-count").innerText = `${filtered.length} Productos`;
             document.getElementById("no-products-msg").classList.toggle("hidden", filtered.length > 0);
 
             filtered.forEach(p => {
                 const img = p.img || `https://placehold.co/400x400/f3f4f6/a3a3a3?text=${encodeURIComponent(p.name)}`;
-                let deleteBtn = isAdminLoggedIn ? `<button onclick="deleteProduct(${p.id})" class="absolute top-2 right-2 bg-red-600 text-white w-7 h-7 rounded-full shadow-md flex items-center justify-center hover:bg-red-700 cursor-pointer z-10"><i class="fas fa-trash-alt text-xs"></i></button>` : "";
+                let delBtn = isAdminLoggedIn ? `<button onclick="deleteProduct(${p.id})" class="absolute top-2 right-2 bg-red-600 text-white w-7 h-7 rounded-full flex items-center justify-center z-10"><i class="fas fa-trash-alt text-xs"></i></button>` : "";
                 
                 grid.innerHTML += `
-                    <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group relative">
-                        ${deleteBtn}
-                        <div class="relative pt-[100%] overflow-hidden bg-gray-100">
-                            <img src="${img}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <div class="bg-white rounded-lg border overflow-hidden shadow-xs relative flex flex-col group">
+                        ${delBtn}
+                        <div class="relative pt-[100%] bg-gray-100">
+                            <img src="${img}" class="absolute inset-0 w-full h-full object-cover">
                         </div>
                         <div class="p-3 flex-grow flex flex-col">
-                            <h3 class="text-sm font-semibold text-gray-800 line-clamp-2 leading-tight h-10 mb-1">${p.name}</h3>
-                            <p class="text-[10px] text-gray-500 mb-2 line-clamp-2 italic">${p.description || "Sin descripción disponible."}</p>
+                            <h3 class="text-sm font-bold text-gray-800 line-clamp-2 h-10 mb-1">${p.name}</h3>
+                            <p class="text-[10px] text-gray-500 mb-2 line-clamp-2 italic">${p.description || ""}</p>
                             <div class="mt-auto flex items-center justify-between">
-                                <span class="text-blue-700 font-bold text-base">$${p.price.toFixed(2)}</span>
-                                <button onclick="addToCart(${p.id})" class="bg-[#6BA4D9] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-600 transition shadow-sm cursor-pointer">
-                                    <i class="fas fa-plus text-xs"></i>
-                                </button>
+                                <span class="text-blue-700 font-bold">$${p.price.toFixed(2)}</span>
+                                <button onclick="addToCart(${p.id})" class="bg-[#6BA4D9] text-white w-8 h-8 rounded-full flex items-center justify-center"><i class="fas fa-plus text-xs"></i></button>
                             </div>
                         </div>
                     </div>
@@ -223,11 +188,7 @@
             });
         }
 
-        function filterCategory(cat) {
-            currentCategory = cat;
-            document.getElementById("section-title").innerText = cat === "Todos" ? "Todos los Productos" : cat;
-            refreshUI();
-        }
+        function filterCategory(cat) { currentCategory = cat; refreshUI(); }
 
         function addProduct() {
             const name = document.getElementById("prod-name").value.trim();
@@ -236,20 +197,17 @@
             const category = document.getElementById("prod-category").value;
             const img = document.getElementById("prod-img").value.trim();
 
-            if (!name || isNaN(price)) { alert("Nombre y precio son obligatorios."); return; }
+            if (!name || isNaN(price)) return alert("Completa nombre y precio");
 
             const products = JSON.parse(localStorage.getItem("ts_products"));
             products.push({ id: Date.now(), name, description: desc, price, category, img });
             localStorage.setItem("ts_products", JSON.stringify(products));
-
-            // Limpiar
-            ["prod-name", "prod-desc", "prod-price", "prod-img"].forEach(id => document.getElementById(id).value = "");
             refreshUI();
-            alert("¡Producto añadido!");
+            alert("Producto añadido");
         }
 
         function deleteProduct(id) {
-            if(confirm("¿Eliminar este producto?")) {
+            if(confirm("¿Eliminar producto?")) {
                 let products = JSON.parse(localStorage.getItem("ts_products"));
                 products = products.filter(p => p.id !== id);
                 localStorage.setItem("ts_products", JSON.stringify(products));
@@ -261,96 +219,58 @@
             const w = document.getElementById("cfg-whatsapp").value.replace(/\D/g,'');
             const i = document.getElementById("cfg-instagram").value.trim();
             const settings = JSON.parse(localStorage.getItem("ts_settings"));
-            
             localStorage.setItem("ts_settings", JSON.stringify({ ...settings, whatsapp: w, instagram: i }));
             refreshUI();
             toggleAdminPanel();
-            alert("Configuración actualizada.");
+            alert("Configuración guardada");
         }
 
         function toggleAdminPanel() {
             const panel = document.getElementById("admin-panel");
             if (panel.classList.contains("hidden")) {
-                const pass = prompt("Contraseña:");
-                const saved = JSON.parse(localStorage.getItem("ts_settings")).password;
-                if (pass === saved) {
+                if (prompt("Contraseña:") === JSON.parse(localStorage.getItem("ts_settings")).password) {
                     isAdminLoggedIn = true;
                     panel.classList.remove("hidden");
-                } else if(pass !== null) alert("Incorrecta");
-            } else {
-                isAdminLoggedIn = false;
-                panel.classList.add("hidden");
-            }
+                } else alert("Error");
+            } else { isAdminLoggedIn = false; panel.classList.add("hidden"); }
             refreshUI();
         }
 
-        // --- CARRITO ---
         function toggleCartModal() { document.getElementById("cart-modal").classList.toggle("hidden"); }
-
         function addToCart(id) {
-            const product = JSON.parse(localStorage.getItem("ts_products")).find(p => p.id === id);
-            const inCart = cart.find(c => c.id === id);
-            if(inCart) inCart.qty++; else cart.push({...product, qty: 1});
+            const p = JSON.parse(localStorage.getItem("ts_products")).find(x => x.id === id);
+            const exists = cart.find(x => x.id === id);
+            if(exists) exists.qty++; else cart.push({...p, qty: 1});
             updateCartUI();
         }
 
         function updateCartUI() {
             const container = document.getElementById("cart-items");
-            const badge = document.getElementById("cart-badge");
-            container.innerHTML = cart.length ? "" : '<p class="text-center text-gray-400 py-4">Tu carrito está vacío</p>';
-            
+            container.innerHTML = cart.length ? "" : '<p class="text-center text-gray-400 py-4 text-xs">Carrito vacío</p>';
             let total = 0;
-            let count = 0;
-
             cart.forEach(item => {
                 total += item.price * item.qty;
-                count += item.qty;
-                container.innerHTML += `
-                    <div class="flex items-center justify-between p-2 border rounded-lg bg-gray-50">
-                        <div class="flex-grow">
-                            <h4 class="text-xs font-bold text-gray-800">${item.name}</h4>
-                            <p class="text-[10px] text-gray-500">$${item.price.toFixed(2)} x ${item.qty}</p>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <button onclick="changeQty(${item.id}, -1)" class="w-6 h-6 bg-white border rounded text-xs">-</button>
-                            <span class="text-xs font-bold">${item.qty}</span>
-                            <button onclick="changeQty(${item.id}, 1)" class="w-6 h-6 bg-white border rounded text-xs">+</button>
-                        </div>
-                    </div>
-                `;
+                container.innerHTML += `<div class="flex justify-between border-b pb-2 text-xs"><span>${item.name} (x${item.qty})</span><b>$${(item.price * item.qty).toFixed(2)}</b></div>`;
             });
-
             document.getElementById("cart-total").innerText = `$${total.toFixed(2)}`;
-            badge.innerText = count;
-            badge.classList.toggle("hidden", count === 0);
-        }
-
-        function changeQty(id, delta) {
-            const item = cart.find(c => c.id === id);
-            item.qty += delta;
-            if(item.qty <= 0) cart = cart.filter(c => c.id !== id);
-            updateCartUI();
+            document.getElementById("cart-badge").innerText = cart.length;
+            document.getElementById("cart-badge").classList.toggle("hidden", cart.length === 0);
         }
 
         function sendOrder() {
-            if(!cart.length) return;
             const settings = JSON.parse(localStorage.getItem("ts_settings"));
-            let msg = "*NUEVO PEDIDO - THE SHAMPOO*\n\n";
-            let total = 0;
-            cart.forEach(i => {
-                msg += `• ${i.name} (${i.qty}) - $${(i.price * i.qty).toFixed(2)}\n`;
-                total += i.price * i.qty;
-            });
-            msg += `\n*TOTAL: $${total.toFixed(2)}*`;
+            let msg = "*PEDIDO THE SHAMPOO*\n";
+            cart.forEach(i => msg += `- ${i.name} (${i.qty})\n`);
             window.open(`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        function resetData() {
-            if(confirm("¿Restablecer todo?")) {
-                localStorage.clear();
-                location.reload();
-            }
-        }
+        function resetData() { if(confirm("¿Borrar todo?")) { localStorage.clear(); location.reload(); } }
+
+        const selectCat = document.getElementById('prod-category');
+        categories.filter(c => c !== "Todos").forEach(c => {
+            let opt = document.createElement('option'); opt.value = c; opt.innerText = c;
+            selectCat.appendChild(opt);
+        });
 
         window.onload = refreshUI;
     </script>
