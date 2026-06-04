@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Distribuidora The Shampoo</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>/*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>/*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -265,9 +266,6 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .mt-0\.5 {
-    margin-top: calc(var(--spacing) * 0.5);
-  }
   .mt-1 {
     margin-top: calc(var(--spacing) * 1);
   }
@@ -325,6 +323,9 @@
   .h-7 {
     height: calc(var(--spacing) * 7);
   }
+  .h-8 {
+    height: calc(var(--spacing) * 8);
+  }
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
@@ -335,7 +336,7 @@
     height: 100%;
   }
   .max-h-\[48\] {
-    max-height: 48;
+    max-height: calc(var(--spacing) * 48);
   }
   .max-h-\[90vh\] {
     max-height: 90vh;
@@ -361,20 +362,17 @@
   .w-full {
     width: 100%;
   }
+  .min-w-0 {
+    min-width: 0px;
+  }
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
   .max-w-md {
     max-width: var(--container-md);
   }
-  .min-w-0 {
-    min-width: calc(var(--spacing) * 0);
-  }
   .flex-1 {
-    flex: 1;
-  }
-  .flex-shrink-0 {
-    flex-shrink: 0;
+    flex: 1 1 0%;
   }
   .flex-grow {
     flex-grow: 1;
@@ -457,11 +455,6 @@
       margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-x-reverse)));
     }
-  }
-  .truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
   .overflow-hidden {
     overflow: hidden;
@@ -629,14 +622,11 @@
   .pt-\[100\%\] {
     padding-top: 100%;
   }
-  .pr-1 {
-    padding-right: calc(var(--spacing) * 1);
-  }
-  .pl-1 {
-    padding-left: calc(var(--spacing) * 1);
-  }
   .pl-3 {
     padding-left: calc(var(--spacing) * 3);
+  }
+  .pr-1 {
+    padding-right: calc(var(--spacing) * 1);
   }
   .text-center {
     text-align: center;
@@ -675,6 +665,10 @@
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
+  }
+  .leading-snug {
+    --tw-leading: 1.375;
+    line-height: 1.375;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -833,13 +827,6 @@
       }
     }
   }
-  .hover\:bg-gray-300 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-gray-300);
-      }
-    }
-  }
   .hover\:bg-gray-500 {
     &:hover {
       @media (hover: hover) {
@@ -858,13 +845,6 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-red-700);
-      }
-    }
-  }
-  .hover\:text-red-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-600);
       }
     }
   }
@@ -909,6 +889,11 @@
   .sm\:grid-cols-2 {
     @media (width >= 40rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .md\:h-10 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 10);
     }
   }
   .md\:grid-cols-3 {
@@ -1111,465 +1096,676 @@
 @property --tw-backdrop-sepia {
   syntax: "*";
   inherits: false;
-}</style></head>
-<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col font-sans">
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
+      --tw-border-style: solid;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+      --tw-duration: initial;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
+    }
+  }
+}
+</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        /* Ocultar barra de scroll en categorías manteniendo funcionalidad */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
-    <div class="bg-gray-900 text-white text-center py-1.5 px-4 text-xs font-medium tracking-wide">
-        ✨ ¡Envíos nacionales a toda Venezuela! Descuentos especiales al mayor ✨
-    </div>
-
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm transition-all duration-200">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="filterCategory('Todos')">
-                <div class="w-10 h-10 rounded-full bg-[#6BA4D9] flex items-center justify-center shadow-sm">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-                    </svg>
-                </div>
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="bg-[#D21427] h-2 w-full"></div> 
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            
+            <div class="flex items-center space-x-3">
+                <img src="logo.png" alt="Logo" onerror="this.src='https://placehold.co/50x50/D21427/ffffff?text=TS'" class="h-12 w-auto object-contain rounded">
                 <div>
-                    <h1 class="text-lg font-bold tracking-tight text-gray-900 uppercase leading-none md:text-2xl">The Shampoo</h1>
-                    <p class="text-[10px] text-gray-500 tracking-wider uppercase font-semibold mt-0.5">Distribuidora Oficial</p>
+                    <h1 class="text-xl md:text-2xl font-bold text-gray-900 tracking-tight leading-none">The Shampoo</h1>
+                    <span class="text-xs text-gray-500 font-medium tracking-wide block mt-1">Distribuidora de Artículos de Peluquería</span>
                 </div>
             </div>
 
             <div class="flex items-center space-x-2 md:space-x-3">
-                <button onclick="toggleAdminPanel()" class="p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition cursor-pointer" title="Panel de Administración">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    </svg>
+                <button onclick="toggleCartModal()" class="relative bg-gray-800 text-white hover:bg-black p-2.5 rounded-full transition text-sm flex items-center justify-center w-10 h-10 shadow-sm mr-1 cursor-pointer">
+                    <i class="fas fa-shopping-cart text-base"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-[#D21427] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">1</span>
                 </button>
-                <button onclick="toggleCart()" class="relative p-2 bg-gray-900 text-white hover:bg-gray-800 rounded-full shadow-sm transition flex items-center justify-center cursor-pointer">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                    </svg>
-                    <span id="cart-count" class="absolute -top-1 -right-1 bg-[#D21427] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-xs">0</span>
+                <a id="btn-insta-head" href="https://instagram.com/the_shampoo_distribuidora" target="_blank" class="bg-[#6BA4D9] text-white hover:bg-opacity-90 p-2.5 rounded-full transition text-sm flex items-center justify-center w-10 h-10 shadow-sm">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
+                <a id="btn-wats-head" href="https://wa.me/584241234567?text=Hola!%20Me%20interesan%20algunos%20productos%20de%20la%20distribuidora." target="_blank" class="bg-[#25D366] text-white hover:bg-opacity-90 p-2.5 rounded-full transition text-sm flex items-center justify-center w-10 h-10 shadow-sm">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 border-t border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-2 md:px-4 py-2.5 overflow-x-auto no-scrollbar flex space-x-2 md:flex-wrap md:gap-2 md:space-x-0">
+                <button onclick="filterCategory('Todos')" id="cat-Todos" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition whitespace-nowrap bg-[#D21427] text-white shadow-sm">
+                    Todos
                 </button>
+                <script>
+                    const categories = [
+                        "Tintes Profesionales", "Agua Oxigenada", "Keratina", "Decolorantes", 
+                        "Ceras", "Shampoo", "Acondicionador", "Ampollas", "SobrePeines", 
+                        "Maquinas", "Planchas", "Secadores", "Cepillos", "Peines", "Maquillaje"
+                    ];
+                    categories.forEach(cat => {
+                        document.write(`
+                            <button onclick="filterCategory('${cat}')" id="cat-${cat.replace(/\s+/g, '')}" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
+                                ${cat}
+                            </button>
+                        `);
+                    });
+                </script>
             </div>
         </div>
     </header>
 
-    <section class="relative bg-gray-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('https://images.unsplash.com/photo-1608248597481-496100c8c836?auto=format&fit=crop&w=1200&q=80');"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent"></div>
-        <div class="relative max-w-7xl mx-auto px-4 py-12 md:py-16 flex flex-col justify-center min-h-[220px]">
-            <span class="text-[#6BA4D9] text-xs font-bold uppercase tracking-wider mb-2">Catálogo Mayorista 2026</span>
-            <h2 class="text-xl md:text-4xl font-bold tracking-tight mb-3 max-w-xl">Luce un cabello espectacular con los mejores productos</h2>
-            <p class="text-sm text-gray-300 max-w-md hidden sm:block">Surtido premium para peluquerías, revendedores y cuidado diario. Calidad garantizada al mejor precio del mercado.</p>
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6">
+        <div class="flex items-center justify-between mb-6">
+            <h2 id="section-title" class="text-xl md:text-2xl font-bold text-gray-800 border-l-4 border-[#6BA4D9] pl-3">Todos los Productos</h2>
+            <span id="product-count" class="text-xs md:text-sm bg-gray-200 text-gray-700 px-3 py-1 rounded-full font-medium">10 Productos</span>
         </div>
-    </section>
 
-    <div class="bg-white border-b border-gray-200 sticky top-[65px] z-30 shadow-xs">
-        <div class="max-w-7xl mx-auto px-4 py-3 space-y-3">
-            <div class="relative">
-                <input type="text" id="search-input" oninput="searchProducts()" placeholder="Buscar producto, marca o ingrediente..." class="w-full bg-gray-50 border border-gray-300 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-[#6BA4D9] focus:bg-white transition">
-                <div class="absolute left-3 top-2.5 text-gray-400">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                </div>
+        <div id="grid-productos" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
             </div>
-            <div id="category-tabs" class="flex space-x-2 overflow-x-auto pb-1 no-scrollbar md:justify-center md:px-4 md:space-x-3 md:flex-wrap md:gap-2 md:space-x-0">
-                </div>
+
+        <div id="no-products-msg" class="hidden text-center py-12">
+            <i class="fas fa-box-open text-gray-300 text-5xl mb-3"></i>
+            <p class="text-gray-500 font-medium">No hay productos registrados en esta categoría aún.</p>
         </div>
-    </div>
-
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6 md:py-8 transition-all duration-300">
-        
-        <section id="admin-panel" class="hidden bg-white border border-red-200 rounded-xl p-4 mb-6 shadow-md border-l-4 border-l-[#D21427]">
-            <div class="flex items-center justify-between mb-4 pb-2 border-b border-gray-100">
-                <div class="flex items-center space-x-2 text-[#D21427]">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-                    </svg>
-                    <h3 class="font-bold uppercase tracking-tight text-sm">Panel de Gestión de Inventario</h3>
-                </div>
-                <button onclick="logoutAdmin()" class="text-xs font-semibold text-gray-500 hover:text-red-700 uppercase cursor-pointer">Cerrar Sesión</button>
-            </div>
-
-            <form id="product-form" onsubmit="saveProduct(event)" class="grid grid-cols-1 gap-3 sm:grid-cols-2 mb-4 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                <input type="hidden" id="prod-id">
-                <div class="space-y-1.5">
-                    <label class="text-xs font-bold text-gray-700 uppercase">Nombre del Producto *</label>
-                    <input type="text" id="prod-name" required class="w-full bg-white border border-gray-300 rounded p-2 text-sm focus:outline-none focus:border-[#6BA4D9]">
-                </div>
-                <div class="space-y-1.5">
-                    <label class="text-xs font-bold text-gray-700 uppercase">Categoría *</label>
-                    <input type="text" id="prod-category" required placeholder="Ej: Champú, Acondicionador, Tintes" class="w-full bg-white border border-gray-300 rounded p-2 text-sm focus:outline-none focus:border-[#6BA4D9]">
-                </div>
-                <div class="space-y-1.5">
-                    <label class="text-xs font-bold text-gray-700 uppercase">Precio ($) *</label>
-                    <input type="number" id="prod-price" step="0.01" required class="w-full bg-white border border-gray-300 rounded p-2 text-sm focus:outline-none focus:border-[#6BA4D9]">
-                </div>
-                <div class="space-y-1.5">
-                    <label class="text-xs font-bold text-gray-700 uppercase">Enlace de la Imagen (URL)</label>
-                    <input type="url" id="prod-img" placeholder="https://ejemplo.com/imagen.jpg" class="w-full bg-white border border-gray-300 rounded p-2 text-sm focus:outline-none focus:border-[#6BA4D9]">
-                </div>
-                <div class="space-y-1.5 sm:col-span-2">
-                    <label class="text-xs font-bold text-gray-700 uppercase">Descripción Corta</label>
-                    <input type="text" id="prod-desc" placeholder="Especificaciones, tamaño, volumen..." class="w-full bg-white border border-gray-300 rounded p-2 text-sm focus:outline-none focus:border-[#6BA4D9]">
-                </div>
-                <div class="sm:col-span-2 flex items-center justify-end space-x-2 pt-2">
-                    <button type="button" onclick="cancelEdit()" class="px-3 py-2 text-xs font-semibold text-gray-500 hover:bg-gray-200 rounded uppercase transition cursor-pointer">Cancelar</button>
-                    <button type="submit" id="submit-btn" class="bg-gray-900 text-white px-4 py-2 text-xs font-bold rounded uppercase hover:bg-gray-800 shadow-xs transition cursor-pointer">Guardar Producto</button>
-                </div>
-            </form>
-
-            <div class="pt-3 border-t border-gray-200 flex justify-end">
-                <button onclick="resetData()" class="text-xs font-bold text-[#D21427] hover:bg-red-100 px-3 py-1.5 rounded uppercase transition cursor-pointer" title="Restaura la clave y la lista inicial de fábrica">
-                    Restablecer Datos de Fábrica
-                </button>
-            </div>
-        </section>
-
-        <section id="catalog-section">
-            <div id="product-grid" class="grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                </div>
-            <div id="empty-state" class="hidden text-center py-12">
-                <svg class="w-12 h-12 text-gray-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                </svg>
-                <p class="text-gray-500 text-sm font-medium">No encontramos productos que coincidan con tu criterio.</p>
-            </div>
-        </section>
-
     </main>
 
-    <div id="cart-sidebar" class="fixed inset-0 z-50 hidden">
-        <div class="absolute inset-0 bg-black/50 backdrop-blur-xs transition-opacity" onclick="toggleCart()"></div>
-        <div class="absolute top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl flex flex-col transition-transform duration-300">
+    <footer class="bg-white border-t border-gray-200 py-6 mt-12 text-center text-xs text-gray-500">
+        <p>© 2026 Distribuidora The Shampoo. Todos los derechos reservados.</p>
+        <p class="mt-1 text-[#6BA4D9] font-medium">Calidad y Belleza Profesional</p>
+    </footer>
+
+    <button onclick="toggleAdminPanel()" class="fixed bottom-4 left-4 bg-gray-800 text-white w-10 h-10 rounded-full shadow-lg hover:bg-black transition flex items-center justify-center z-50 opacity-60 hover:opacity-100 cursor-pointer">
+        <i class="fas fa-cog text-base"></i>
+    </button>
+
+    <div id="cart-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-xs hidden">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            <div class="bg-gray-900 text-white p-4 flex justify-between items-center">
+                <h3 class="font-bold text-base flex items-center"><i class="fas fa-shopping-cart mr-2 text-[#6BA4D9]"></i> Mi Carrito de Compras</h3>
+                <button onclick="toggleCartModal()" class="text-gray-400 hover:text-white text-lg cursor-pointer"><i class="fas fa-times"></i></button>
+            </div>
             
-            <div class="p-4 border-b border-gray-200 flex items-center justify-between bg-gray-50">
-                <div class="flex items-center space-x-2 text-gray-900">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 0a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                    </svg>
-                    <h3 class="font-bold uppercase tracking-tight text-base">Tu Lista de Pedido</h3>
+            <div id="cart-items" class="p-4 flex-grow overflow-y-auto space-y-3">
+                <div class="text-center py-8 text-gray-400">
+                    <i class="fas fa-shopping-basket text-4xl mb-2"></i>
+                    <p class="text-xs font-medium">Tu carrito está vacío.</p>
                 </div>
-                <button onclick="toggleCart()" class="p-1.5 hover:bg-gray-200 rounded-full text-gray-500 hover:text-gray-900 transition cursor-pointer">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
             </div>
 
-            <div id="cart-items" class="flex-grow overflow-y-auto p-4 space-y-3">
+            <div class="p-4 bg-gray-50 border-t border-gray-200 space-y-3">
+                <div class="flex justify-between items-center font-bold text-base md:text-lg text-gray-800">
+                    <span>Total Estimado:</span>
+                    <span id="cart-total" class="text-[#D21427]">$0.00</span>
                 </div>
-
-            <div class="p-4 border-t border-gray-200 bg-gray-50 space-y-4">
-                <div class="flex items-center justify-between text-gray-900 font-bold text-lg">
-                    <span>Monto Total Estimado:</span>
-                    <span id="cart-total">$0.00</span>
-                </div>
-                <div class="space-y-2">
-                    <button onclick="checkoutWhatsApp()" class="w-full bg-[#25D366] text-white py-3 px-4 rounded-xl font-bold uppercase tracking-wide shadow-md hover:shadow-lg transition flex items-center justify-center space-x-2 text-sm cursor-pointer">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 1.977 14.069.953 11.5.953c-5.438 0-9.863 4.371-9.868 9.802-.002 1.73.463 3.42 1.345 4.927l-.997 3.641 3.734-.979zm11.215-6.38c-.307-.154-1.82-.898-2.102-1.001-.282-.102-.489-.154-.693.154-.204.307-.792.997-.971 1.202-.178.205-.357.228-.665.074-3.042-1.516-4.398-2.26-6.175-5.307-.172-.295-.017-.455.13-.603.133-.132.307-.357.462-.534.153-.178.204-.302.307-.503.102-.202.051-.38-.026-.534-.076-.153-.693-1.67-.95-2.285-.25-.601-.506-.519-.693-.529-.18-.009-.385-.01-.59-.01s-.538.077-.82.38c-.282.307-1.077 1.051-1.077 2.561s1.103 2.966 1.256 3.17c.154.204 2.169 3.312 5.256 4.643.735.316 1.307.505 1.753.647.739.236 1.412.203 1.944.124.592-.088 1.82-.743 2.076-1.459.256-.717.256-1.332.179-1.459-.076-.127-.282-.204-.59-.357z"/>
-                        </svg>
-                        <span>Enviar Pedido por WhatsApp</span>
-                    </button>
-                    <button onclick="clearCart()" class="w-full bg-gray-200 text-gray-700 hover:bg-gray-300 py-2 px-4 rounded-lg font-medium text-xs uppercase tracking-wide transition cursor-pointer">
-                        Vaciar Carrito
-                    </button>
-                </div>
+                <button onclick="sendCartToWhatsApp()" class="w-full bg-[#25D366] hover:bg-opacity-95 text-white font-bold py-2.5 rounded-lg text-sm transition flex items-center justify-center space-x-2 shadow-md cursor-pointer">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    <span>Confirmar Pedido por WhatsApp</span>
+                </button>
             </div>
         </div>
     </div>
 
-    <div class="fixed bottom-4 left-4 z-40 flex flex-col space-y-2">
-        <a href="https://instagram.com" target="_blank" class="w-10 h-10 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition duration-200" title="Síguenos en Instagram">
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-            </svg>
-        </a>
+    <div id="admin-panel" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-xs hidden">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden">
+            <div class="bg-gray-900 text-white p-4 flex justify-between items-center">
+                <h3 class="font-bold text-base flex items-center"><i class="fas fa-sliders-h mr-2 text-[#6BA4D9]"></i> Panel de Control</h3>
+                <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-white text-lg cursor-pointer"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div id="admin-panel-scroll" class="p-4 flex-grow overflow-y-auto space-y-5">
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                    <h4 class="font-semibold text-xs uppercase tracking-wider text-gray-500 mb-2">Enlaces de Contacto</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-medium text-gray-700 mb-1">WhatsApp (Solo números con código de país, ej: 584123456789)</label>
+                            <input type="text" id="cfg-whatsapp" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#D21427]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-gray-700 mb-1">Usuario de Instagram (ej: tu_tienda)</label>
+                            <input type="text" id="cfg-instagram" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#D21427]">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                    <h4 class="font-semibold text-xs uppercase tracking-wider text-gray-500 mb-2"><i class="fas fa-lock mr-1 text-amber-500"></i> Seguridad</h4>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-700 mb-1">Contraseña del Panel de Control</label>
+                        <input type="password" id="cfg-password" placeholder="Cambiar contraseña" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#D21427]">
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                    <h4 class="font-semibold text-xs uppercase tracking-wider text-gray-500 mb-2">Añadir / Editar Producto</h4>
+                    <div class="space-y-3">
+                        <input type="hidden" id="edit-id" value="">
+                        <div>
+                            <label class="block text-xs font-medium text-gray-700 mb-1">Nombre del Producto</label>
+                            <input type="text" id="prod-name" placeholder="Ej. Tinte Igora 6-0" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#6BA4D9]">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-gray-700 mb-1">Descripción</label>
+                            <textarea id="prod-desc" rows="2" placeholder="Detalles o beneficios del producto..." class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#6BA4D9]"></textarea>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block text-xs font-medium text-gray-700 mb-1">Precio ($)</label>
+                                <input type="number" step="0.01" id="prod-price" placeholder="0.00" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#6BA4D9]">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-gray-700 mb-1">Categoría</label>
+                                <select id="prod-category" class="w-full text-sm border border-gray-300 p-2 rounded bg-white focus:outline-none focus:border-[#6BA4D9]"></select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-gray-700 mb-1">URL de Imagen (Opcional)</label>
+                            <input type="text" id="prod-img" placeholder="https://enlace.com/imagen.jpg" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#6BA4D9]">
+                        </div>
+                        <div class="flex gap-2 mt-2">
+                            <button onclick="saveProduct()" id="btn-save-prod" class="flex-1 bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-2 rounded text-sm transition shadow-sm cursor-pointer"><i class="fas fa-plus mr-1"></i> Registrar</button>
+                            <button onclick="cancelEdit()" id="btn-cancel-edit" class="flex-1 bg-gray-400 hover:bg-gray-500 text-white font-semibold py-2 rounded text-sm transition shadow-sm cursor-pointer hidden">
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                    <h4 class="font-semibold text-xs uppercase tracking-wider text-gray-500 mb-2">Inventario Actual</h4>
+                    <div id="admin-product-list" class="space-y-2 max-h-[48] overflow-y-auto pr-1 no-scrollbar">
+                        </div>
+                </div>
+
+                <div class="pt-2 space-y-2">
+                    <button onclick="downloadHTML()" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2 rounded border border-blue-700 transition flex items-center justify-center space-x-1 cursor-pointer shadow-xs">
+                        <i class="fas fa-download mr-1"></i> <span class="font-bold">Descargar HTML Actualizado (para GitHub)</span>
+                    </button>
+                    <button onclick="resetData()" class="w-full bg-red-100 text-red-700 hover:bg-red-200 text-xs font-medium py-1.5 rounded border border-red-200 transition cursor-pointer">
+                        <i class="fas fa-undo mr-1"></i> Reestablecer Datos de Fábrica
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-gray-100 p-3 border-t border-gray-200 flex justify-end">
+                <button onclick="saveConfig()" class="bg-[#D21427] hover:bg-opacity-90 text-white font-semibold px-5 py-2 rounded text-sm transition shadow-md cursor-pointer">
+                    Guardar Cambios
+                </button>
+            </div>
+        </div>
     </div>
 
-    <a href="https://wa.me/584120000000" target="_blank" class="fixed bottom-4 right-4 z-40 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition duration-200" title="Atención Inmediata por WhatsApp">
-        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.528 1.977 14.069.953 11.5.953c-5.438 0-9.863 4.371-9.868 9.802-.002 1.73.463 3.42 1.345 4.927l-.997 3.641 3.734-.979zm11.215-6.38c-.307-.154-1.82-.898-2.102-1.001-.282-.102-.489-.154-.693.154-.204.307-.792.997-.971 1.202-.178.205-.357.228-.665.074-3.042-1.516-4.398-2.26-6.175-5.307-.172-.295-.017-.455.13-.603.133-.132.307-.357.462-.534.153-.178.204-.302.307-.503.102-.202.051-.38-.026-.534-.076-.153-.693-1.67-.95-2.285-.25-.601-.506-.519-.693-.529-.18-.009-.385-.01-.59-.01s-.538.077-.82.38c-.282.307-1.077 1.051-1.077 2.561s1.103 2.966 1.256 3.17c.154.204 2.169 3.312 5.256 4.643.735.316 1.307.505 1.753.647.739.236 1.412.203 1.944.124.592-.088 1.82-.743 2.076-1.459.256-.717.256-1.332.179-1.459-.076-.127-.282-.204-.59-.357z"/>
-        </svg>
-    </a>
-
-    <footer class="bg-gray-900 text-gray-400 py-6 text-center text-xs mt-12 border-t border-gray-800">
-        <p class="font-medium text-gray-300">© 2026 Distribuidora The Shampoo. Todos los derechos reservados.</p>
-        <p class="mt-1 opacity-60">Diseñado para la máxima eficiencia comercial en el sector de la belleza.</p>
-    </footer>
-
     <script>
-        // Claves y Configuración Base
-        const defaultSettings = { adminPass: "admin", whatsappNumber: "584120000000" };
-        const defaultProducts = [
-            { id: 1, name: "Champú de Keratina Profesional 1L", category: "Champú", price: 12.50, desc: "Restauración profunda, libre de sal.", img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=400&q=80" },
-            { id: 2, name: "Acondicionador de Argán Orgánico 1L", category: "Acondicionador", price: 13.00, desc: "Brillo extremo e hidratación prolongada.", img: "https://images.unsplash.com/photo-1519735791682-110061e85907?auto=format&fit=crop&w=400&q=80" },
-            { id: 3, name: "Tinte Profesional Rubio Cenizo 9.1", category: "Tintes", price: 4.25, desc: "Excelente cobertura de canas, máxima duración.", img: "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=400&q=80" },
-            { id: 4, name: "Tratamiento Mascarilla de Coco 500g", category: "Tratamientos", price: 8.00, desc: "Nutrición intensa para cabellos dañados.", img: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=400&q=80" }
-        ];
+        // CONFIGURACIÓN Y BASE DE DATOS DE FÁBRICA REEMPLAZABLE DINÁMICAMENTE
+        /*START_SETTINGS*/
+        const defaultSettings = {"whatsapp":"584241234567","instagram":"the_shampoo_distribuidora","password":"1"};
+        /*END_SETTINGS*/
 
-        // Inicialización de Estados
-        if(!localStorage.getItem("ts_settings")) localStorage.setItem("ts_settings", JSON.stringify(defaultSettings));
-        if(!localStorage.getItem("ts_products")) localStorage.setItem("ts_products", JSON.stringify(defaultProducts));
+        /*START_PRODUCTS*/
+        const defaultProducts = [{"id":1,"name":"Igora Royal 60ml","price":4.5,"category":"Tintes Profesionales","img":"imagenes/igorarojo.png"},{"id":7,"name":"Igora Royal Highlifts 60ml","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-f62a5c0a-017c-4f7d-a029-9ac1d38c8e2c.png"},{"id":8,"name":"Igora Royal Silver Whites 60ml","desc":"","price":1,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-03-d0c96714-aec5-4578-a590-abedf2b9d734.png"},{"id":9,"name":"Igora Royal Fashion Lights 60ml","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-97d5af90-0988-4385-9d30-631b53755451.png"},{"id":10,"name":"Igora Royal Absolutes 60ml","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-25626206-4ba4-420a-bd06-0ed79acdcfdd.png"},{"id":11,"name":"Tinte Nouvelle","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-38b0623e-dce6-40f8-b009-ddb8074b91f3.png"},{"id":12,"name":"Nouvelle Tono Sobre Tono Touch","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-506a054e-9a62-4147-873c-6974f475d3ea.png"},{"id":13,"name":"Nook The Virgin Color","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-d75b4969-77b4-4cd8-a4ce-03f03c4ebc7b.png"},{"id":14,"name":"Glamour Professional For Your Hair","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-d04d9f3b-410e-4214-ac31-0f51edf3f10c.png"},{"id":15,"name":"Salerm Vison Tinte","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-705d5424-22d7-4080-99ae-ddcc148a2c23.png"}];
+        /*END_PRODUCTS*/
 
         let currentCategory = "Todos";
-        let searchQuery = "";
         let cart = [];
         let isAdminLoggedIn = false;
+        let isEditing = false;
 
-        // Gestión de Interfaz del Panel de Administración
-        function toggleAdminPanel() {
-            const panel = document.getElementById("admin-panel");
-            if(isAdminLoggedIn) {
-                panel.classList.toggle("hidden");
-            } else {
-                const pass = prompt("Introduce la contraseña de administrador:");
-                const settings = JSON.parse(localStorage.getItem("ts_settings"));
-                if(pass === settings.adminPass) {
-                    isAdminLoggedIn = true;
-                    panel.classList.remove("hidden");
-                    refreshUI();
-                } else if(pass !== null) {
-                    alert("Contraseña incorrecta.");
-                }
-            }
+        // Inicializadores de LocalStorage
+        if (!localStorage.getItem("ts_settings")) {
+            localStorage.setItem("ts_settings", JSON.stringify(defaultSettings));
+        }
+        if (!localStorage.getItem("ts_products")) {
+            localStorage.setItem("ts_products", JSON.stringify(defaultProducts));
         }
 
-        function logoutAdmin() {
-            isAdminLoggedIn = false;
-            document.getElementById("admin-panel").classList.add("hidden");
-            refreshUI();
-        }
-
-        // Control y Apertura/Cierre del Carrito
-        function toggleCart() {
-            const sidebar = document.getElementById("cart-sidebar");
-            sidebar.classList.toggle("hidden");
-        }
-
-        function filterCategory(cat) {
-            currentCategory = cat;
-            refreshUI();
-        }
-
-        function searchProducts() {
-            searchQuery = document.getElementById("search-input").value.toLowerCase().trim();
-            refreshUI();
-        }
-
-        // RENDERIZADO DEL CATÁLOGO (CON FIX DE ASIMETRÍA INTEGRADO AQUÍ)
-        function refreshUI() {
-            const products = JSON.parse(localStorage.getItem("ts_products"));
-            
-            // 1. Obtener todas las categorías únicas del inventario actual
-            const categories = ["Todos", ...new Set(products.map(p => p.category))];
-            
-            // 2. Renderizar Pestañas de Categoría
-            const tabsContainer = document.getElementById("category-tabs");
-            tabsContainer.innerHTML = "";
-            categories.forEach(cat => {
-                const btn = document.createElement("button");
-                btn.className = `px-4 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
-                    currentCategory === cat 
-                    ? "bg-[#6BA4D9] text-white shadow-sm" 
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`;
-                btn.textContent = cat;
-                btn.onclick = () => filterCategory(cat);
-                tabsContainer.appendChild(btn);
+        // Renderizado del Select de Categorías en el Formulario Administrativo
+        const selectCat = document.getElementById('prod-category');
+        if (selectCat) {
+            selectCat.innerHTML = "";
+            categories.forEach(c => {
+                let opt = document.createElement('option');
+                opt.value = c;
+                opt.innerText = c;
+                selectCat.appendChild(opt);
             });
+        }
 
-            // 3. Filtrar Productos por Categoría y por Barra de Búsqueda
-            let filtered = products;
-            if(currentCategory !== "Todos") {
-                filtered = filtered.filter(p => p.category === currentCategory);
-            }
-            if(searchQuery) {
-                filtered = filtered.filter(p => 
-                    p.name.toLowerCase().includes(searchQuery) || 
-                    p.category.toLowerCase().includes(searchQuery) ||
-                    (p.desc && p.desc.toLowerCase().includes(searchQuery))
-                );
-            }
+        // Cargar Datos y Refrescar Interfaz
+        function refreshUI() {
+            const settings = JSON.parse(localStorage.getItem("ts_settings"));
+            const products = JSON.parse(localStorage.getItem("ts_products"));
 
-            // 4. Renderizar Grilla del Catálogo Comercial
-            const grid = document.getElementById("product-grid");
-            const emptyState = document.getElementById("empty-state");
-            grid.innerHTML = "";
+            // Actualizar Enlaces de Redes Sociales
+            document.getElementById("btn-insta-head").href = `https://instagram.com/${settings.instagram}`;
+            document.getElementById("btn-wats-head").href = `https://wa.me/${settings.whatsapp}?text=Hola!%20Me%20interesan%20algunos%20productos%20de%20la%20distribuidora.`;
 
-            if(filtered.length === 0) {
-                emptyState.classList.remove("hidden");
-            } else {
-                emptyState.classList.add("hidden");
-                filtered.forEach(p => {
-                    const card = document.createElement("div");
-                    card.className = "bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col group relative";
-                    
-                    const imgUrl = p.img || "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=400&q=80";
-                    
-                    // CONTENEDOR FIX: pt-[100%] da altura simétrica cuadrada exacta basada en el ancho
-                    card.innerHTML = `
-                        <div class="relative w-full pt-[100%] bg-gray-100 overflow-hidden">
-                            <img src="${imgUrl}" alt="${p.name}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                            ${isAdminLoggedIn ? `
-                                <div class="absolute top-2 right-2 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                                    <button onclick="editProduct(${p.id}, event)" class="bg-white/90 p-1.5 rounded-full text-gray-700 hover:bg-white shadow-xs cursor-pointer">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
-                                    </button>
-                                    <button onclick="deleteProduct(${p.id}, event)" class="bg-white/90 p-1.5 rounded-full text-[#D21427] hover:bg-red-50 shadow-xs cursor-pointer">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                                    </button>
-                                </div>
-                            ` : ''}
-                        </div>
-                        <div class="p-3 flex flex-col flex-grow">
-                            <span class="text-[10px] font-bold text-[#6BA4D9] uppercase tracking-wider mb-0.5">${p.category}</span>
-                            <h4 class="text-xs font-semibold text-gray-900 line-clamp-2 flex-grow mb-1" title="${p.name}">${p.name}</h4>
-                            <p class="text-[11px] text-gray-500 truncate mb-2" title="${p.desc || ''}">${p.desc || 'Sin descripción disponible.'}</p>
-                            <div class="flex items-center justify-between pt-1">
-                                <span class="text-sm font-bold text-gray-900">$${parseFloat(p.price).toFixed(2)}</span>
-                                <button onclick="addToCart(${p.id})" class="bg-gray-900 text-white p-1.5 rounded-lg hover:bg-gray-800 transition shadow-xs flex items-center justify-center cursor-pointer" title="Agregar al pedido">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
-                                </button>
+            // Rellenar Campos del Formulario del Panel con los valores guardados
+            document.getElementById("cfg-whatsapp").value = settings.whatsapp;
+            document.getElementById("cfg-instagram").value = settings.instagram;
+            document.getElementById("cfg-password").value = settings.password || "admin";
+
+            // Renderizar lista de productos en el panel de control
+            const adminProductList = document.getElementById("admin-product-list");
+            if (adminProductList) {
+                adminProductList.innerHTML = "";
+                products.forEach(p => {
+                    adminProductList.innerHTML += `
+                        <div class="flex items-center justify-between bg-white border border-gray-200 p-2 rounded shadow-sm">
+                            <div class="flex-1 min-w-0 mr-2">
+                                <p class="text-xs font-bold text-gray-800 truncate">${p.name}</p>
+                                <p class="text-[10px] text-gray-500 font-semibold">$${p.price.toFixed(2)} - ${p.category}</p>
+                            </div>
+                            <div class="flex gap-1">
+                                <button onclick="loadProductToEdit(${p.id})" class="bg-amber-500 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-amber-600 transition" title="Editar"><i class="fas fa-pen"></i></button>
+                                <button onclick="deleteProduct(${p.id})" class="bg-red-600 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-red-700 transition" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
                             </div>
                         </div>
                     `;
-                    grid.appendChild(card);
                 });
             }
 
-            // 5. Renderizar Elementos Internos del Carrito de Pedidos
-            const cartItemsContainer = document.getElementById("cart-items");
-            cartItemsContainer.innerHTML = "";
-            let total = 0;
-            let totalUnits = 0;
+            // Filtrar y Mostrar Productos
+            const grid = document.getElementById("grid-productos");
+            grid.innerHTML = "";
 
-            if(cart.length === 0) {
-                cartItemsContainer.innerHTML = `<p class="text-center text-xs text-gray-400 py-6">No has agregado productos a tu lista.</p>`;
+            const filtered = currentCategory === "Todos" 
+                ? products 
+                : products.filter(p => p.category === currentCategory);
+
+            document.getElementById("product-count").innerText = `${filtered.length} Producto${filtered.length !== 1 ? 's' : ''}`;
+
+            if(filtered.length === 0) {
+                document.getElementById("no-products-msg").classList.remove("hidden");
             } else {
-                cart.forEach(item => {
-                    total += item.price * item.quantity;
-                    totalUnits += item.quantity;
-                    const row = document.createElement("div");
-                    row.className = "flex items-center justify-between bg-gray-50 p-2 rounded-lg border border-gray-200 gap-2";
-                    row.innerHTML = `
-                        <div class="min-w-0 flex-1">
-                            <h5 class="text-xs font-semibold text-gray-900 truncate" title="${item.name}">${item.name}</h5>
-                            <p class="text-[10px] text-gray-500 font-medium">$${parseFloat(item.price).toFixed(2)} c/u</p>
-                        </div>
-                        <div class="flex items-center space-x-1 flex-shrink-0">
-                            <button onclick="updateQuantity(${item.id}, -1)" class="w-6 h-6 bg-white border border-gray-300 text-gray-700 font-bold rounded flex items-center justify-center text-xs hover:bg-gray-100 cursor-pointer">-</button>
-                            <span class="text-xs font-bold w-6 text-center text-gray-900">${item.quantity}</span>
-                            <button onclick="updateQuantity(${item.id}, 1)" class="w-6 h-6 bg-white border border-gray-300 text-gray-700 font-bold rounded flex items-center justify-center text-xs hover:bg-gray-100 cursor-pointer">+</button>
+                document.getElementById("no-products-msg").classList.add("hidden");
+                
+                filtered.forEach(p => {
+                    const finalImg = p.img || `https://placehold.co/300x300/f3f4f6/a3a3a3?text=${encodeURIComponent(p.name)}`;
+                    
+                    let actionBtnsHTML = "";
+                    if (isAdminLoggedIn) {
+                        actionBtnsHTML = `
+                            <div class="absolute top-2 right-2 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-all z-10">
+                                <button onclick="loadProductToEdit(${p.id})" class="bg-amber-500 text-white w-7 h-7 rounded-full shadow-md text-[10px] flex items-center justify-center hover:bg-amber-600 cursor-pointer" title="Editar Producto"><i class="fas fa-pen"></i></button>
+                                <button onclick="deleteProduct(${p.id})" class="bg-red-600 text-white w-7 h-7 rounded-full shadow-md text-[10px] flex items-center justify-center hover:bg-red-700 cursor-pointer" title="Eliminar Producto"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        `;
+                    }
+
+                    // AQUI ESTA EL CAMBIO: object-cover cambió a object-contain p-2 bg-white
+                    grid.innerHTML += `
+                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
+                            <div class="relative pt-[100%] bg-white overflow-hidden border-b border-gray-100">
+                                <img src="${finalImg}" alt="${p.name}" class="absolute inset-0 w-full h-full object-contain p-2 bg-white group-hover:scale-105 transition duration-300">
+                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
+                                    ${p.category}
+                                </span>
+                                ${actionBtnsHTML}
+                            </div>
+                            <div class="p-3 flex-grow flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 mb-1">${p.name}</h3>
+                                    ${p.desc ? `<p class="text-[10px] text-gray-500 line-clamp-2 leading-snug mb-1">${p.desc}</p>` : ''}
+                                </div>
+                                <div class="mt-2 space-y-1.5">
+                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$${p.price.toFixed(2)}</div>
+                                    
+                                    <button onclick="addToCart(${p.id})" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
+                                        <i class="fas fa-cart-plus"></i>
+                                        <span>Añadir al Carrito</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     `;
-                    cartItemsContainer.appendChild(row);
                 });
             }
-
-            // 6. Actualizar Contadores Globales en Pantalla
-            document.getElementById("cart-count").textContent = totalUnits;
-            document.getElementById("cart-total").textContent = `$${total.toFixed(2)}`;
+            updateCartUI();
         }
 
-        // Lógica de Operación del Carrito de Ventas
+        // Acciones de Categorías
+        function filterCategory(catName) {
+            currentCategory = catName;
+            
+            document.querySelectorAll(".cat-btn").forEach(btn => {
+                btn.classList.remove("bg-[#D21427]", "text-white", "shadow-sm");
+                btn.classList.add("bg-white", "text-gray-700", "border-gray-300");
+            });
+
+            const activeId = `cat-${catName.replace(/\s+/g, '')}`;
+            const activeBtn = document.getElementById(activeId);
+            if(activeBtn) {
+                activeBtn.classList.remove("bg-white", "text-gray-700", "border-gray-300");
+                activeBtn.classList.add("bg-[#D21427]", "text-white", "shadow-sm");
+            }
+
+            document.getElementById("section-title").innerText = catName === "Todos" ? "Todos los Productos" : catName;
+            refreshUI();
+        }
+
+        // LÓGICA DEL CARRITO DE COMPRAS
+        function toggleCartModal() {
+            document.getElementById("cart-modal").classList.toggle("hidden");
+        }
+
         function addToCart(id) {
             const products = JSON.parse(localStorage.getItem("ts_products"));
-            const product = products.find(p => p.id === id);
-            if(!product) return;
+            const itemMatch = products.find(p => p.id === id);
+            if (!itemMatch) return;
 
-            const existing = cart.find(item => item.id === id);
-            if(existing) {
-                existing.quantity++;
+            const existingCartItem = cart.find(item => item.id === id);
+            if (existingCartItem) {
+                existingCartItem.quantity++;
             } else {
-                cart.push({ ...product, quantity: 1 });
+                cart.push({ ...itemMatch, quantity: 1 });
             }
-            refreshUI();
+            updateCartUI();
         }
 
-        function updateQuantity(id, delta) {
-            const item = cart.find(i => i.id === id);
-            if(!item) return;
+        function updateCartQuantity(id, amount) {
+            const item = cart.find(p => p.id === id);
+            if (!item) return;
 
-            item.quantity += delta;
-            if(item.quantity <= 0) {
-                cart = cart.filter(i => i.id !== id);
+            item.quantity += amount;
+            if (item.quantity <= 0) {
+                cart = cart.filter(p => p.id !== id);
             }
-            refreshUI();
+            updateCartUI();
         }
 
-        function clearCart() {
-            cart = [];
-            refreshUI();
+        function removeFromCart(id) {
+            cart = cart.filter(p => p.id !== id);
+            updateCartUI();
         }
 
-        // Motor de Despacho de Pedidos hacia la API de WhatsApp
-        function checkoutWhatsApp() {
-            if(cart.length === 0) {
-                alert("Tu pedido está vacío.");
+        function updateCartUI() {
+            const badge = document.getElementById("cart-badge");
+            const itemsContainer = document.getElementById("cart-items");
+            const totalContainer = document.getElementById("cart-total");
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            if (totalItems > 0) {
+                badge.innerText = totalItems;
+                badge.classList.remove("hidden");
+            } else {
+                badge.classList.add("hidden");
+            }
+
+            totalContainer.innerText = `$${totalPrice.toFixed(2)}`;
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = `
+                    <div class="text-center py-8 text-gray-400">
+                        <i class="fas fa-shopping-basket text-4xl mb-2"></i>
+                        <p class="text-xs font-medium">Tu carrito está vacío.</p>
+                    </div>
+                `;
                 return;
             }
 
-            const settings = JSON.parse(localStorage.getItem("ts_settings"));
-            let text = `🛒 *NUEVO PEDIDO - THE SHAMPOO*\n\n`;
-            let total = 0;
-
-            cart.forEach((item, index) => {
-                const subtotal = item.price * item.quantity;
-                total += subtotal;
-                text += `${index + 1}. *${item.name}*\n   Cant: ${item.quantity} x $${parseFloat(item.price).toFixed(2)} = *$${subtotal.toFixed(2)}*\n\n`;
+            itemsContainer.innerHTML = "";
+            cart.forEach(item => {
+                const img = item.img || `https://placehold.co/50x50/f3f4f6/a3a3a3?text=${encodeURIComponent(item.name)}`;
+                itemsContainer.innerHTML += `
+                    <div class="flex items-center justify-between p-2.5 border border-gray-100 rounded-lg bg-gray-50 gap-2">
+                        <img src="${img}" class="w-10 h-10 object-contain p-0.5 rounded bg-white border flex-shrink-0">
+                        <div class="flex-grow min-w-0">
+                            <h4 class="text-xs font-semibold text-gray-800 truncate">${item.name}</h4>
+                            <p class="text-xs text-[#D21427] font-bold mt-0.5">$${item.price.toFixed(2)}</p>
+                        </div>
+                        <div class="flex items-center space-x-1 flex-shrink-0">
+                            <button onclick="updateCartQuantity(${item.id}, -1)" class="w-5 h-5 rounded bg-gray-200 hover:bg-gray-300 text-xs font-bold flex items-center justify-center text-gray-700 cursor-pointer">-</button>
+                            <span class="text-xs font-bold w-5 text-center">${item.quantity}</span>
+                            <button onclick="updateCartQuantity(${item.id}, 1)" class="w-5 h-5 rounded bg-gray-200 hover:bg-gray-300 text-xs font-bold flex items-center justify-center text-gray-700 cursor-pointer">+</button>
+                            <button onclick="removeFromCart(${item.id})" class="text-gray-400 hover:text-red-600 pl-1 text-xs cursor-pointer" title="Remover producto">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
             });
-
-            text += `Total Estimado a Pagar: *$${total.toFixed(2)}*\n\n`;
-            text += `*Por favor, confírmenme disponibilidad y métodos de pago.*`;
-
-            const url = `https://wa.me/${settings.whatsappNumber}?text=${encodeURIComponent(text)}`;
-            window.open(url, "_blank");
         }
 
-        // Funciones CRUD del Panel Administrativo
-        function editProduct(id, event) {
-            if(event) event.stopPropagation();
+        function sendCartToWhatsApp() {
+            if (cart.length === 0) {
+                alert("Por favor añade artículos a tu carrito primero.");
+                return;
+            }
+            const settings = JSON.parse(localStorage.getItem("ts_settings"));
+            
+            let message = `🛒 *NUEVO PEDIDO - THE SHAMPOO*\n`;
+            message += `====================================\n\n`;
+            
+            let total = 0;
+            cart.forEach((item, index) => {
+                const sub = item.price * item.quantity;
+                total += sub;
+                message += `*${index + 1}. ${item.name}*\n`;
+                message += `   Cant: ${item.quantity}  x  $${item.price.toFixed(2)}\n`;
+                message += `   Subtotal: *$${sub.toFixed(2)}*\n\n`;
+            });
+
+            message += `====================================\n`;
+            message += `💰 *TOTAL A PAGAR: $${total.toFixed(2)}*\n\n`;
+            message += `Quedo a la espera de sus datos para concretar el pago y la entrega.`;
+
+            const waUrl = `https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, '_blank');
+        }
+
+        function toggleAdminPanel() {
+            const panel = document.getElementById("admin-panel");
+            
+            if (panel.classList.contains("hidden")) {
+                const settings = JSON.parse(localStorage.getItem("ts_settings")) || defaultSettings;
+                const savedPassword = settings.password || "admin";
+                
+                const inputPass = prompt("Introduce la contraseña para ingresar al Panel de Control:");
+                if (inputPass === null) return;
+                
+                if (inputPass === savedPassword) {
+                    isAdminLoggedIn = true;
+                    panel.classList.remove("hidden");
+                    refreshUI(); 
+                } else {
+                    alert("Contraseña incorrecta. Acceso denegado.");
+                }
+            } else {
+                isAdminLoggedIn = false;
+                cancelEdit();
+                panel.classList.add("hidden");
+                refreshUI(); 
+            }
+        }
+
+        function saveConfig() {
+            const nw = document.getElementById("cfg-whatsapp").value.replace(/\D/g,''); 
+            const ni = document.getElementById("cfg-instagram").value.trim();
+            const np = document.getElementById("cfg-password").value.trim();
+
+            if(!nw) { alert("Por favor ingresa un número de WhatsApp válido."); return; }
+            if(!ni) { alert("Por favor ingresa una cuenta de Instagram."); return; }
+            if(!np) { alert("Por favor ingresa una contraseña válida."); return; }
+
+            localStorage.setItem("ts_settings", JSON.stringify({ whatsapp: nw, instagram: ni, password: np }));
+            refreshUI();
+            toggleAdminPanel();
+            alert("¡Configuración guardada exitosamente!");
+        }
+
+        function downloadHTML() {
+            const panel = document.getElementById("admin-panel");
+            const wasOpen = !panel.classList.contains("hidden");
+
+            if (wasOpen) panel.classList.add("hidden");
+            const tempAdminState = isAdminLoggedIn;
+            isAdminLoggedIn = false;
+            cancelEdit();
+            refreshUI(); 
+            
+            const currentSettings = localStorage.getItem("ts_settings") || JSON.stringify(defaultSettings);
+            const currentProducts = localStorage.getItem("ts_products") || JSON.stringify(defaultProducts);
+
+            let rawHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+
+            rawHtml = rawHtml.replace('id="admin-panel" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden backdrop-blur-xs"', 'id="admin-panel" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden backdrop-blur-xs"');
+            rawHtml = rawHtml.replace('id="cart-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden backdrop-blur-xs"', 'id="cart-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden backdrop-blur-xs"');
+
+            const settingsRegex = /\/\*START_SETTINGS\*\/[\s\S]*?\/\*END_SETTINGS\*\//;
+            const productsRegex = /\/\*START_PRODUCTS\*\/[\s\S]*?\/\*END_PRODUCTS\*\//;
+
+            rawHtml = rawHtml.replace(settingsRegex, `/*START_SETTINGS*/\n        const defaultSettings = ${currentSettings};\n        /*END_SETTINGS*/`);
+            rawHtml = rawHtml.replace(productsRegex, `/*START_PRODUCTS*/\n        const defaultProducts = ${currentProducts};\n        /*END_PRODUCTS*/`);
+
+            const blob = new Blob([rawHtml], { type: "text/html" });
+            const downloaderElement = document.createElement("a");
+            downloaderElement.href = URL.createObjectURL(blob);
+            downloaderElement.download = "index.html";
+            document.body.appendChild(downloaderElement);
+            downloaderElement.click();
+            document.body.removeChild(downloaderElement);
+            
+            isAdminLoggedIn = tempAdminState;
+            if (wasOpen) panel.classList.remove("hidden");
+            refreshUI(); 
+        }
+
+        function loadProductToEdit(id) {
             const products = JSON.parse(localStorage.getItem("ts_products"));
             const p = products.find(prod => prod.id === id);
             if(!p) return;
 
-            document.getElementById("prod-id").value = p.id;
+            document.getElementById("edit-id").value = p.id;
             document.getElementById("prod-name").value = p.name;
-            document.getElementById("prod-category").value = p.category;
-            document.getElementById("prod-price").value = p.price;
             document.getElementById("prod-desc").value = p.desc || "";
+            document.getElementById("prod-price").value = p.price;
+            document.getElementById("prod-category").value = p.category;
             document.getElementById("prod-img").value = p.img || "";
+            
+            isEditing = true;
+            document.getElementById("btn-save-prod").innerHTML = '<i class="fas fa-save mr-1"></i> Actualizar';
+            document.getElementById("btn-save-prod").classList.replace("bg-[#6BA4D9]", "bg-amber-500");
+            document.getElementById("btn-cancel-edit").classList.remove("hidden");
 
-            document.getElementById("submit-btn").textContent = "Actualizar Producto";
-            document.getElementById("admin-panel").scrollIntoView({ behavior: 'smooth' });
+            const panel = document.getElementById("admin-panel");
+            if (panel.classList.contains("hidden")) {
+                panel.classList.remove("hidden");
+            }
+            
+            const scrollArea = document.getElementById("admin-panel-scroll");
+            if (scrollArea) {
+                scrollArea.scrollTo({top: 0, behavior: 'smooth'});
+            }
         }
 
         function cancelEdit() {
-            document.getElementById("prod-id").value = "";
-            document.getElementById("product-form").reset();
-            document.getElementById("submit-btn").textContent = "Guardar Producto";
+            isEditing = false;
+            document.getElementById("edit-id").value = "";
+            document.getElementById("prod-name").value = "";
+            document.getElementById("prod-desc").value = "";
+            document.getElementById("prod-price").value = "";
+            document.getElementById("prod-img").value = "";
+            
+            document.getElementById("btn-save-prod").innerHTML = '<i class="fas fa-plus mr-1"></i> Registrar';
+            document.getElementById("btn-save-prod").classList.replace("bg-amber-500", "bg-[#6BA4D9]");
+            document.getElementById("btn-cancel-edit").classList.add("hidden");
         }
 
-        function saveProduct(event) {
-            event.preventDefault();
-            let products = JSON.parse(localStorage.getItem("ts_products"));
-
-            const id = document.getElementById("prod-id").value;
+        function saveProduct() {
             const name = document.getElementById("prod-name").value.trim();
-            const category = document.getElementById("prod-category").value.trim();
-            const price = parseFloat(document.getElementById("prod-price").value);
             const desc = document.getElementById("prod-desc").value.trim();
+            const price = parseFloat(document.getElementById("prod-price").value);
+            const category = document.getElementById("prod-category").value;
             const img = document.getElementById("prod-img").value.trim();
 
-            if(id) {
-                // Modo Edición
-                products = products.map(p => p.id == id ? { ...p, name, category, price, desc, img } : p);
+            if(!name || isNaN(price) || price <= 0) {
+                alert("Por favor completa el nombre y un precio válido mayor a 0.");
+                return;
+            }
+
+            let products = JSON.parse(localStorage.getItem("ts_products"));
+
+            if (isEditing) {
+                const id = parseInt(document.getElementById("edit-id").value);
+                const index = products.findIndex(p => p.id === id);
+                if(index !== -1) {
+                    products[index] = { id, name, desc, price, category, img };
+                }
+                alert("¡Producto actualizado exitosamente!");
                 cancelEdit();
             } else {
-                // Modo Creación
                 const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
-                products.push({ id: newId, name, category, price, desc, img });
+                products.push({ id: newId, name, desc, price, category, img });
+                alert("¡Producto añadido exitosamente!");
+                
                 document.getElementById("prod-name").value = "";
-                document.getElementById("prod-price").value = "";
                 document.getElementById("prod-desc").value = "";
+                document.getElementById("prod-price").value = "";
                 document.getElementById("prod-img").value = "";
             }
 
@@ -1577,16 +1773,11 @@
             refreshUI();
         }
 
-        function deleteProduct(id, event) {
-            if(event) event.stopPropagation();
+        function deleteProduct(id) {
             if(confirm("¿Estás seguro de que deseas eliminar este producto?")) {
                 let products = JSON.parse(localStorage.getItem("ts_products"));
                 products = products.filter(p => p.id !== id);
                 localStorage.setItem("ts_products", JSON.stringify(products));
-                
-                // Remover del carrito si estaba agregado
-                cart = cart.filter(item => item.id !== id);
-                
                 refreshUI();
             }
         }
@@ -1613,4 +1804,5 @@
         };
     </script>
 
-</body></html>
+</body>
+</html>
