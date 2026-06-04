@@ -1,3171 +1,428 @@
 <!DOCTYPE html>
-<html lang="es"><head>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Distribuidora The Shampoo</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script><style>/*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */
-@layer properties;
-@layer theme, base, components, utilities;
-@layer theme {
-  :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
-    monospace;
-    --color-red-100: oklch(93.6% 0.032 17.717);
-    --color-red-200: oklch(88.5% 0.062 18.334);
-    --color-red-600: oklch(57.7% 0.245 27.325);
-    --color-red-700: oklch(50.5% 0.213 27.518);
-    --color-amber-500: oklch(76.9% 0.188 70.08);
-    --color-amber-600: oklch(66.6% 0.179 58.318);
-    --color-blue-600: oklch(54.6% 0.245 262.881);
-    --color-blue-700: oklch(48.8% 0.243 264.376);
-    --color-gray-50: oklch(98.5% 0.002 247.839);
-    --color-gray-100: oklch(96.7% 0.003 264.542);
-    --color-gray-200: oklch(92.8% 0.006 264.531);
-    --color-gray-300: oklch(87.2% 0.01 258.338);
-    --color-gray-400: oklch(70.7% 0.022 261.325);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
-    --color-gray-700: oklch(37.3% 0.034 259.733);
-    --color-gray-800: oklch(27.8% 0.033 256.848);
-    --color-gray-900: oklch(21% 0.034 264.665);
-    --color-black: #000;
-    --color-white: #fff;
-    --spacing: 0.25rem;
-    --container-md: 28rem;
-    --container-7xl: 80rem;
-    --text-xs: 0.75rem;
-    --text-xs--line-height: calc(1 / 0.75);
-    --text-sm: 0.875rem;
-    --text-sm--line-height: calc(1.25 / 0.875);
-    --text-base: 1rem;
-    --text-base--line-height: calc(1.5 / 1);
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
-    --text-xl: 1.25rem;
-    --text-xl--line-height: calc(1.75 / 1.25);
-    --text-2xl: 1.5rem;
-    --text-2xl--line-height: calc(2 / 1.5);
-    --text-4xl: 2.25rem;
-    --text-4xl--line-height: calc(2.5 / 2.25);
-    --text-5xl: 3rem;
-    --text-5xl--line-height: 1;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    --tracking-tight: -0.025em;
-    --tracking-wide: 0.025em;
-    --tracking-wider: 0.05em;
-    --radius-lg: 0.5rem;
-    --radius-xl: 0.75rem;
-    --blur-xs: 4px;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    --default-font-family: var(--font-sans);
-    --default-mono-font-family: var(--font-mono);
-  }
-}
-@layer base {
-  *, ::after, ::before, ::backdrop, ::file-selector-button {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0 solid;
-  }
-  html, :host {
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
-    tab-size: 4;
-    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
-    font-feature-settings: var(--default-font-feature-settings, normal);
-    font-variation-settings: var(--default-font-variation-settings, normal);
-    -webkit-tap-highlight-color: transparent;
-  }
-  hr {
-    height: 0;
-    color: inherit;
-    border-top-width: 1px;
-  }
-  abbr:where([title]) {
-    -webkit-text-decoration: underline dotted;
-    text-decoration: underline dotted;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-size: inherit;
-    font-weight: inherit;
-  }
-  a {
-    color: inherit;
-    -webkit-text-decoration: inherit;
-    text-decoration: inherit;
-  }
-  b, strong {
-    font-weight: bolder;
-  }
-  code, kbd, samp, pre {
-    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
-    font-feature-settings: var(--default-mono-font-feature-settings, normal);
-    font-variation-settings: var(--default-mono-font-variation-settings, normal);
-    font-size: 1em;
-  }
-  small {
-    font-size: 80%;
-  }
-  sub, sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-  }
-  sub {
-    bottom: -0.25em;
-  }
-  sup {
-    top: -0.5em;
-  }
-  table {
-    text-indent: 0;
-    border-color: inherit;
-    border-collapse: collapse;
-  }
-  :-moz-focusring {
-    outline: auto;
-  }
-  progress {
-    vertical-align: baseline;
-  }
-  summary {
-    display: list-item;
-  }
-  ol, ul, menu {
-    list-style: none;
-  }
-  img, svg, video, canvas, audio, iframe, embed, object {
-    display: block;
-    vertical-align: middle;
-  }
-  img, video {
-    max-width: 100%;
-    height: auto;
-  }
-  button, input, select, optgroup, textarea, ::file-selector-button {
-    font: inherit;
-    font-feature-settings: inherit;
-    font-variation-settings: inherit;
-    letter-spacing: inherit;
-    color: inherit;
-    border-radius: 0;
-    background-color: transparent;
-    opacity: 1;
-  }
-  :where(select:is([multiple], [size])) optgroup {
-    font-weight: bolder;
-  }
-  :where(select:is([multiple], [size])) optgroup option {
-    padding-inline-start: 20px;
-  }
-  ::file-selector-button {
-    margin-inline-end: 4px;
-  }
-  ::placeholder {
-    opacity: 1;
-  }
-  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
-    ::placeholder {
-      color: currentcolor;
-      @supports (color: color-mix(in lab, red, red)) {
-        color: color-mix(in oklab, currentcolor 50%, transparent);
-      }
-    }
-  }
-  textarea {
-    resize: vertical;
-  }
-  ::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
-  ::-webkit-date-and-time-value {
-    min-height: 1lh;
-    text-align: inherit;
-  }
-  ::-webkit-datetime-edit {
-    display: inline-flex;
-  }
-  ::-webkit-datetime-edit-fields-wrapper {
-    padding: 0;
-  }
-  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
-    padding-block: 0;
-  }
-  ::-webkit-calendar-picker-indicator {
-    line-height: 1;
-  }
-  :-moz-ui-invalid {
-    box-shadow: none;
-  }
-  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
-    appearance: button;
-  }
-  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
-    height: auto;
-  }
-  [hidden]:where(:not([hidden='until-found'])) {
-    display: none !important;
-  }
-}
-@layer utilities {
-  .absolute {
-    position: absolute;
-  }
-  .fixed {
-    position: fixed;
-  }
-  .relative {
-    position: relative;
-  }
-  .sticky {
-    position: sticky;
-  }
-  .inset-0 {
-    inset: calc(var(--spacing) * 0);
-  }
-  .-top-1 {
-    top: calc(var(--spacing) * -1);
-  }
-  .top-0 {
-    top: calc(var(--spacing) * 0);
-  }
-  .top-2 {
-    top: calc(var(--spacing) * 2);
-  }
-  .-right-1 {
-    right: calc(var(--spacing) * -1);
-  }
-  .right-2 {
-    right: calc(var(--spacing) * 2);
-  }
-  .bottom-4 {
-    bottom: calc(var(--spacing) * 4);
-  }
-  .left-2 {
-    left: calc(var(--spacing) * 2);
-  }
-  .left-4 {
-    left: calc(var(--spacing) * 4);
-  }
-  .z-10 {
-    z-index: 10;
-  }
-  .z-40 {
-    z-index: 40;
-  }
-  .z-50 {
-    z-index: 50;
-  }
-  .mx-auto {
-    margin-inline: auto;
-  }
-  .mt-0\.5 {
-    margin-top: calc(var(--spacing) * 0.5);
-  }
-  .mt-1 {
-    margin-top: calc(var(--spacing) * 1);
-  }
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
-  }
-  .mt-12 {
-    margin-top: calc(var(--spacing) * 12);
-  }
-  .mr-1 {
-    margin-right: calc(var(--spacing) * 1);
-  }
-  .mr-2 {
-    margin-right: calc(var(--spacing) * 2);
-  }
-  .mb-1 {
-    margin-bottom: calc(var(--spacing) * 1);
-  }
-  .mb-2 {
-    margin-bottom: calc(var(--spacing) * 2);
-  }
-  .mb-3 {
-    margin-bottom: calc(var(--spacing) * 3);
-  }
-  .mb-6 {
-    margin-bottom: calc(var(--spacing) * 6);
-  }
-  .line-clamp-2 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  }
-  .block {
-    display: block;
-  }
-  .flex {
-    display: flex;
-  }
-  .grid {
-    display: grid;
-  }
-  .hidden {
-    display: none;
-  }
-  .h-2 {
-    height: calc(var(--spacing) * 2);
-  }
-  .h-5 {
-    height: calc(var(--spacing) * 5);
-  }
-  .h-6 {
-    height: calc(var(--spacing) * 6);
-  }
-  .h-7 {
-    height: calc(var(--spacing) * 7);
-  }
-  .h-10 {
-    height: calc(var(--spacing) * 10);
-  }
-  .h-12 {
-    height: calc(var(--spacing) * 12);
-  }
-  .h-full {
-    height: 100%;
-  }
-  .max-h-\[48\] {
-    max-height: 48;
-  }
-  .max-h-\[90vh\] {
-    max-height: 90vh;
-  }
-  .min-h-screen {
-    min-height: 100vh;
-  }
-  .w-5 {
-    width: calc(var(--spacing) * 5);
-  }
-  .w-6 {
-    width: calc(var(--spacing) * 6);
-  }
-  .w-7 {
-    width: calc(var(--spacing) * 7);
-  }
-  .w-10 {
-    width: calc(var(--spacing) * 10);
-  }
-  .w-auto {
-    width: auto;
-  }
-  .w-full {
-    width: 100%;
-  }
-  .max-w-7xl {
-    max-width: var(--container-7xl);
-  }
-  .max-w-md {
-    max-width: var(--container-md);
-  }
-  .min-w-0 {
-    min-width: calc(var(--spacing) * 0);
-  }
-  .flex-1 {
-    flex: 1;
-  }
-  .flex-shrink-0 {
-    flex-shrink: 0;
-  }
-  .flex-grow {
-    flex-grow: 1;
-  }
-  .cursor-pointer {
-    cursor: pointer;
-  }
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .flex-col {
-    flex-direction: column;
-  }
-  .items-center {
-    align-items: center;
-  }
-  .justify-between {
-    justify-content: space-between;
-  }
-  .justify-center {
-    justify-content: center;
-  }
-  .justify-end {
-    justify-content: flex-end;
-  }
-  .gap-1 {
-    gap: calc(var(--spacing) * 1);
-  }
-  .gap-2 {
-    gap: calc(var(--spacing) * 2);
-  }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
-  }
-  .space-y-1\.5 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 1.5) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-2 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-3 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-5 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-x-1 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 1) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-x-reverse)));
-    }
-  }
-  .space-x-2 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
-    }
-  }
-  .space-x-3 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-x-reverse)));
-    }
-  }
-  .truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .overflow-hidden {
-    overflow: hidden;
-  }
-  .overflow-x-auto {
-    overflow-x: auto;
-  }
-  .overflow-y-auto {
-    overflow-y: auto;
-  }
-  .rounded {
-    border-radius: 0.25rem;
-  }
-  .rounded-full {
-    border-radius: calc(infinity * 1px);
-  }
-  .rounded-lg {
-    border-radius: var(--radius-lg);
-  }
-  .rounded-xl {
-    border-radius: var(--radius-xl);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
-  .border-t {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 1px;
-  }
-  .border-b {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 1px;
-  }
-  .border-l-4 {
-    border-left-style: var(--tw-border-style);
-    border-left-width: 4px;
-  }
-  .border-\[\#6BA4D9\] {
-    border-color: #6BA4D9;
-  }
-  .border-blue-700 {
-    border-color: var(--color-blue-700);
-  }
-  .border-gray-100 {
-    border-color: var(--color-gray-100);
-  }
-  .border-gray-200 {
-    border-color: var(--color-gray-200);
-  }
-  .border-gray-300 {
-    border-color: var(--color-gray-300);
-  }
-  .border-red-200 {
-    border-color: var(--color-red-200);
-  }
-  .bg-\[\#6BA4D9\] {
-    background-color: #6BA4D9;
-  }
-  .bg-\[\#25D366\] {
-    background-color: #25D366;
-  }
-  .bg-\[\#D21427\] {
-    background-color: #D21427;
-  }
-  .bg-amber-500 {
-    background-color: var(--color-amber-500);
-  }
-  .bg-black\/50 {
-    background-color: color-mix(in srgb, #000 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
-    }
-  }
-  .bg-blue-600 {
-    background-color: var(--color-blue-600);
-  }
-  .bg-gray-50 {
-    background-color: var(--color-gray-50);
-  }
-  .bg-gray-100 {
-    background-color: var(--color-gray-100);
-  }
-  .bg-gray-200 {
-    background-color: var(--color-gray-200);
-  }
-  .bg-gray-400 {
-    background-color: var(--color-gray-400);
-  }
-  .bg-gray-800 {
-    background-color: var(--color-gray-800);
-  }
-  .bg-gray-900 {
-    background-color: var(--color-gray-900);
-  }
-  .bg-red-100 {
-    background-color: var(--color-red-100);
-  }
-  .bg-red-600 {
-    background-color: var(--color-red-600);
-  }
-  .bg-white {
-    background-color: var(--color-white);
-  }
-  .object-contain {
-    object-fit: contain;
-  }
-  .object-cover {
-    object-fit: cover;
-  }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
-  }
-  .p-2\.5 {
-    padding: calc(var(--spacing) * 2.5);
-  }
-  .p-3 {
-    padding: calc(var(--spacing) * 3);
-  }
-  .p-4 {
-    padding: calc(var(--spacing) * 4);
-  }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
-  }
-  .px-3 {
-    padding-inline: calc(var(--spacing) * 3);
-  }
-  .px-4 {
-    padding-inline: calc(var(--spacing) * 4);
-  }
-  .px-5 {
-    padding-inline: calc(var(--spacing) * 5);
-  }
-  .py-0\.5 {
-    padding-block: calc(var(--spacing) * 0.5);
-  }
-  .py-1 {
-    padding-block: calc(var(--spacing) * 1);
-  }
-  .py-1\.5 {
-    padding-block: calc(var(--spacing) * 1.5);
-  }
-  .py-2 {
-    padding-block: calc(var(--spacing) * 2);
-  }
-  .py-2\.5 {
-    padding-block: calc(var(--spacing) * 2.5);
-  }
-  .py-3 {
-    padding-block: calc(var(--spacing) * 3);
-  }
-  .py-6 {
-    padding-block: calc(var(--spacing) * 6);
-  }
-  .py-8 {
-    padding-block: calc(var(--spacing) * 8);
-  }
-  .py-12 {
-    padding-block: calc(var(--spacing) * 12);
-  }
-  .pt-2 {
-    padding-top: calc(var(--spacing) * 2);
-  }
-  .pt-\[100\%\] {
-    padding-top: 100%;
-  }
-  .pr-1 {
-    padding-right: calc(var(--spacing) * 1);
-  }
-  .pl-1 {
-    padding-left: calc(var(--spacing) * 1);
-  }
-  .pl-3 {
-    padding-left: calc(var(--spacing) * 3);
-  }
-  .text-center {
-    text-align: center;
-  }
-  .text-4xl {
-    font-size: var(--text-4xl);
-    line-height: var(--tw-leading, var(--text-4xl--line-height));
-  }
-  .text-5xl {
-    font-size: var(--text-5xl);
-    line-height: var(--tw-leading, var(--text-5xl--line-height));
-  }
-  .text-base {
-    font-size: var(--text-base);
-    line-height: var(--tw-leading, var(--text-base--line-height));
-  }
-  .text-lg {
-    font-size: var(--text-lg);
-    line-height: var(--tw-leading, var(--text-lg--line-height));
-  }
-  .text-sm {
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-  }
-  .text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
-  .text-xs {
-    font-size: var(--text-xs);
-    line-height: var(--tw-leading, var(--text-xs--line-height));
-  }
-  .text-\[10px\] {
-    font-size: 10px;
-  }
-  .leading-none {
-    --tw-leading: 1;
-    line-height: 1;
-  }
-  .font-bold {
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
-  }
-  .font-medium {
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-  }
-  .font-semibold {
-    --tw-font-weight: var(--font-weight-semibold);
-    font-weight: var(--font-weight-semibold);
-  }
-  .tracking-tight {
-    --tw-tracking: var(--tracking-tight);
-    letter-spacing: var(--tracking-tight);
-  }
-  .tracking-wide {
-    --tw-tracking: var(--tracking-wide);
-    letter-spacing: var(--tracking-wide);
-  }
-  .tracking-wider {
-    --tw-tracking: var(--tracking-wider);
-    letter-spacing: var(--tracking-wider);
-  }
-  .whitespace-nowrap {
-    white-space: nowrap;
-  }
-  .text-\[\#6BA4D9\] {
-    color: #6BA4D9;
-  }
-  .text-\[\#D21427\] {
-    color: #D21427;
-  }
-  .text-amber-500 {
-    color: var(--color-amber-500);
-  }
-  .text-gray-300 {
-    color: var(--color-gray-300);
-  }
-  .text-gray-400 {
-    color: var(--color-gray-400);
-  }
-  .text-gray-500 {
-    color: var(--color-gray-500);
-  }
-  .text-gray-700 {
-    color: var(--color-gray-700);
-  }
-  .text-gray-800 {
-    color: var(--color-gray-800);
-  }
-  .text-gray-900 {
-    color: var(--color-gray-900);
-  }
-  .text-red-700 {
-    color: var(--color-red-700);
-  }
-  .text-white {
-    color: var(--color-white);
-  }
-  .uppercase {
-    text-transform: uppercase;
-  }
-  .opacity-0 {
-    opacity: 0%;
-  }
-  .opacity-60 {
-    opacity: 60%;
-  }
-  .shadow-2xl {
-    --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-lg {
-    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-md {
-    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-sm {
-    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-xs {
-    --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .backdrop-blur-xs {
-    --tw-backdrop-blur: blur(var(--blur-xs));
-    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-  }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .transition-all {
-    transition-property: all;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .duration-200 {
-    --tw-duration: 200ms;
-    transition-duration: 200ms;
-  }
-  .duration-300 {
-    --tw-duration: 300ms;
-    transition-duration: 300ms;
-  }
-  .group-hover\:scale-105 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        --tw-scale-x: 105%;
-        --tw-scale-y: 105%;
-        --tw-scale-z: 105%;
-        scale: var(--tw-scale-x) var(--tw-scale-y);
-      }
-    }
-  }
-  .group-hover\:opacity-100 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        opacity: 100%;
-      }
-    }
-  }
-  .hover\:bg-amber-600 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-amber-600);
-      }
-    }
-  }
-  .hover\:bg-black {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-black);
-      }
-    }
-  }
-  .hover\:bg-blue-700 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-blue-700);
-      }
-    }
-  }
-  .hover\:bg-gray-200 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-gray-200);
-      }
-    }
-  }
-  .hover\:bg-gray-300 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-gray-300);
-      }
-    }
-  }
-  .hover\:bg-gray-500 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-gray-500);
-      }
-    }
-  }
-  .hover\:bg-red-200 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-red-200);
-      }
-    }
-  }
-  .hover\:bg-red-700 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-red-700);
-      }
-    }
-  }
-  .hover\:text-red-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-600);
-      }
-    }
-  }
-  .hover\:text-white {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-white);
-      }
-    }
-  }
-  .hover\:opacity-100 {
-    &:hover {
-      @media (hover: hover) {
-        opacity: 100%;
-      }
-    }
-  }
-  .hover\:shadow-md {
-    &:hover {
-      @media (hover: hover) {
-        --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-      }
-    }
-  }
-  .focus\:border-\[\#6BA4D9\] {
-    &:focus {
-      border-color: #6BA4D9;
-    }
-  }
-  .focus\:border-\[\#D21427\] {
-    &:focus {
-      border-color: #D21427;
-    }
-  }
-  .focus\:outline-none {
-    &:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-  }
-  .sm\:grid-cols-2 {
-    @media (width >= 40rem) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  .md\:grid-cols-3 {
-    @media (width >= 48rem) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-  .md\:flex-wrap {
-    @media (width >= 48rem) {
-      flex-wrap: wrap;
-    }
-  }
-  .md\:gap-2 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 2);
-    }
-  }
-  .md\:gap-6 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 6);
-    }
-  }
-  .md\:space-x-0 {
-    @media (width >= 48rem) {
-      :where(& > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(var(--spacing) * 0) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-x-reverse)));
-      }
-    }
-  }
-  .md\:space-x-3 {
-    @media (width >= 48rem) {
-      :where(& > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-x-reverse)));
-      }
-    }
-  }
-  .md\:px-4 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 4);
-    }
-  }
-  .md\:text-2xl {
-    @media (width >= 48rem) {
-      font-size: var(--text-2xl);
-      line-height: var(--tw-leading, var(--text-2xl--line-height));
-    }
-  }
-  .md\:text-base {
-    @media (width >= 48rem) {
-      font-size: var(--text-base);
-      line-height: var(--tw-leading, var(--text-base--line-height));
-    }
-  }
-  .md\:text-lg {
-    @media (width >= 48rem) {
-      font-size: var(--text-lg);
-      line-height: var(--tw-leading, var(--text-lg--line-height));
-    }
-  }
-  .md\:text-sm {
-    @media (width >= 48rem) {
-      font-size: var(--text-sm);
-      line-height: var(--tw-leading, var(--text-sm--line-height));
-    }
-  }
-  .lg\:grid-cols-4 {
-    @media (width >= 64rem) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-}
-@property --tw-space-y-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-space-x-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-tracking {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-inset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-ring-inset {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-offset-width {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0px;
-}
-@property --tw-ring-offset-color {
-  syntax: "*";
-  inherits: false;
-  initial-value: #fff;
-}
-@property --tw-ring-offset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-backdrop-blur {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-brightness {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-contrast {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-grayscale {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-hue-rotate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-invert {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-opacity {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-saturate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-sepia {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-duration {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@layer properties {
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-    *, ::before, ::after, ::backdrop {
-      --tw-space-y-reverse: 0;
-      --tw-space-x-reverse: 0;
-      --tw-border-style: solid;
-      --tw-leading: initial;
-      --tw-font-weight: initial;
-      --tw-tracking: initial;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-color: initial;
-      --tw-shadow-alpha: 100%;
-      --tw-inset-shadow: 0 0 #0000;
-      --tw-inset-shadow-color: initial;
-      --tw-inset-shadow-alpha: 100%;
-      --tw-ring-color: initial;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-inset-ring-color: initial;
-      --tw-inset-ring-shadow: 0 0 #0000;
-      --tw-ring-inset: initial;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-backdrop-blur: initial;
-      --tw-backdrop-brightness: initial;
-      --tw-backdrop-contrast: initial;
-      --tw-backdrop-grayscale: initial;
-      --tw-backdrop-hue-rotate: initial;
-      --tw-backdrop-invert: initial;
-      --tw-backdrop-opacity: initial;
-      --tw-backdrop-saturate: initial;
-      --tw-backdrop-sepia: initial;
-      --tw-duration: initial;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
-    }
-  }
-}
-</style><style>/*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */
-@layer properties;
-@layer theme, base, components, utilities;
-@layer theme {
-  :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-    'Noto Color Emoji';
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
-    monospace;
-    --color-red-100: oklch(93.6% 0.032 17.717);
-    --color-red-200: oklch(88.5% 0.062 18.334);
-    --color-red-600: oklch(57.7% 0.245 27.325);
-    --color-red-700: oklch(50.5% 0.213 27.518);
-    --color-amber-500: oklch(76.9% 0.188 70.08);
-    --color-amber-600: oklch(66.6% 0.179 58.318);
-    --color-blue-600: oklch(54.6% 0.245 262.881);
-    --color-blue-700: oklch(48.8% 0.243 264.376);
-    --color-gray-50: oklch(98.5% 0.002 247.839);
-    --color-gray-100: oklch(96.7% 0.003 264.542);
-    --color-gray-200: oklch(92.8% 0.006 264.531);
-    --color-gray-300: oklch(87.2% 0.01 258.338);
-    --color-gray-400: oklch(70.7% 0.022 261.325);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
-    --color-gray-700: oklch(37.3% 0.034 259.733);
-    --color-gray-800: oklch(27.8% 0.033 256.848);
-    --color-gray-900: oklch(21% 0.034 264.665);
-    --color-black: #000;
-    --color-white: #fff;
-    --spacing: 0.25rem;
-    --container-md: 28rem;
-    --container-7xl: 80rem;
-    --text-xs: 0.75rem;
-    --text-xs--line-height: calc(1 / 0.75);
-    --text-sm: 0.875rem;
-    --text-sm--line-height: calc(1.25 / 0.875);
-    --text-base: 1rem;
-    --text-base--line-height: calc(1.5 / 1);
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
-    --text-xl: 1.25rem;
-    --text-xl--line-height: calc(1.75 / 1.25);
-    --text-2xl: 1.5rem;
-    --text-2xl--line-height: calc(2 / 1.5);
-    --text-4xl: 2.25rem;
-    --text-4xl--line-height: calc(2.5 / 2.25);
-    --text-5xl: 3rem;
-    --text-5xl--line-height: 1;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    --tracking-tight: -0.025em;
-    --tracking-wide: 0.025em;
-    --tracking-wider: 0.05em;
-    --radius-lg: 0.5rem;
-    --radius-xl: 0.75rem;
-    --blur-xs: 4px;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    --default-font-family: var(--font-sans);
-    --default-mono-font-family: var(--font-mono);
-  }
-}
-@layer base {
-  *, ::after, ::before, ::backdrop, ::file-selector-button {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0 solid;
-  }
-  html, :host {
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
-    tab-size: 4;
-    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji');
-    font-feature-settings: var(--default-font-feature-settings, normal);
-    font-variation-settings: var(--default-font-variation-settings, normal);
-    -webkit-tap-highlight-color: transparent;
-  }
-  hr {
-    height: 0;
-    color: inherit;
-    border-top-width: 1px;
-  }
-  abbr:where([title]) {
-    -webkit-text-decoration: underline dotted;
-    text-decoration: underline dotted;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-size: inherit;
-    font-weight: inherit;
-  }
-  a {
-    color: inherit;
-    -webkit-text-decoration: inherit;
-    text-decoration: inherit;
-  }
-  b, strong {
-    font-weight: bolder;
-  }
-  code, kbd, samp, pre {
-    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace);
-    font-feature-settings: var(--default-mono-font-feature-settings, normal);
-    font-variation-settings: var(--default-mono-font-variation-settings, normal);
-    font-size: 1em;
-  }
-  small {
-    font-size: 80%;
-  }
-  sub, sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-  }
-  sub {
-    bottom: -0.25em;
-  }
-  sup {
-    top: -0.5em;
-  }
-  table {
-    text-indent: 0;
-    border-color: inherit;
-    border-collapse: collapse;
-  }
-  :-moz-focusring {
-    outline: auto;
-  }
-  progress {
-    vertical-align: baseline;
-  }
-  summary {
-    display: list-item;
-  }
-  ol, ul, menu {
-    list-style: none;
-  }
-  img, svg, video, canvas, audio, iframe, embed, object {
-    display: block;
-    vertical-align: middle;
-  }
-  img, video {
-    max-width: 100%;
-    height: auto;
-  }
-  button, input, select, optgroup, textarea, ::file-selector-button {
-    font: inherit;
-    font-feature-settings: inherit;
-    font-variation-settings: inherit;
-    letter-spacing: inherit;
-    color: inherit;
-    border-radius: 0;
-    background-color: transparent;
-    opacity: 1;
-  }
-  :where(select:is([multiple], [size])) optgroup {
-    font-weight: bolder;
-  }
-  :where(select:is([multiple], [size])) optgroup option {
-    padding-inline-start: 20px;
-  }
-  ::file-selector-button {
-    margin-inline-end: 4px;
-  }
-  ::placeholder {
-    opacity: 1;
-  }
-  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
-    ::placeholder {
-      color: currentcolor;
-      @supports (color: color-mix(in lab, red, red)) {
-        color: color-mix(in oklab, currentcolor 50%, transparent);
-      }
-    }
-  }
-  textarea {
-    resize: vertical;
-  }
-  ::-webkit-search-decoration {
-    -webkit-appearance: none;
-  }
-  ::-webkit-date-and-time-value {
-    min-height: 1lh;
-    text-align: inherit;
-  }
-  ::-webkit-datetime-edit {
-    display: inline-flex;
-  }
-  ::-webkit-datetime-edit-fields-wrapper {
-    padding: 0;
-  }
-  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
-    padding-block: 0;
-  }
-  ::-webkit-calendar-picker-indicator {
-    line-height: 1;
-  }
-  :-moz-ui-invalid {
-    box-shadow: none;
-  }
-  button, input:where([type='button'], [type='reset'], [type='submit']), ::file-selector-button {
-    appearance: button;
-  }
-  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
-    height: auto;
-  }
-  [hidden]:where(:not([hidden='until-found'])) {
-    display: none !important;
-  }
-}
-@layer utilities {
-  .absolute {
-    position: absolute;
-  }
-  .fixed {
-    position: fixed;
-  }
-  .relative {
-    position: relative;
-  }
-  .sticky {
-    position: sticky;
-  }
-  .inset-0 {
-    inset: calc(var(--spacing) * 0);
-  }
-  .-top-1 {
-    top: calc(var(--spacing) * -1);
-  }
-  .top-0 {
-    top: calc(var(--spacing) * 0);
-  }
-  .top-2 {
-    top: calc(var(--spacing) * 2);
-  }
-  .-right-1 {
-    right: calc(var(--spacing) * -1);
-  }
-  .right-2 {
-    right: calc(var(--spacing) * 2);
-  }
-  .bottom-4 {
-    bottom: calc(var(--spacing) * 4);
-  }
-  .left-2 {
-    left: calc(var(--spacing) * 2);
-  }
-  .left-4 {
-    left: calc(var(--spacing) * 4);
-  }
-  .z-10 {
-    z-index: 10;
-  }
-  .z-40 {
-    z-index: 40;
-  }
-  .z-50 {
-    z-index: 50;
-  }
-  .mx-auto {
-    margin-inline: auto;
-  }
-  .mt-0\.5 {
-    margin-top: calc(var(--spacing) * 0.5);
-  }
-  .mt-1 {
-    margin-top: calc(var(--spacing) * 1);
-  }
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
-  }
-  .mt-12 {
-    margin-top: calc(var(--spacing) * 12);
-  }
-  .mr-1 {
-    margin-right: calc(var(--spacing) * 1);
-  }
-  .mr-2 {
-    margin-right: calc(var(--spacing) * 2);
-  }
-  .mb-1 {
-    margin-bottom: calc(var(--spacing) * 1);
-  }
-  .mb-2 {
-    margin-bottom: calc(var(--spacing) * 2);
-  }
-  .mb-3 {
-    margin-bottom: calc(var(--spacing) * 3);
-  }
-  .mb-6 {
-    margin-bottom: calc(var(--spacing) * 6);
-  }
-  .line-clamp-2 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  }
-  .block {
-    display: block;
-  }
-  .flex {
-    display: flex;
-  }
-  .grid {
-    display: grid;
-  }
-  .hidden {
-    display: none;
-  }
-  .h-2 {
-    height: calc(var(--spacing) * 2);
-  }
-  .h-5 {
-    height: calc(var(--spacing) * 5);
-  }
-  .h-6 {
-    height: calc(var(--spacing) * 6);
-  }
-  .h-7 {
-    height: calc(var(--spacing) * 7);
-  }
-  .h-8 {
-    height: calc(var(--spacing) * 8);
-  }
-  .h-10 {
-    height: calc(var(--spacing) * 10);
-  }
-  .h-12 {
-    height: calc(var(--spacing) * 12);
-  }
-  .h-full {
-    height: 100%;
-  }
-  .max-h-\[48\] {
-    max-height: calc(var(--spacing) * 48);
-  }
-  .max-h-\[90vh\] {
-    max-height: 90vh;
-  }
-  .min-h-screen {
-    min-height: 100vh;
-  }
-  .w-5 {
-    width: calc(var(--spacing) * 5);
-  }
-  .w-6 {
-    width: calc(var(--spacing) * 6);
-  }
-  .w-7 {
-    width: calc(var(--spacing) * 7);
-  }
-  .w-10 {
-    width: calc(var(--spacing) * 10);
-  }
-  .w-auto {
-    width: auto;
-  }
-  .w-full {
-    width: 100%;
-  }
-  .min-w-0 {
-    min-width: 0px;
-  }
-  .max-w-7xl {
-    max-width: var(--container-7xl);
-  }
-  .max-w-md {
-    max-width: var(--container-md);
-  }
-  .flex-1 {
-    flex: 1 1 0%;
-  }
-  .flex-grow {
-    flex-grow: 1;
-  }
-  .cursor-pointer {
-    cursor: pointer;
-  }
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .flex-col {
-    flex-direction: column;
-  }
-  .items-center {
-    align-items: center;
-  }
-  .justify-between {
-    justify-content: space-between;
-  }
-  .justify-center {
-    justify-content: center;
-  }
-  .justify-end {
-    justify-content: flex-end;
-  }
-  .gap-1 {
-    gap: calc(var(--spacing) * 1);
-  }
-  .gap-2 {
-    gap: calc(var(--spacing) * 2);
-  }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
-  }
-  .space-y-1\.5 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 1.5) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-2 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-3 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-y-5 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 5) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-x-1 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 1) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-x-reverse)));
-    }
-  }
-  .space-x-2 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
-    }
-  }
-  .space-x-3 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-x-reverse)));
-    }
-  }
-  .overflow-hidden {
-    overflow: hidden;
-  }
-  .overflow-x-auto {
-    overflow-x: auto;
-  }
-  .overflow-y-auto {
-    overflow-y: auto;
-  }
-  .rounded {
-    border-radius: 0.25rem;
-  }
-  .rounded-full {
-    border-radius: calc(infinity * 1px);
-  }
-  .rounded-lg {
-    border-radius: var(--radius-lg);
-  }
-  .rounded-xl {
-    border-radius: var(--radius-xl);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
-  .border-t {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 1px;
-  }
-  .border-b {
-    border-bottom-style: var(--tw-border-style);
-    border-bottom-width: 1px;
-  }
-  .border-l-4 {
-    border-left-style: var(--tw-border-style);
-    border-left-width: 4px;
-  }
-  .border-\[\#6BA4D9\] {
-    border-color: #6BA4D9;
-  }
-  .border-blue-700 {
-    border-color: var(--color-blue-700);
-  }
-  .border-gray-100 {
-    border-color: var(--color-gray-100);
-  }
-  .border-gray-200 {
-    border-color: var(--color-gray-200);
-  }
-  .border-gray-300 {
-    border-color: var(--color-gray-300);
-  }
-  .border-red-200 {
-    border-color: var(--color-red-200);
-  }
-  .bg-\[\#6BA4D9\] {
-    background-color: #6BA4D9;
-  }
-  .bg-\[\#25D366\] {
-    background-color: #25D366;
-  }
-  .bg-\[\#D21427\] {
-    background-color: #D21427;
-  }
-  .bg-amber-500 {
-    background-color: var(--color-amber-500);
-  }
-  .bg-black\/50 {
-    background-color: color-mix(in srgb, #000 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
-    }
-  }
-  .bg-blue-600 {
-    background-color: var(--color-blue-600);
-  }
-  .bg-gray-50 {
-    background-color: var(--color-gray-50);
-  }
-  .bg-gray-100 {
-    background-color: var(--color-gray-100);
-  }
-  .bg-gray-200 {
-    background-color: var(--color-gray-200);
-  }
-  .bg-gray-400 {
-    background-color: var(--color-gray-400);
-  }
-  .bg-gray-800 {
-    background-color: var(--color-gray-800);
-  }
-  .bg-gray-900 {
-    background-color: var(--color-gray-900);
-  }
-  .bg-red-100 {
-    background-color: var(--color-red-100);
-  }
-  .bg-red-600 {
-    background-color: var(--color-red-600);
-  }
-  .bg-white {
-    background-color: var(--color-white);
-  }
-  .object-contain {
-    object-fit: contain;
-  }
-  .object-cover {
-    object-fit: cover;
-  }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
-  }
-  .p-2\.5 {
-    padding: calc(var(--spacing) * 2.5);
-  }
-  .p-3 {
-    padding: calc(var(--spacing) * 3);
-  }
-  .p-4 {
-    padding: calc(var(--spacing) * 4);
-  }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
-  }
-  .px-3 {
-    padding-inline: calc(var(--spacing) * 3);
-  }
-  .px-4 {
-    padding-inline: calc(var(--spacing) * 4);
-  }
-  .px-5 {
-    padding-inline: calc(var(--spacing) * 5);
-  }
-  .py-0\.5 {
-    padding-block: calc(var(--spacing) * 0.5);
-  }
-  .py-1 {
-    padding-block: calc(var(--spacing) * 1);
-  }
-  .py-1\.5 {
-    padding-block: calc(var(--spacing) * 1.5);
-  }
-  .py-2 {
-    padding-block: calc(var(--spacing) * 2);
-  }
-  .py-2\.5 {
-    padding-block: calc(var(--spacing) * 2.5);
-  }
-  .py-3 {
-    padding-block: calc(var(--spacing) * 3);
-  }
-  .py-6 {
-    padding-block: calc(var(--spacing) * 6);
-  }
-  .py-8 {
-    padding-block: calc(var(--spacing) * 8);
-  }
-  .py-12 {
-    padding-block: calc(var(--spacing) * 12);
-  }
-  .pt-2 {
-    padding-top: calc(var(--spacing) * 2);
-  }
-  .pt-\[100\%\] {
-    padding-top: 100%;
-  }
-  .pr-1 {
-    padding-right: calc(var(--spacing) * 1);
-  }
-  .pl-1 {
-    padding-left: calc(var(--spacing) * 1);
-  }
-  .pl-3 {
-    padding-left: calc(var(--spacing) * 3);
-  }
-  .text-center {
-    text-align: center;
-  }
-  .text-4xl {
-    font-size: var(--text-4xl);
-    line-height: var(--tw-leading, var(--text-4xl--line-height));
-  }
-  .text-5xl {
-    font-size: var(--text-5xl);
-    line-height: var(--tw-leading, var(--text-5xl--line-height));
-  }
-  .text-base {
-    font-size: var(--text-base);
-    line-height: var(--tw-leading, var(--text-base--line-height));
-  }
-  .text-lg {
-    font-size: var(--text-lg);
-    line-height: var(--tw-leading, var(--text-lg--line-height));
-  }
-  .text-sm {
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-  }
-  .text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
-  .text-xs {
-    font-size: var(--text-xs);
-    line-height: var(--tw-leading, var(--text-xs--line-height));
-  }
-  .text-\[10px\] {
-    font-size: 10px;
-  }
-  .leading-none {
-    --tw-leading: 1;
-    line-height: 1;
-  }
-  .leading-snug {
-    --tw-leading: 1.375;
-    line-height: 1.375;
-  }
-  .font-bold {
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
-  }
-  .font-medium {
-    --tw-font-weight: var(--font-weight-medium);
-    font-weight: var(--font-weight-medium);
-  }
-  .font-semibold {
-    --tw-font-weight: var(--font-weight-semibold);
-    font-weight: var(--font-weight-semibold);
-  }
-  .tracking-tight {
-    --tw-tracking: var(--tracking-tight);
-    letter-spacing: var(--tracking-tight);
-  }
-  .tracking-wide {
-    --tw-tracking: var(--tracking-wide);
-    letter-spacing: var(--tracking-wide);
-  }
-  .tracking-wider {
-    --tw-tracking: var(--tracking-wider);
-    letter-spacing: var(--tracking-wider);
-  }
-  .whitespace-nowrap {
-    white-space: nowrap;
-  }
-  .text-\[\#6BA4D9\] {
-    color: #6BA4D9;
-  }
-  .text-\[\#D21427\] {
-    color: #D21427;
-  }
-  .text-amber-500 {
-    color: var(--color-amber-500);
-  }
-  .text-gray-300 {
-    color: var(--color-gray-300);
-  }
-  .text-gray-400 {
-    color: var(--color-gray-400);
-  }
-  .text-gray-500 {
-    color: var(--color-gray-500);
-  }
-  .text-gray-700 {
-    color: var(--color-gray-700);
-  }
-  .text-gray-800 {
-    color: var(--color-gray-800);
-  }
-  .text-gray-900 {
-    color: var(--color-gray-900);
-  }
-  .text-red-700 {
-    color: var(--color-red-700);
-  }
-  .text-white {
-    color: var(--color-white);
-  }
-  .uppercase {
-    text-transform: uppercase;
-  }
-  .opacity-0 {
-    opacity: 0%;
-  }
-  .opacity-60 {
-    opacity: 60%;
-  }
-  .shadow-2xl {
-    --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-lg {
-    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-md {
-    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-sm {
-    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-xs {
-    --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .backdrop-blur-xs {
-    --tw-backdrop-blur: blur(var(--blur-xs));
-    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
-  }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .transition-all {
-    transition-property: all;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .duration-200 {
-    --tw-duration: 200ms;
-    transition-duration: 200ms;
-  }
-  .duration-300 {
-    --tw-duration: 300ms;
-    transition-duration: 300ms;
-  }
-  .group-hover\:scale-105 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        --tw-scale-x: 105%;
-        --tw-scale-y: 105%;
-        --tw-scale-z: 105%;
-        scale: var(--tw-scale-x) var(--tw-scale-y);
-      }
-    }
-  }
-  .group-hover\:opacity-100 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        opacity: 100%;
-      }
-    }
-  }
-  .hover\:bg-amber-600 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-amber-600);
-      }
-    }
-  }
-  .hover\:bg-black {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-black);
-      }
-    }
-  }
-  .hover\:bg-blue-700 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-blue-700);
-      }
-    }
-  }
-  .hover\:bg-gray-200 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-gray-200);
-      }
-    }
-  }
-  .hover\:bg-gray-500 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-gray-500);
-      }
-    }
-  }
-  .hover\:bg-red-200 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-red-200);
-      }
-    }
-  }
-  .hover\:bg-red-700 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-red-700);
-      }
-    }
-  }
-  .hover\:text-red-600 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-red-600);
-      }
-    }
-  }
-  .hover\:text-white {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-white);
-      }
-    }
-  }
-  .hover\:opacity-100 {
-    &:hover {
-      @media (hover: hover) {
-        opacity: 100%;
-      }
-    }
-  }
-  .hover\:shadow-md {
-    &:hover {
-      @media (hover: hover) {
-        --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-      }
-    }
-  }
-  .focus\:border-\[\#6BA4D9\] {
-    &:focus {
-      border-color: #6BA4D9;
-    }
-  }
-  .focus\:border-\[\#D21427\] {
-    &:focus {
-      border-color: #D21427;
-    }
-  }
-  .focus\:outline-none {
-    &:focus {
-      --tw-outline-style: none;
-      outline-style: none;
-    }
-  }
-  .sm\:grid-cols-2 {
-    @media (width >= 40rem) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  .md\:h-10 {
-    @media (width >= 48rem) {
-      height: calc(var(--spacing) * 10);
-    }
-  }
-  .md\:grid-cols-3 {
-    @media (width >= 48rem) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-  .md\:flex-wrap {
-    @media (width >= 48rem) {
-      flex-wrap: wrap;
-    }
-  }
-  .md\:gap-2 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 2);
-    }
-  }
-  .md\:gap-6 {
-    @media (width >= 48rem) {
-      gap: calc(var(--spacing) * 6);
-    }
-  }
-  .md\:space-x-0 {
-    @media (width >= 48rem) {
-      :where(& > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(var(--spacing) * 0) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(var(--spacing) * 0) * calc(1 - var(--tw-space-x-reverse)));
-      }
-    }
-  }
-  .md\:space-x-3 {
-    @media (width >= 48rem) {
-      :where(& > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(var(--spacing) * 3) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-x-reverse)));
-      }
-    }
-  }
-  .md\:px-4 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 4);
-    }
-  }
-  .md\:text-2xl {
-    @media (width >= 48rem) {
-      font-size: var(--text-2xl);
-      line-height: var(--tw-leading, var(--text-2xl--line-height));
-    }
-  }
-  .md\:text-base {
-    @media (width >= 48rem) {
-      font-size: var(--text-base);
-      line-height: var(--tw-leading, var(--text-base--line-height));
-    }
-  }
-  .md\:text-lg {
-    @media (width >= 48rem) {
-      font-size: var(--text-lg);
-      line-height: var(--tw-leading, var(--text-lg--line-height));
-    }
-  }
-  .md\:text-sm {
-    @media (width >= 48rem) {
-      font-size: var(--text-sm);
-      line-height: var(--tw-leading, var(--text-sm--line-height));
-    }
-  }
-  .lg\:grid-cols-4 {
-    @media (width >= 64rem) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-}
-@property --tw-space-y-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-space-x-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-tracking {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-inset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-ring-inset {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-offset-width {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0px;
-}
-@property --tw-ring-offset-color {
-  syntax: "*";
-  inherits: false;
-  initial-value: #fff;
-}
-@property --tw-ring-offset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-backdrop-blur {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-brightness {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-contrast {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-grayscale {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-hue-rotate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-invert {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-opacity {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-saturate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-backdrop-sepia {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-duration {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-@layer properties {
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-    *, ::before, ::after, ::backdrop {
-      --tw-space-y-reverse: 0;
-      --tw-space-x-reverse: 0;
-      --tw-border-style: solid;
-      --tw-leading: initial;
-      --tw-font-weight: initial;
-      --tw-tracking: initial;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-color: initial;
-      --tw-shadow-alpha: 100%;
-      --tw-inset-shadow: 0 0 #0000;
-      --tw-inset-shadow-color: initial;
-      --tw-inset-shadow-alpha: 100%;
-      --tw-ring-color: initial;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-inset-ring-color: initial;
-      --tw-inset-ring-shadow: 0 0 #0000;
-      --tw-ring-inset: initial;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-backdrop-blur: initial;
-      --tw-backdrop-brightness: initial;
-      --tw-backdrop-contrast: initial;
-      --tw-backdrop-grayscale: initial;
-      --tw-backdrop-hue-rotate: initial;
-      --tw-backdrop-invert: initial;
-      --tw-backdrop-opacity: initial;
-      --tw-backdrop-saturate: initial;
-      --tw-backdrop-sepia: initial;
-      --tw-duration: initial;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
-    }
-  }
-}
-</style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { font-family: 'Poppins', sans-serif; }
-        /* Ocultar barra de scroll en categorías manteniendo funcionalidad */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* AÑADIDO: Ajuste automático de imágenes de productos */
-        #grid-productos img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            object-position: center;
-        }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
 
-    <header class="bg-white shadow-md sticky top-0 z-40">
-        <div class="bg-[#D21427] h-2 w-full"></div> 
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            
-            <div class="flex items-center space-x-3">
-                <img src="logo.png" alt="Logo" onerror="this.src='https://placehold.co/50x50/D21427/ffffff?text=TS'" class="h-12 w-auto object-contain rounded">
-                <div>
-                    <h1 class="text-xl md:text-2xl font-bold text-gray-900 tracking-tight leading-none">The Shampoo</h1>
-                    <span class="text-xs text-gray-500 font-medium tracking-wide block mt-1">Distribuidora de Artículos de Peluquería</span>
-                </div>
+    <header class="bg-white shadow-xs sticky top-0 z-40 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl font-black bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent tracking-tight">The Shampoo</span>
+                <span class="text-xs font-semibold uppercase tracking-wider bg-violet-100 text-violet-700 px-2 py-0.5 rounded-full">Distribuidora</span>
             </div>
-
-            <div class="flex items-center space-x-2 md:space-x-3">
-                <button onclick="toggleCartModal()" class="relative bg-gray-800 text-white hover:bg-black p-2.5 rounded-full transition text-sm flex items-center justify-center w-10 h-10 shadow-sm mr-1 cursor-pointer">
-                    <i class="fas fa-shopping-cart text-base"></i>
-                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-[#D21427] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">1</span>
+            <div class="flex items-center gap-4">
+                <button id="admin-login-btn" onclick="toggleAdminLogin()" class="text-sm font-medium text-slate-500 hover:text-slate-800 transition cursor-pointer">Panel Admin</button>
+                <button onclick="toggleCart()" class="relative p-2 text-slate-600 hover:text-violet-600 transition cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                    </svg>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
                 </button>
-                <a id="btn-insta-head" href="https://instagram.com/the_shampoo_distribuidora" target="_blank" class="bg-[#6BA4D9] text-white hover:bg-opacity-90 p-2.5 rounded-full transition text-sm flex items-center justify-center w-10 h-10 shadow-sm">
-                    <i class="fab fa-instagram text-lg"></i>
-                </a>
-                <a id="btn-wats-head" href="https://wa.me/584241234567?text=Hola!%20Me%20interesan%20algunos%20productos%20de%20la%20distribuidora." target="_blank" class="bg-[#25D366] text-white hover:bg-opacity-90 p-2.5 rounded-full transition text-sm flex items-center justify-center w-10 h-10 shadow-sm">
-                    <i class="fab fa-whatsapp text-lg"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="bg-gray-100 border-t border-b border-gray-200">
-            <div class="max-w-7xl mx-auto px-2 md:px-4 py-2.5 overflow-x-auto no-scrollbar flex space-x-2 md:flex-wrap md:gap-2 md:space-x-0">
-                <button onclick="filterCategory('Todos')" id="cat-Todos" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold transition whitespace-nowrap bg-[#D21427] text-white shadow-sm">
-                    Todos
-                </button>
-                <script>
-                    const categories = [
-                        "Tintes Profesionales", "Agua Oxigenada", "Keratina", "Decolorantes", 
-                        "Ceras", "Shampoo", "Acondicionador", "Ampollas", "SobrePeines", 
-                        "Maquinas", "Planchas", "Secadores", "Cepillos", "Peines", "Maquillaje"
-                    ];
-                    categories.forEach(cat => {
-                        document.write(`
-                            <button onclick="filterCategory('${cat}')" id="cat-${cat.replace(/\s+/g, '')}" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                ${cat}
-                            </button>
-                        `);
-                    });
-                </script>
-                            <button onclick="filterCategory('Tintes Profesionales')" id="cat-TintesProfesionales" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Tintes Profesionales
-                            </button>
-                        
-                            <button onclick="filterCategory('Agua Oxigenada')" id="cat-AguaOxigenada" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Agua Oxigenada
-                            </button>
-                        
-                            <button onclick="filterCategory('Keratina')" id="cat-Keratina" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Keratina
-                            </button>
-                        
-                            <button onclick="filterCategory('Decolorantes')" id="cat-Decolorantes" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Decolorantes
-                            </button>
-                        
-                            <button onclick="filterCategory('Ceras')" id="cat-Ceras" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Ceras
-                            </button>
-                        
-                            <button onclick="filterCategory('Shampoo')" id="cat-Shampoo" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Shampoo
-                            </button>
-                        
-                            <button onclick="filterCategory('Acondicionador')" id="cat-Acondicionador" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Acondicionador
-                            </button>
-                        
-                            <button onclick="filterCategory('Ampollas')" id="cat-Ampollas" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Ampollas
-                            </button>
-                        
-                            <button onclick="filterCategory('SobrePeines')" id="cat-SobrePeines" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                SobrePeines
-                            </button>
-                        
-                            <button onclick="filterCategory('Maquinas')" id="cat-Maquinas" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Maquinas
-                            </button>
-                        
-                            <button onclick="filterCategory('Planchas')" id="cat-Planchas" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Planchas
-                            </button>
-                        
-                            <button onclick="filterCategory('Secadores')" id="cat-Secadores" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Secadores
-                            </button>
-                        
-                            <button onclick="filterCategory('Cepillos')" id="cat-Cepillos" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Cepillos
-                            </button>
-                        
-                            <button onclick="filterCategory('Peines')" id="cat-Peines" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Peines
-                            </button>
-                        
-                            <button onclick="filterCategory('Maquillaje')" id="cat-Maquillaje" class="cat-btn px-4 py-1.5 rounded-full text-xs md:text-sm font-medium bg-white text-gray-700 hover:bg-gray-200 transition border border-gray-300 whitespace-nowrap shadow-sm">
-                                Maquillaje
-                            </button>
-                        
             </div>
         </div>
     </header>
 
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6">
-        <div class="flex items-center justify-between mb-6">
-            <h2 id="section-title" class="text-xl md:text-2xl font-bold text-gray-800 border-l-4 border-[#6BA4D9] pl-3">Todos los Productos</h2>
-            <span id="product-count" class="text-xs md:text-sm bg-gray-200 text-gray-700 px-3 py-1 rounded-full font-medium">10 Productos</span>
+    <div id="admin-auth-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-sm p-6 relative border border-slate-100">
+            <button onclick="toggleAdminLogin()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 cursor-pointer">✕</button>
+            <h3 class="text-xl font-bold text-slate-800 mb-4">Acceso Administrativo</h3>
+            <input type="password" id="admin-password" placeholder="Contraseña de fábrica: admin" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl mb-4 focus:outline-none focus:border-violet-500 text-sm">
+            <button onclick="loginAdmin()" class="w-full bg-gradient-to-r from-pink-500 to-violet-600 text-white font-semibold py-2.5 rounded-xl text-sm shadow-md cursor-pointer hover:opacity-95 transition">Ingresar</button>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
+        
+        <div id="admin-panel" class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 mb-8 hidden">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+                <div>
+                    <h2 class="text-lg font-bold text-slate-800">Panel de Administración de Productos</h2>
+                    <p class="text-xs text-slate-400">Agrega, edita o elimina productos del catálogo</p>
+                </div>
+                <button onclick="logoutAdmin()" class="text-xs font-semibold text-rose-600 hover:underline cursor-pointer">Cerrar Sesión</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-500 mb-1">Nombre del Producto</label>
+                    <input type="text" id="prod-name" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-violet-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-500 mb-1">Categoría</label>
+                    <input type="text" id="prod-category" placeholder="Ej: Shampoo, Tintes..." class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-violet-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-500 mb-1">Precio ($)</label>
+                    <input type="number" step="0.01" id="prod-price" class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-violet-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-500 mb-1">URL de la Imagen</label>
+                    <input type="text" id="prod-img" placeholder="https://..." class="w-full px-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-violet-500">
+                </div>
+            </div>
+            
+            <div class="flex justify-between items-center">
+                <button onclick="resetData()" class="text-xs text-slate-400 hover:text-rose-600 transition cursor-pointer border border-slate-200 px-3 py-1.5 rounded-lg hover:border-rose-200">Restablecer de Fábrica</button>
+                <div class="flex gap-2">
+                    <button id="cancel-edit-btn" onclick="cancelEdit()" class="px-4 py-2 bg-slate-100 text-slate-600 font-medium text-xs rounded-lg hover:bg-slate-200 cursor-pointer hidden">Cancelar Edición</button>
+                    <button id="save-product-btn" onclick="saveProduct()" class="px-4 py-2 bg-violet-600 text-white font-medium text-xs rounded-lg hover:bg-violet-700 shadow-xs cursor-pointer">Guardar Producto</button>
+                </div>
+            </div>
         </div>
 
-        <div id="grid-productos" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
-                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
-                            <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
-                                <img src="imagenes/igorarojo.png" alt="Igora Royal 60ml" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
-                                    Tintes Profesionales
-                                </span>
-                                
-                            </div>
-                            <div class="p-3 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 mb-1">Igora Royal 60ml</h3>
-                                    
-                                </div>
-                                <div class="mt-2 space-y-1.5">
-                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$4.50</div>
-                                    
-                                    <button onclick="addToCart(1)" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
-                                        <i class="fas fa-cart-plus"></i>
-                                        <span>Añadir al Carrito</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
-                            <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
-                                <img src="https://cdn.phototourl.com/member/2026-06-04-f62a5c0a-017c-4f7d-a029-9ac1d38c8e2c.png" alt="Igora Royal Highlifts 60ml" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
-                                    Tintes Profesionales
-                                </span>
-                                
-                            </div>
-                            <div class="p-3 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 mb-1">Igora Royal Highlifts 60ml</h3>
-                                    
-                                </div>
-                                <div class="mt-2 space-y-1.5">
-                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$0.01</div>
-                                    
-                                    <button onclick="addToCart(7)" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
-                                        <i class="fas fa-cart-plus"></i>
-                                        <span>Añadir al Carrito</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
-                            <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
-                                <img src="https://cdn.phototourl.com/member/2026-06-03-d0c96714-aec5-4578-a590-abedf2b9d734.png" alt="Igora Royal Silver Whites 60ml" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
-                                    Tintes Profesionales
-                                </span>
-                                
-                            </div>
-                            <div class="p-3 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 mb-1">Igora Royal Silver Whites 60ml</h3>
-                                    
-                                </div>
-                                <div class="mt-2 space-y-1.5">
-                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$1.00</div>
-                                    
-                                    <button onclick="addToCart(8)" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
-                                        <i class="fas fa-cart-plus"></i>
-                                        <span>Añadir al Carrito</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
-                            <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
-                                <img src="https://cdn.phototourl.com/member/2026-06-04-97d5af90-0988-4385-9d30-631b53755451.png" alt="Igora Royal Fashion Lights 60ml" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
-                                    Tintes Profesionales
-                                </span>
-                                
-                            </div>
-                            <div class="p-3 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 mb-1">Igora Royal Fashion Lights 60ml</h3>
-                                    
-                                </div>
-                                <div class="mt-2 space-y-1.5">
-                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$0.01</div>
-                                    
-                                    <button onclick="addToCart(9)" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
-                                        <i class="fas fa-cart-plus"></i>
-                                        <span>Añadir al Carrito</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
-                            <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
-                                <img src="https://cdn.phototourl.com/member/2026-06-04-25626206-4ba4-420a-bd06-0ed79acdcfdd.png" alt="Igora Royal Absolutes 60ml" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
-                                    Tintes Profesionales
-                                </span>
-                                
-                            </div>
-                            <div class="p-3 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 mb-1">Igora Royal Absolutes 60ml</h3>
-                                    
-                                </div>
-                                <div class="mt-2 space-y-1.5">
-                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$0.01</div>
-                                    
-                                    <button onclick="addToCart(10)" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
-                                        <i class="fas fa-cart-plus"></i>
-                                        <span>Añadir al Carrito</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
-                            <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
-                                <img src="https://cdn.phototourl.com/member/2026-06-04-38b0623e-dce6-40f8-b009-ddb8074b91f3.png" alt="Tinte Nouvelle" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
-                                    Tintes Profesionales
-                                </span>
-                                
-                            </div>
-                            <div class="p-3 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 mb-1">Tinte Nouvelle</h3>
-                                    
-                                </div>
-                                <div class="mt-2 space-y-1.5">
-                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$0.01</div>
-                                    
-                                    <button onclick="addToCart(11)" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
-                                        <i class="fas fa-cart-plus"></i>
-                                        <span>Añadir al Carrito</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
-                            <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
-                                <img src="https://cdn.phototourl.com/member/2026-06-04-506a054e-9a62-4147-873c-6974f475d3ea.png" alt="Nouvelle Tono Sobre Tono Touch" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
-                                    Tintes Profesionales
-                                </span>
-                                
-                            </div>
-                            <div class="p-3 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 mb-1">Nouvelle Tono Sobre Tono Touch</h3>
-                                    
-                                </div>
-                                <div class="mt-2 space-y-1.5">
-                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$0.01</div>
-                                    
-                                    <button onclick="addToCart(12)" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
-                                        <i class="fas fa-cart-plus"></i>
-                                        <span>Añadir al Carrito</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
-                            <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
-                                <img src="https://cdn.phototourl.com/member/2026-06-04-d75b4969-77b4-4cd8-a4ce-03f03c4ebc7b.png" alt="Nook The Virgin Color" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
-                                    Tintes Profesionales
-                                </span>
-                                
-                            </div>
-                            <div class="p-3 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 mb-1">Nook The Virgin Color</h3>
-                                    
-                                </div>
-                                <div class="mt-2 space-y-1.5">
-                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$0.01</div>
-                                    
-                                    <button onclick="addToCart(13)" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
-                                        <i class="fas fa-cart-plus"></i>
-                                        <span>Añadir al Carrito</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
-                            <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
-                                <img src="https://cdn.phototourl.com/member/2026-06-04-d04d9f3b-410e-4214-ac31-0f51edf3f10c.png" alt="Glamour Professional For Your Hair" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
-                                    Tintes Profesionales
-                                </span>
-                                
-                            </div>
-                            <div class="p-3 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 mb-1">Glamour Professional For Your Hair</h3>
-                                    
-                                </div>
-                                <div class="mt-2 space-y-1.5">
-                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$0.01</div>
-                                    
-                                    <button onclick="addToCart(14)" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
-                                        <i class="fas fa-cart-plus"></i>
-                                        <span>Añadir al Carrito</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
-                            <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
-                                <img src="https://cdn.phototourl.com/member/2026-06-04-705d5424-22d7-4080-99ae-ddcc148a2c23.png" alt="Salerm Vison Tinte" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
-                                    Tintes Profesionales
-                                </span>
-                                
-                            </div>
-                            <div class="p-3 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 mb-1">Salerm Vison Tinte</h3>
-                                    
-                                </div>
-                                <div class="mt-2 space-y-1.5">
-                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$0.01</div>
-                                    
-                                    <button onclick="addToCart(15)" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
-                                        <i class="fas fa-cart-plus"></i>
-                                        <span>Añadir al Carrito</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-        <div id="no-products-msg" class="hidden text-center py-12">
-            <i class="fas fa-box-open text-gray-300 text-5xl mb-3"></i>
-            <p class="text-gray-500 font-medium">No hay productos registrados en esta categoría aún.</p>
+        <div class="mb-8 overflow-x-auto pb-2 scrollbar-none">
+            <div id="categories-nav" class="flex gap-2 whitespace-nowrap">
+                </div>
         </div>
+
+        <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+            </div>
     </main>
 
-    <footer class="bg-white border-t border-gray-200 py-6 mt-12 text-center text-xs text-gray-500">
+    <div id="cart-sidebar" class="fixed inset-y-0 right-0 w-full max-w-md bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 border-l border-slate-100 flex flex-col">
+        <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <h3 class="text-lg font-bold text-slate-800">Tu Pedido</h3>
+                <span id="cart-badge-count" class="bg-slate-100 text-slate-700 text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+            </div>
+            <button onclick="toggleCart()" class="text-slate-400 hover:text-slate-600 text-xl cursor-pointer">✕</button>
+        </div>
+        
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+            </div>
+        
+        <div class="p-6 border-t border-slate-100 bg-slate-50">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-sm font-medium text-slate-500">Total a pagar:</span>
+                <span id="cart-total" class="text-2xl font-black text-slate-800">$0.00</span>
+            </div>
+            <button onclick="sendWhatsAppOrder()" class="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl shadow-md hover:bg-emerald-700 transition flex items-center justify-center gap-2 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.734-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.858.002-2.634-1.023-5.11-2.885-6.974C16.526 1.949 14.053.924 11.42.923c-5.44 0-9.866 4.421-9.87 9.86-.001 1.716.452 3.39 1.312 4.869l-1.02 3.722 3.805-.998z"/></svg>
+                Confirmar por WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t border-slate-100 py-6 text-center text-xs text-slate-400 mt-auto">
         <p>© 2026 Distribuidora The Shampoo. Todos los derechos reservados.</p>
-        <p class="mt-1 text-[#6BA4D9] font-medium">Calidad y Belleza Profesional</p>
     </footer>
 
-    <button onclick="toggleAdminPanel()" class="fixed bottom-4 left-4 bg-gray-800 text-white w-10 h-10 rounded-full shadow-lg hover:bg-black transition flex items-center justify-center z-50 opacity-60 hover:opacity-100 cursor-pointer">
-        <i class="fas fa-cog text-base"></i>
-    </button>
-
-    <div id="cart-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-xs hidden">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-            <div class="bg-gray-900 text-white p-4 flex justify-between items-center">
-                <h3 class="font-bold text-base flex items-center"><i class="fas fa-shopping-cart mr-2 text-[#6BA4D9]"></i> Mi Carrito de Compras</h3>
-                <button onclick="toggleCartModal()" class="text-gray-400 hover:text-white text-lg cursor-pointer"><i class="fas fa-times"></i></button>
-            </div>
-            
-            <div id="cart-items" class="p-4 flex-grow overflow-y-auto space-y-3">
-                    <div class="text-center py-8 text-gray-400">
-                        <i class="fas fa-shopping-basket text-4xl mb-2"></i>
-                        <p class="text-xs font-medium">Tu carrito está vacío.</p>
-                    </div>
-                </div>
-
-            <div class="p-4 bg-gray-50 border-t border-gray-200 space-y-3">
-                <div class="flex justify-between items-center font-bold text-base md:text-lg text-gray-800">
-                    <span>Total Estimado:</span>
-                    <span id="cart-total" class="text-[#D21427]">$0.00</span>
-                </div>
-                <button onclick="sendCartToWhatsApp()" class="w-full bg-[#25D366] hover:bg-opacity-95 text-white font-bold py-2.5 rounded-lg text-sm transition flex items-center justify-center space-x-2 shadow-md cursor-pointer">
-                    <i class="fab fa-whatsapp text-lg"></i>
-                    <span>Confirmar Pedido por WhatsApp</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="admin-panel" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-xs hidden">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] flex flex-col overflow-hidden">
-            <div class="bg-gray-900 text-white p-4 flex justify-between items-center">
-                <h3 class="font-bold text-base flex items-center"><i class="fas fa-sliders-h mr-2 text-[#6BA4D9]"></i> Panel de Control</h3>
-                <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-white text-lg cursor-pointer"><i class="fas fa-times"></i></button>
-            </div>
-            
-            <div id="admin-panel-scroll" class="p-4 flex-grow overflow-y-auto space-y-5">
-                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                    <h4 class="font-semibold text-xs uppercase tracking-wider text-gray-500 mb-2">Enlaces de Contacto</h4>
-                    <div class="space-y-3">
-                        <div>
-                            <label class="block text-xs font-medium text-gray-700 mb-1">WhatsApp (Solo números con código de país, ej: 584123456789)</label>
-                            <input type="text" id="cfg-whatsapp" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#D21427]">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-medium text-gray-700 mb-1">Usuario de Instagram (ej: tu_tienda)</label>
-                            <input type="text" id="cfg-instagram" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#D21427]">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                    <h4 class="font-semibold text-xs uppercase tracking-wider text-gray-500 mb-2"><i class="fas fa-lock mr-1 text-amber-500"></i> Seguridad</h4>
-                    <div>
-                        <label class="block text-xs font-medium text-gray-700 mb-1">Contraseña del Panel de Control</label>
-                        <input type="password" id="cfg-password" placeholder="Cambiar contraseña" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#D21427]">
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                    <h4 class="font-semibold text-xs uppercase tracking-wider text-gray-500 mb-2">Añadir / Editar Producto</h4>
-                    <div class="space-y-3">
-                        <input type="hidden" id="edit-id" value="">
-                        <div>
-                            <label class="block text-xs font-medium text-gray-700 mb-1">Nombre del Producto</label>
-                            <input type="text" id="prod-name" placeholder="Ej. Tinte Igora 6-0" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#6BA4D9]">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-medium text-gray-700 mb-1">Descripción</label>
-                            <textarea id="prod-desc" rows="2" placeholder="Detalles o beneficios del producto..." class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#6BA4D9]"></textarea>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <div>
-                                <label class="block text-xs font-medium text-gray-700 mb-1">Precio ($)</label>
-                                <input type="number" step="0.01" id="prod-price" placeholder="0.00" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#6BA4D9]">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-gray-700 mb-1">Categoría</label>
-                                <select id="prod-category" class="w-full text-sm border border-gray-300 p-2 rounded bg-white focus:outline-none focus:border-[#6BA4D9]"><option value="Tintes Profesionales">Tintes Profesionales</option><option value="Agua Oxigenada">Agua Oxigenada</option><option value="Keratina">Keratina</option><option value="Decolorantes">Decolorantes</option><option value="Ceras">Ceras</option><option value="Shampoo">Shampoo</option><option value="Acondicionador">Acondicionador</option><option value="Ampollas">Ampollas</option><option value="SobrePeines">SobrePeines</option><option value="Maquinas">Maquinas</option><option value="Planchas">Planchas</option><option value="Secadores">Secadores</option><option value="Cepillos">Cepillos</option><option value="Peines">Peines</option><option value="Maquillaje">Maquillaje</option></select>
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-medium text-gray-700 mb-1">URL de Imagen (Opcional)</label>
-                            <input type="text" id="prod-img" placeholder="https://enlace.com/imagen.jpg" class="w-full text-sm border border-gray-300 p-2 rounded focus:outline-none focus:border-[#6BA4D9]">
-                        </div>
-                        <div class="flex gap-2 mt-2">
-                            <button onclick="saveProduct()" id="btn-save-prod" class="flex-1 bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-2 rounded text-sm transition shadow-sm cursor-pointer"><i class="fas fa-plus mr-1"></i> Registrar</button>
-                            <button onclick="cancelEdit()" id="btn-cancel-edit" class="flex-1 bg-gray-400 hover:bg-gray-500 text-white font-semibold py-2 rounded text-sm transition shadow-sm cursor-pointer hidden">
-                                Cancelar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-3 rounded-lg border border-gray-200">
-                    <h4 class="font-semibold text-xs uppercase tracking-wider text-gray-500 mb-2">Inventario Actual</h4>
-                    <div id="admin-product-list" class="space-y-2 max-h-[48] overflow-y-auto pr-1 no-scrollbar">
-                        <div class="flex items-center justify-between bg-white border border-gray-200 p-2 rounded shadow-sm">
-                            <div class="flex-1 min-w-0 mr-2">
-                                <p class="text-xs font-bold text-gray-800 truncate">Igora Royal 60ml</p>
-                                <p class="text-[10px] text-gray-500 font-semibold">$4.50 - Tintes Profesionales</p>
-                            </div>
-                            <div class="flex gap-1">
-                                <button onclick="loadProductToEdit(1)" class="bg-amber-500 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-amber-600 transition" title="Editar"><i class="fas fa-pen"></i></button>
-                                <button onclick="deleteProduct(1)" class="bg-red-600 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-red-700 transition" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </div>
-                    
-                        <div class="flex items-center justify-between bg-white border border-gray-200 p-2 rounded shadow-sm">
-                            <div class="flex-1 min-w-0 mr-2">
-                                <p class="text-xs font-bold text-gray-800 truncate">Igora Royal Highlifts 60ml</p>
-                                <p class="text-[10px] text-gray-500 font-semibold">$0.01 - Tintes Profesionales</p>
-                            </div>
-                            <div class="flex gap-1">
-                                <button onclick="loadProductToEdit(7)" class="bg-amber-500 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-amber-600 transition" title="Editar"><i class="fas fa-pen"></i></button>
-                                <button onclick="deleteProduct(7)" class="bg-red-600 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-red-700 transition" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </div>
-                    
-                        <div class="flex items-center justify-between bg-white border border-gray-200 p-2 rounded shadow-sm">
-                            <div class="flex-1 min-w-0 mr-2">
-                                <p class="text-xs font-bold text-gray-800 truncate">Igora Royal Silver Whites 60ml</p>
-                                <p class="text-[10px] text-gray-500 font-semibold">$1.00 - Tintes Profesionales</p>
-                            </div>
-                            <div class="flex gap-1">
-                                <button onclick="loadProductToEdit(8)" class="bg-amber-500 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-amber-600 transition" title="Editar"><i class="fas fa-pen"></i></button>
-                                <button onclick="deleteProduct(8)" class="bg-red-600 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-red-700 transition" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </div>
-                    
-                        <div class="flex items-center justify-between bg-white border border-gray-200 p-2 rounded shadow-sm">
-                            <div class="flex-1 min-w-0 mr-2">
-                                <p class="text-xs font-bold text-gray-800 truncate">Igora Royal Fashion Lights 60ml</p>
-                                <p class="text-[10px] text-gray-500 font-semibold">$0.01 - Tintes Profesionales</p>
-                            </div>
-                            <div class="flex gap-1">
-                                <button onclick="loadProductToEdit(9)" class="bg-amber-500 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-amber-600 transition" title="Editar"><i class="fas fa-pen"></i></button>
-                                <button onclick="deleteProduct(9)" class="bg-red-600 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-red-700 transition" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </div>
-                    
-                        <div class="flex items-center justify-between bg-white border border-gray-200 p-2 rounded shadow-sm">
-                            <div class="flex-1 min-w-0 mr-2">
-                                <p class="text-xs font-bold text-gray-800 truncate">Igora Royal Absolutes 60ml</p>
-                                <p class="text-[10px] text-gray-500 font-semibold">$0.01 - Tintes Profesionales</p>
-                            </div>
-                            <div class="flex gap-1">
-                                <button onclick="loadProductToEdit(10)" class="bg-amber-500 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-amber-600 transition" title="Editar"><i class="fas fa-pen"></i></button>
-                                <button onclick="deleteProduct(10)" class="bg-red-600 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-red-700 transition" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </div>
-                    
-                        <div class="flex items-center justify-between bg-white border border-gray-200 p-2 rounded shadow-sm">
-                            <div class="flex-1 min-w-0 mr-2">
-                                <p class="text-xs font-bold text-gray-800 truncate">Tinte Nouvelle</p>
-                                <p class="text-[10px] text-gray-500 font-semibold">$0.01 - Tintes Profesionales</p>
-                            </div>
-                            <div class="flex gap-1">
-                                <button onclick="loadProductToEdit(11)" class="bg-amber-500 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-amber-600 transition" title="Editar"><i class="fas fa-pen"></i></button>
-                                <button onclick="deleteProduct(11)" class="bg-red-600 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-red-700 transition" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </div>
-                    
-                        <div class="flex items-center justify-between bg-white border border-gray-200 p-2 rounded shadow-sm">
-                            <div class="flex-1 min-w-0 mr-2">
-                                <p class="text-xs font-bold text-gray-800 truncate">Nouvelle Tono Sobre Tono Touch</p>
-                                <p class="text-[10px] text-gray-500 font-semibold">$0.01 - Tintes Profesionales</p>
-                            </div>
-                            <div class="flex gap-1">
-                                <button onclick="loadProductToEdit(12)" class="bg-amber-500 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-amber-600 transition" title="Editar"><i class="fas fa-pen"></i></button>
-                                <button onclick="deleteProduct(12)" class="bg-red-600 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-red-700 transition" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </div>
-                    
-                        <div class="flex items-center justify-between bg-white border border-gray-200 p-2 rounded shadow-sm">
-                            <div class="flex-1 min-w-0 mr-2">
-                                <p class="text-xs font-bold text-gray-800 truncate">Nook The Virgin Color</p>
-                                <p class="text-[10px] text-gray-500 font-semibold">$0.01 - Tintes Profesionales</p>
-                            </div>
-                            <div class="flex gap-1">
-                                <button onclick="loadProductToEdit(13)" class="bg-amber-500 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-amber-600 transition" title="Editar"><i class="fas fa-pen"></i></button>
-                                <button onclick="deleteProduct(13)" class="bg-red-600 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-red-700 transition" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </div>
-                    
-                        <div class="flex items-center justify-between bg-white border border-gray-200 p-2 rounded shadow-sm">
-                            <div class="flex-1 min-w-0 mr-2">
-                                <p class="text-xs font-bold text-gray-800 truncate">Glamour Professional For Your Hair</p>
-                                <p class="text-[10px] text-gray-500 font-semibold">$0.01 - Tintes Profesionales</p>
-                            </div>
-                            <div class="flex gap-1">
-                                <button onclick="loadProductToEdit(14)" class="bg-amber-500 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-amber-600 transition" title="Editar"><i class="fas fa-pen"></i></button>
-                                <button onclick="deleteProduct(14)" class="bg-red-600 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-red-700 transition" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </div>
-                    
-                        <div class="flex items-center justify-between bg-white border border-gray-200 p-2 rounded shadow-sm">
-                            <div class="flex-1 min-w-0 mr-2">
-                                <p class="text-xs font-bold text-gray-800 truncate">Salerm Vison Tinte</p>
-                                <p class="text-[10px] text-gray-500 font-semibold">$0.01 - Tintes Profesionales</p>
-                            </div>
-                            <div class="flex gap-1">
-                                <button onclick="loadProductToEdit(15)" class="bg-amber-500 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-amber-600 transition" title="Editar"><i class="fas fa-pen"></i></button>
-                                <button onclick="deleteProduct(15)" class="bg-red-600 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-red-700 transition" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-2 space-y-2">
-                    <button onclick="downloadHTML()" class="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2 rounded border border-blue-700 transition flex items-center justify-center space-x-1 cursor-pointer shadow-xs">
-                        <i class="fas fa-download mr-1"></i> <span class="font-bold">Descargar HTML Actualizado (para GitHub)</span>
-                    </button>
-                    <button onclick="resetData()" class="w-full bg-red-100 text-red-700 hover:bg-red-200 text-xs font-medium py-1.5 rounded border border-red-200 transition cursor-pointer">
-                        <i class="fas fa-undo mr-1"></i> Reestablecer Datos de Fábrica
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-gray-100 p-3 border-t border-gray-200 flex justify-end">
-                <button onclick="saveConfig()" class="bg-[#D21427] hover:bg-opacity-90 text-white font-semibold px-5 py-2 rounded text-sm transition shadow-md cursor-pointer">
-                    Guardar Cambios
-                </button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // CONFIGURACIÓN Y BASE DE DATOS DE FÁBRICA REEMPLAZABLE DINÁMICAMENTE
-        /*START_SETTINGS*/
-        const defaultSettings = {"whatsapp":"584241234567","instagram":"the_shampoo_distribuidora","password":"1"};
-        /*END_SETTINGS*/
+        const defaultSettings = { password: "admin" };
+        const defaultProducts = [
+            { id: 1, name: "Shampoo Profesional Keratina 1L", category: "Shampoo", price: 12.50, img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=500&q=80" },
+            { id: 2, name: "Acondicionador Brillo Argán 1L", category: "Acondicionador", price: 13.00, img: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=500&q=80" },
+            { id: 3, name: "Baño de Crema Hidratación Coco 500g", category: "Tratamiento", price: 8.50, img: "https://images.unsplash.com/photo-1608248597481-496100c80836?w=500&q=80" },
+            { id: 4, name: "Ampollas Anticaída Caja x12", category: "Ampollas", price: 15.00, img: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=500&q=80" }
+        ];
 
-        /*START_PRODUCTS*/
-        const defaultProducts = [{"id":1,"name":"Igora Royal 60ml","price":4.5,"category":"Tintes Profesionales","img":"imagenes/igorarojo.png"},{"id":7,"name":"Igora Royal Highlifts 60ml","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-f62a5c0a-017c-4f7d-a029-9ac1d38c8e2c.png"},{"id":8,"name":"Igora Royal Silver Whites 60ml","desc":"","price":1,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-03-d0c96714-aec5-4578-a590-abedf2b9d734.png"},{"id":9,"name":"Igora Royal Fashion Lights 60ml","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-97d5af90-0988-4385-9d30-631b53755451.png"},{"id":10,"name":"Igora Royal Absolutes 60ml","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-25626206-4ba4-420a-bd06-0ed79acdcfdd.png"},{"id":11,"name":"Tinte Nouvelle","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-38b0623e-dce6-40f8-b009-ddb8074b91f3.png"},{"id":12,"name":"Nouvelle Tono Sobre Tono Touch","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-506a054e-9a62-4147-873c-6974f475d3ea.png"},{"id":13,"name":"Nook The Virgin Color","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-d75b4969-77b4-4cd8-a4ce-03f03c4ebc7b.png"},{"id":14,"name":"Glamour Professional For Your Hair","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-d04d9f3b-410e-4214-ac31-0f51edf3f10c.png"},{"id":15,"name":"Salerm Vison Tinte","desc":"","price":0.01,"category":"Tintes Profesionales","img":"https://cdn.phototourl.com/member/2026-06-04-705d5424-22d7-4080-99ae-ddcc148a2c23.png"}];
-        /*END_PRODUCTS*/
+        // Variable global principal de productos
+        let products = JSON.parse(localStorage.getItem("ts_products")) || defaultProducts;
+        
+        if(!localStorage.getItem("ts_products")) localStorage.setItem("ts_products", JSON.stringify(defaultProducts));
+        if(!localStorage.getItem("ts_settings")) localStorage.setItem("ts_settings", JSON.stringify(defaultSettings));
 
-        let currentCategory = "Todos";
         let cart = [];
+        let currentCategory = "Todos";
         let isAdminLoggedIn = false;
-        let isEditing = false;
+        let editingProductId = null;
 
-        // Inicializadores de LocalStorage
-        if (!localStorage.getItem("ts_settings")) {
-            localStorage.setItem("ts_settings", JSON.stringify(defaultSettings));
-        }
-        if (!localStorage.getItem("ts_products")) {
-            localStorage.setItem("ts_products", JSON.stringify(defaultProducts));
+        function toggleAdminLogin() {
+            const modal = document.getElementById("admin-auth-modal");
+            modal.classList.toggle("hidden");
+            document.getElementById("admin-password").value = "";
         }
 
-        // Renderizado del Select de Categorías en el Formulario Administrativo
-        const selectCat = document.getElementById('prod-category');
-        if (selectCat) {
-            selectCat.innerHTML = "";
-            categories.forEach(c => {
-                let opt = document.createElement('option');
-                opt.value = c;
-                opt.innerText = c;
-                selectCat.appendChild(opt);
-            });
-        }
-
-        // Cargar Datos y Refrescar Interfaz
-        function refreshUI() {
+        function loginAdmin() {
+            const pass = document.getElementById("admin-password").value;
             const settings = JSON.parse(localStorage.getItem("ts_settings"));
-            const products = JSON.parse(localStorage.getItem("ts_products"));
+            if(pass === settings.password) {
+                isAdminLoggedIn = true;
+                toggleAdminLogin();
+                document.getElementById("admin-panel").classList.remove("hidden");
+                document.getElementById("admin-login-btn").textContent = "Panel Activo";
+                refreshUI();
+            } else {
+                alert("Contraseña incorrecta");
+            }
+        }
 
-            // Actualizar Enlaces de Redes Sociales
-            document.getElementById("btn-insta-head").href = `https://instagram.com/${settings.instagram}`;
-            document.getElementById("btn-wats-head").href = `https://wa.me/${settings.whatsapp}?text=Hola!%20Me%20interesan%20algunos%20productos%20de%20la%20distribuidora.`;
+        function logoutAdmin() {
+            isAdminLoggedIn = false;
+            document.getElementById("admin-panel").classList.add("hidden");
+            document.getElementById("admin-login-btn").textContent = "Panel Admin";
+            cancelEdit();
+            refreshUI();
+        }
 
-            // Rellenar Campos del Formulario del Panel con los valores guardados
-            document.getElementById("cfg-whatsapp").value = settings.whatsapp;
-            document.getElementById("cfg-instagram").value = settings.instagram;
-            document.getElementById("cfg-password").value = settings.password || "admin";
+        function toggleCart() {
+            const sidebar = document.getElementById("cart-sidebar");
+            sidebar.classList.toggle("translate-x-full");
+        }
 
-            // Renderizar lista de productos en el panel de control
-            const adminProductList = document.getElementById("admin-product-list");
-            if (adminProductList) {
-                adminProductList.innerHTML = "";
-                products.forEach(p => {
-                    adminProductList.innerHTML += `
-                        <div class="flex items-center justify-between bg-white border border-gray-200 p-2 rounded shadow-sm">
-                            <div class="flex-1 min-w-0 mr-2">
-                                <p class="text-xs font-bold text-gray-800 truncate">${p.name}</p>
-                                <p class="text-[10px] text-gray-500 font-semibold">$${p.price.toFixed(2)} - ${p.category}</p>
-                            </div>
-                            <div class="flex gap-1">
-                                <button onclick="loadProductToEdit(${p.id})" class="bg-amber-500 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-amber-600 transition" title="Editar"><i class="fas fa-pen"></i></button>
-                                <button onclick="deleteProduct(${p.id})" class="bg-red-600 text-white w-6 h-6 rounded text-[10px] flex items-center justify-center hover:bg-red-700 transition" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </div>
-                    `;
-                });
+        function filterCategory(cat) {
+            currentCategory = cat;
+            refreshUI();
+        }
+
+        function refreshUI() {
+            // 1. Renderizar Categorías de forma limpia y sin duplicados
+            const catNav = document.getElementById("categories-nav");
+            catNav.innerHTML = "";
+            
+            let categories = ["Todos"];
+            products.forEach(p => {
+                if(p.category) {
+                    const cleanCat = p.category.trim();
+                    // Evita duplicados ignorando diferencias de mayúsculas/minúsculas o espacios accidentales
+                    if(!categories.some(c => c.toLowerCase() === cleanCat.toLowerCase())) {
+                        categories.push(cleanCat);
+                    }
+                }
+            });
+
+            // Resguardo por si se elimina una categoría activa entera
+            if(!categories.some(c => c.toLowerCase() === currentCategory.toLowerCase())) {
+                currentCategory = "Todos";
             }
 
-            // Filtrar y Mostrar Productos
-            const grid = document.getElementById("grid-productos");
+            categories.forEach(cat => {
+                const btn = document.createElement("button");
+                btn.className = `px-4 py-1.5 text-xs font-semibold rounded-full transition pacing-wide cursor-pointer border ${
+                    currentCategory.toLowerCase() === cat.toLowerCase()
+                    ? "bg-gradient-to-r from-pink-500 to-violet-600 text-white border-transparent shadow-xs" 
+                    : "bg-white text-slate-600 border-slate-200 hover:border-slate-300"
+                }`;
+                btn.textContent = cat;
+                btn.onclick = () => filterCategory(cat);
+                catNav.appendChild(btn);
+            });
+
+            // 2. Renderizar Productos en el Grid con imágenes perfectamente simétricas
+            const grid = document.getElementById("products-grid");
             grid.innerHTML = "";
 
             const filtered = currentCategory === "Todos" 
                 ? products 
-                : products.filter(p => p.category === currentCategory);
+                : products.filter(p => p.category && p.category.trim().toLowerCase() === currentCategory.toLowerCase());
 
-            document.getElementById("product-count").innerText = `${filtered.length} Producto${filtered.length !== 1 ? 's' : ''}`;
-
-            if(filtered.length === 0) {
-                document.getElementById("no-products-msg").classList.remove("hidden");
-            } else {
-                document.getElementById("no-products-msg").classList.add("hidden");
+            filtered.forEach(p => {
+                const card = document.createElement("div");
+                card.className = "bg-white rounded-2xl border border-slate-100 shadow-xs overflow-hidden flex flex-col group relative";
                 
-                filtered.forEach(p => {
-                    const finalImg = p.img || `https://placehold.co/300x300/f3f4f6/a3a3a3?text=${encodeURIComponent(p.name)}`;
-                    
-                    let actionBtnsHTML = "";
-                    if (isAdminLoggedIn) {
-                        actionBtnsHTML = `
-                            <div class="absolute top-2 right-2 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-all z-10">
-                                <button onclick="loadProductToEdit(${p.id})" class="bg-amber-500 text-white w-7 h-7 rounded-full shadow-md text-[10px] flex items-center justify-center hover:bg-amber-600 cursor-pointer" title="Editar Producto"><i class="fas fa-pen"></i></button>
-                                <button onclick="deleteProduct(${p.id})" class="bg-red-600 text-white w-7 h-7 rounded-full shadow-md text-[10px] flex items-center justify-center hover:bg-red-700 cursor-pointer" title="Eliminar Producto"><i class="fas fa-trash-alt"></i></button>
+                // Contenedor 'aspect-square' e imagen con 'object-cover' asegura tamaño idéntico sin deformaciones
+                card.innerHTML = `
+                    <div class="relative bg-slate-100 overflow-hidden w-full aspect-square flex items-center justify-center">
+                        <img src="${p.img || 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=500&q=80'}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300 ease-in-out">
+                        ${isAdminLoggedIn ? `
+                            <div class="absolute top-2 right-2 flex gap-1 z-10">
+                                <button onclick="editProduct(${p.id})" class="p-1.5 bg-white/90 backdrop-blur-xs rounded-lg text-slate-600 hover:text-violet-600 shadow-xs transition text-xs font-bold cursor-pointer">✏️</button>
+                                <button onclick="deleteProduct(${p.id})" class="p-1.5 bg-white/90 backdrop-blur-xs rounded-lg text-rose-600 hover:bg-rose-50 shadow-xs transition text-xs font-bold cursor-pointer">🗑️</button>
                             </div>
-                        `;
-                    }
-
-                    grid.innerHTML += `
-                        <div class="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-xs hover:shadow-md transition flex flex-col group">
-                            <div class="relative pt-[100%] bg-gray-50 overflow-hidden border-b border-gray-100">
-                                <img src="${finalImg}" alt="${p.name}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                                <span class="absolute top-2 left-2 bg-[#6BA4D9] text-white font-semibold text-[10px] px-2 py-0.5 rounded-full shadow-xs">
-                                    ${p.category}
-                                </span>
-                                ${actionBtnsHTML}
-                            </div>
-                            <div class="p-3 flex-grow flex flex-col justify-between">
-                                <div>
-                                    <h3 class="font-semibold text-xs md:text-sm text-gray-800 line-clamp-2 mb-1">${p.name}</h3>
-                                    ${p.desc ? `<p class="text-[10px] text-gray-500 line-clamp-2 leading-snug mb-1">${p.desc}</p>` : ''}
-                                </div>
-                                <div class="mt-2 space-y-1.5">
-                                    <div class="text-sm md:text-base font-bold text-[#D21427] mb-1">$${p.price.toFixed(2)}</div>
-                                    
-                                    <button onclick="addToCart(${p.id})" class="w-full bg-[#6BA4D9] hover:bg-opacity-90 text-white font-semibold py-1.5 px-2 rounded text-xs transition flex items-center justify-center space-x-1 cursor-pointer shadow-sm">
-                                        <i class="fas fa-cart-plus"></i>
-                                        <span>Añadir al Carrito</span>
-                                    </button>
-                                </div>
-                            </div>
+                        ` : ''}
+                    </div>
+                    <div class="p-4 flex flex-col flex-1 justify-between gap-3">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">${p.category}</span>
+                            <h4 class="text-sm font-bold text-slate-800 line-clamp-2 mt-0.5">${p.name}</h4>
                         </div>
-                    `;
-                });
-            }
-            updateCartUI();
-        }
-
-        // Acciones de Categorías
-        function filterCategory(catName) {
-            currentCategory = catName;
-            
-            document.querySelectorAll(".cat-btn").forEach(btn => {
-                btn.classList.remove("bg-[#D21427]", "text-white", "shadow-sm");
-                btn.classList.add("bg-white", "text-gray-700", "border-gray-300");
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="text-base font-black text-slate-900">$${parseFloat(p.price).toFixed(2)}</span>
+                            <button onclick="addToCart(${p.id})" class="px-3 py-1.5 bg-slate-900 hover:bg-violet-600 text-white font-semibold text-xs rounded-lg shadow-xs transition flex items-center gap-1 cursor-pointer">
+                                <span>Agregar</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
             });
 
-            const activeId = `cat-${catName.replace(/\s+/g, '')}`;
-            const activeBtn = document.getElementById(activeId);
-            if(activeBtn) {
-                activeBtn.classList.remove("bg-white", "text-gray-700", "border-gray-300");
-                activeBtn.classList.add("bg-[#D21427]", "text-white", "shadow-sm");
-            }
+            // 3. Renderizar Carrito
+            const cartItemsContainer = document.getElementById("cart-items");
+            cartItemsContainer.innerHTML = "";
+            let total = 0;
+            let totalCount = 0;
 
-            document.getElementById("section-title").innerText = catName === "Todos" ? "Todos los Productos" : catName;
-            refreshUI();
-        }
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                totalCount += item.quantity;
 
-        // LÓGICA DEL CARRITO DE COMPRAS
-        function toggleCartModal() {
-            document.getElementById("cart-modal").classList.toggle("hidden");
-        }
+                const itemDiv = document.createElement("div");
+                itemDiv.className = "flex items-center gap-3 border-b border-slate-100 pb-3";
+                itemDiv.innerHTML = `
+                    <img src="${item.img || 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=500&q=80'}" class="w-12 h-12 object-cover rounded-lg bg-slate-100">
+                    <div class="flex-1">
+                        <h5 class="text-xs font-bold text-slate-800 line-clamp-1">${item.name}</h5>
+                        <span class="text-xs font-semibold text-slate-500">$${item.price.toFixed(2)} x ${item.quantity}</span>
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <button onclick="updateQuantity(${item.id}, -1)" class="w-6 h-6 flex items-center justify-center border border-slate-200 rounded-md text-xs font-bold hover:bg-slate-50 cursor-pointer">-</button>
+                        <button onclick="updateQuantity(${item.id}, 1)" class="w-6 h-6 flex items-center justify-center border border-slate-200 rounded-md text-xs font-bold hover:bg-slate-50 cursor-pointer">+</button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+            });
 
-        function addToCart(id) {
-            const products = JSON.parse(localStorage.getItem("ts_products"));
-            const itemMatch = products.find(p => p.id === id);
-            if (!itemMatch) return;
-
-            const existingCartItem = cart.find(item => item.id === id);
-            if (existingCartItem) {
-                existingCartItem.quantity++;
-            } else {
-                cart.push({ ...itemMatch, quantity: 1 });
-            }
-            updateCartUI();
-        }
-
-        function updateCartQuantity(id, amount) {
-            const item = cart.find(p => p.id === id);
-            if (!item) return;
-
-            item.quantity += amount;
-            if (item.quantity <= 0) {
-                cart = cart.filter(p => p.id !== id);
-            }
-            updateCartUI();
-        }
-
-        function removeFromCart(id) {
-            cart = cart.filter(p => p.id !== id);
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            const badge = document.getElementById("cart-badge");
-            const itemsContainer = document.getElementById("cart-items");
-            const totalContainer = document.getElementById("cart-total");
-
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-            if (totalItems > 0) {
-                badge.innerText = totalItems;
+            const badge = document.getElementById("cart-count");
+            const sideBadge = document.getElementById("cart-badge-count");
+            badge.textContent = totalCount;
+            sideBadge.textContent = totalCount;
+            
+            if(totalCount > 0) {
                 badge.classList.remove("hidden");
             } else {
                 badge.classList.add("hidden");
             }
+            document.getElementById("cart-total").textContent = `$${total.toFixed(2)}`;
+        }
 
-            totalContainer.innerText = `$${totalPrice.toFixed(2)}`;
+        function addToCart(id) {
+            const prod = products.find(p => p.id === id);
+            if(!prod) return;
+            
+            const existing = cart.find(item => item.id === id);
+            if(existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ ...prod, quantity: 1 });
+            }
+            refreshUI();
+        }
 
-            if (cart.length === 0) {
-                itemsContainer.innerHTML = `
-                    <div class="text-center py-8 text-gray-400">
-                        <i class="fas fa-shopping-basket text-4xl mb-2"></i>
-                        <p class="text-xs font-medium">Tu carrito está vacío.</p>
-                    </div>
-                `;
+        function updateQuantity(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if(!item) return;
+            
+            item.quantity += delta;
+            if(item.quantity <= 0) {
+                cart = cart.filter(i => i.id !== id);
+            }
+            refreshUI();
+        }
+
+        function sendWhatsAppOrder() {
+            if(cart.length === 0) {
+                alert("Tu carrito está vacío");
+                return;
+            }
+            
+            let message = "*¡Hola! Me gustaría realizar el siguiente pedido en Distribuidora The Shampoo:*\n\n";
+            let total = 0;
+            
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                message += `▪️ *${item.name}*\n  ${item.quantity}x $${item.price.toFixed(2)} = *$${subtotal.toFixed(2)}*\n`;
+                total += subtotal;
+            });
+            
+            message += `\n💵 *Total a pagar: $${total.toFixed(2)}*`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank");
+        }
+
+        function editProduct(id) {
+            const p = products.find(prod => prod.id === id);
+            if(p) {
+                editingProductId = id;
+                document.getElementById("prod-name").value = p.name;
+                document.getElementById("prod-category").value = p.category;
+                document.getElementById("prod-price").value = p.price;
+                document.getElementById("prod-img").value = p.img || "";
+                
+                document.getElementById("cancel-edit-btn").classList.remove("hidden");
+                document.getElementById("save-product-btn").textContent = "Actualizar Producto";
+                document.getElementById("admin-panel").scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function cancelEdit() {
+            editingProductId = null;
+            document.getElementById("prod-name").value = "";
+            document.getElementById("prod-category").value = "";
+            document.getElementById("prod-price").value = "";
+            document.getElementById("prod-img").value = "";
+            document.getElementById("cancel-edit-btn").classList.add("hidden");
+            document.getElementById("save-product-btn").textContent = "Guardar Producto";
+        }
+
+        function saveProduct() {
+            const name = document.getElementById("prod-name").value.trim();
+            const category = document.getElementById("prod-category").value.trim();
+            const price = parseFloat(document.getElementById("prod-price").value);
+            const img = document.getElementById("prod-img").value.trim();
+
+            if(!name || !category || isNaN(price)) {
+                alert("Por favor completa los campos obligatorios (Nombre, Categoría y Precio)");
                 return;
             }
 
-            itemsContainer.innerHTML = "";
-            cart.forEach(item => {
-                const img = item.img || `https://placehold.co/50x50/f3f4f6/a3a3a3?text=${encodeURIComponent(item.name)}`;
-                itemsContainer.innerHTML += `
-                    <div class="flex items-center justify-between p-2.5 border border-gray-100 rounded-lg bg-gray-50 gap-2">
-                        <img src="${img}" class="w-10 h-10 object-cover rounded bg-white border flex-shrink-0">
-                        <div class="flex-grow
+            // Sincronización correcta leyendo del localStorage
+            let storedProducts = JSON.parse(localStorage.getItem("ts_products")) || defaultProducts;
+
+            if(editingProductId) {
+                storedProducts = storedProducts.map(p => p.id === editingProductId ? { ...p, name, category, price, img } : p);
+                editingProductId = null;
+                document.getElementById("cancel-edit-btn").classList.add("hidden");
+                document.getElementById("save-product-btn").textContent = "Guardar Producto";
+            } else {
+                const newId = storedProducts.length > 0 ? Math.max(...storedProducts.map(p => p.id)) + 1 : 1;
+                storedProducts.push({ id: newId, name, category, price, img });
+            }
+
+            // Guardar cambios y actualizar de inmediato la variable global en memoria activa
+            localStorage.setItem("ts_products", JSON.stringify(storedProducts));
+            products = storedProducts;
+
+            // Limpieza del formulario
+            document.getElementById("prod-name").value = "";
+            document.getElementById("prod-category").value = "";
+            document.getElementById("prod-price").value = "";
+            document.getElementById("prod-img").value = "";
+
+            refreshUI();
+        }
+
+        function deleteProduct(id) {
+            if(confirm("¿Estás seguro de que deseas eliminar este producto?")) {
+                let storedProducts = JSON.parse(localStorage.getItem("ts_products")) || [];
+                storedProducts = storedProducts.filter(p => p.id !== id);
+                
+                // Guardar cambios y actualizar la variable global en memoria activa
+                localStorage.setItem("ts_products", JSON.stringify(storedProducts));
+                products = storedProducts;
+                
+                refreshUI();
+            }
+        }
+
+        function resetData() {
+            if(confirm("Se borrarán tus modificaciones, se restablecerá la contraseña de fábrica ('admin') y volverán los productos muestra. ¿Proceder?")) {
+                localStorage.clear();
+                localStorage.setItem("ts_settings", JSON.stringify(defaultSettings));
+                localStorage.setItem("ts_products", JSON.stringify(defaultProducts));
+                
+                // Actualización limpia de estados globales
+                products = [...defaultProducts];
+                currentCategory = "Todos";
+                cart = [];
+                isAdminLoggedIn = false;
+                cancelEdit();
+                
+                const panel = document.getElementById("admin-panel");
+                if (!panel.classList.contains("hidden")) panel.classList.add("hidden");
+                document.getElementById("admin-login-btn").textContent = "Panel Admin";
+                
+                refreshUI();
+            }
+        }
+
+        // Carga Inicial
+        window.onload = function() {
+            refreshUI();
+        };
+    </script>
+</body>
+</html>
